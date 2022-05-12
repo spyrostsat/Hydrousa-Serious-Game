@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+body, label, input, button {
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+
+#webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    /* cursor: url("/static/models/cursor1.png"), auto; */
+    /*cursor image should change from cursor1 to cursor2 when player hovers town components*/
+    /*site for cursor icons: https://icons8.com/icons/set/gaming-cursor
+    Cursor images should be 24x24 pixels*/
+}
+
+#loading-bar {
+     position: absolute;
+     top: 50%;
+     width: 100%;
+     height: 4px;
+     background: #ffffff;
+     transform: scaleX(0);
+     transform-origin: top left;
+     transition: transform 0.3s;
+}
+
+/* GAME DIFFICUTLY */
+.game-difficulty {
+     position: absolute;
+     top: 30%;
+     left: 25%;
+     background-color: #007FFF;
+     padding: 10px;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-family: Helvetica, Arial, sans-serif;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     width: 540px;
+     height: 240px;
+}
+
+.game-difficulty.visible {
+     transform: scale(1, 1);
+}
+
+#difficulty-text {
+     font-size: 40px;
+     color: #ffffff;
+     position: absolute;
+     top: 10%;
+     left: 20%;
+}
+
+#easy-button {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 20px;
+     position: absolute;
+     left: 5%;
+     bottom: 20%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 30px;
+     transition: background-color 0.15s;
+}
+
+#easy-button:hover {
+     background-color: #0000ff;
+}
+
+#medium-button {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 20px;
+     position: absolute;
+     left: 33%;
+     bottom: 20%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 30px;
+     transition: background-color 0.15s;
+}
+
+#medium-button:hover {
+     background-color: #0000ff;
+}
+
+#hard-button {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 20px;
+     position: absolute;
+     left: 70%;
+     bottom: 20%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 30px;
+     transition: background-color 0.15s;
+}
+
+#hard-button:hover {
+     background-color: #0000ff;
+}
+
+.city-menu {
+     position: absolute;
+     top: 27%;
+     left: 24%;
+     background-color: #007FFF;
+     color: #333333;
+     padding: 10px;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-size: 22px;
+     font-family: Helvetica, Arial, sans-serif;
+     line-height: 2;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     width: 600px;
+     height: 260px;
+}
+
+.city-menu.visible {
+     transform: scale(1, 1);
+}
+
+.water-tower-menu {
+     position: absolute;
+     top: 10%;
+     left: 20%;
+     background-color: #007FFF;
+     color: #333333;
+     padding: 10px;
+     transform: scale(0, 0); /*initialy the water-tower-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-size: 22px;
+     font-family: Helvetica, Arial, sans-serif;
+     line-height: 2;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     width: 710px;
+     height: 530px;
+}
+
+.water-tower-menu.visible {
+     transform: scale(1, 1);
+}
+
+
+.crop-menu {
+     position: absolute;
+     top: 10%;
+     left: 20%;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 10px;
+     transform: scale(0, 0); /*initialy the crop-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-size: 22px;
+     font-family: Helvetica, Arial, sans-serif;
+     line-height: 2;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     height:72%;
+     width: 660px;
+}
+
+.crop-menu.visible {
+     transform: scale(1, 1);
+}
+
+/*this css rule removes the default arrows existing in the input tags*/
+#population::-webkit-outer-spin-button, #population::-webkit-inner-spin-button, #roofs::-webkit-outer-spin-button, #roofs::-webkit-inner-spin-button, #roofsCoeff::-webkit-outer-spin-button, #roofsCoeff::-webkit-inner-spin-button, #yards::-webkit-outer-spin-button, #yards::-webkit-inner-spin-button, #yardsCoeff::-webkit-outer-spin-button, #yardsCoeff::-webkit-inner-spin-button, #openTankArea::-webkit-outer-spin-button, #openTankArea::-webkit-inner-spin-button, #openTankSpill::-webkit-outer-spin-button, #openTankSpill::-webkit-inner-spin-button, #tank2Area::-webkit-outer-spin-button, #tank2Area::-webkit-inner-spin-button, #tank2Spill::-webkit-outer-spin-button, #tank2Spill::-webkit-inner-spin-button, #subsurfaceTankArea::-webkit-outer-spin-button, #subsurfaceTankArea::-webkit-inner-spin-button, #subsurfaceTankSpill::-webkit-outer-spin-button, #subsurfaceTankSpill::-webkit-inner-spin-button, #rainfall::-webkit-outer-spin-button, #rainfall::-webkit-inner-spin-button, #irrigation::-webkit-outer-spin-button, #irrigation::-webkit-inner-spin-button, #stormwaterArea::-webkit-outer-spin-button, #stormwaterArea::-webkit-inner-spin-button, #stormwaterCoeff::-webkit-outer-spin-button, #stormwaterCoeff::-webkit-inner-spin-button, #BioswaleB::-webkit-outer-spin-button, #BioswaleB::-webkit-inner-spin-button, #BioswaleZ::-webkit-outer-spin-button, #BioswaleZ::-webkit-inner-spin-button, #BioswaleJ::-webkit-outer-spin-button, #BioswaleJ::-webkit-inner-spin-button, #BioswaleN::-webkit-outer-spin-button, #BioswaleN::-webkit-inner-spin-button, #BioswaleYo::-webkit-outer-spin-button, #BioswaleYo::-webkit-inner-spin-button {
+
+     -webkit-appearance: none;
+     margin: 0;
+}
+
+.simulation-button {
+     position: absolute;
+     top: 6px;
+     left: 6px;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 10px;
+     transform: scale(0, 0); /*initialy the simulation-button is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     transition: background-color 0.15s;
+     font-size: 26px;
+     font-family: Helvetica, Arial, sans-serif;
+     border: 3px solid #333333;
+     border-radius: 10px;
+}
+
+.simulation-button:hover:enabled {
+     background-color: #0000ff;
+}
+
+.simulation-button.visible {
+     transform: scale(1, 1);
+}
+
+.budget {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     color: #ffffff;
+     transform: scale(0, 0);
+     transition: transform 0.3s;
+     transition: background-color 0.15s;
+     font-size: 26px;
+     font-family: Helvetica, Arial, sans-serif;
+}
+
+.budget.visible {
+     transform: scale(1, 1);
+}
+
+.time {
+     position: absolute;
+     top: 40px;
+     left: 40%;
+     color: #ffffff;
+     transform: scale(0, 0);
+     transition: transform 0.3s;
+     transition: background-color 0.15s;
+     font-size: 26px;
+     font-family: Helvetica, Arial, sans-serif;
+}
+
+.time.visible {
+     transform: scale(1, 1);
+}
+
+.results {
+     position: absolute;
+     top: 30%;
+     left: 25%;
+     transform: scale(0, 0);
+     font-size: 26px;
+     line-height: 50px;
+     font-family: Helvetica, Arial, sans-serif;
+     padding: 10px;
+     background-color: #007FFF;
+     color: #ffffff;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     width: 650px;
+     height: 250px;
+     transition: transform 0.3s;
+}
+
+.results.visible {
+     transform: scale(1, 1);
+}
+
+#results-ok {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 5px;
+     position: absolute;
+     left: 42%;
+     bottom: 5%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 22px;
+     transition: background-color 0.15s;
+}
+
+#results-ok:hover {
+     background-color: #0000ff;
+}
+
+#city-ok {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 8px;
+     position: absolute;
+     left: 42%;
+     bottom: 4%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 22px;
+     transition: background-color 0.15s;
+}
+
+#city-ok:hover {
+     background-color: #0000ff;
+}
+
+#water-tower-ok {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 8px;
+     position: absolute;
+     left: 42%;
+     bottom: 4%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 22px;
+     transition: background-color 0.15s;
+}
+
+#water-tower-ok:hover {
+     background-color: #0000ff;
+}
+
+
+#crop-ok {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 8px;
+     position: absolute;
+     left: 42%;
+     bottom: 3%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 22px;
+     transition: background-color 0.15s;
+}
+
+#crop-ok:hover {
+     background-color: #0000ff;
+}
+
+button.play {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 20px;
+     position: absolute;
+     left: 37%;
+     bottom: 23%;
+     border: 3px solid #333333;
+     border-radius: 15px;
+     transform: scale(0, 0);
+     font-size: 50px;
+     font-family: Helvetica, Arial, sans-serif;
+     transition: transform 0.5s;
+     transition: background-color 0.15s;
+}
+
+button.play:hover {
+     background-color: #0000ff;
+}
+
+button.play.visible {
+     transform: scale(1, 1);
+}

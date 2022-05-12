@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HYDROUSA SERIOUS GAME</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+     <canvas id="webgl"></canvas>
+
+     <div id="loading-bar"></div>
+
+     <!-- Lets play button -->
+     <button type="button" class="play">Let's Play!</button>
+
+     <div class="game-difficulty">
+          <p id="difficulty-text">Choose Difficulty</p>
+          <button type="button" id="easy-button">EASY</button>
+          <button type="button" id="medium-button">MEDIUM</button>
+          <button type="button" id="hard-button">HARD</button>
+     </div>
+
+     <div class="city-menu">
+          <!-- <label for="population">Population: </label>
+          <input id="population" type="range" name="population" min="1000" max="20000" step="1000" value="5000" style="width: 335px;">
+          <span id="populationValue">5000</span>
+          <br> -->
+
+          <label for="roofs">Roofs Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
+          <input id="roofs" type="range" name="roofs" min="100000" max="600000" step="10000" value="300000" style="width: 300px;">
+          <span id="roofsValue">300000</span>
+          <br>
+
+          <label for="roofsCoeff">Roofs Runoff Coefficient: </label>
+          <input id="roofsCoeff" type="range" name="roofsCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 225px;">
+          <span id="roofsCoeffValue">0.65</span>
+          <br>
+
+          <label for="yards">Residential Yards Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
+          <input id="yards" type="range" name="yards" min="10000" max="100000" step="5000" value="50000" style="width: 175px;">
+          <span id="yardsValue">50000</span>
+          <br>
+
+          <label for="yardsCoeff">Residential Yards Runoff Coefficient: </label>
+          <input id="yardsCoeff" type="range" name="yardsCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 100px;">
+          <span id="yardsCoeffValue">0.65</span>
+          <button type="button" id="city-ok">OK</button>
+     </div>
+
+     <div class="water-tower-menu">
+          <label for="openTankArea">Open Tank Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
+          <input id="openTankArea" type="range" name="openTankArea" min="10" max="40" step="1" value="25" style="width: 260px;">
+          <span id="openTankAreaValue">25</span>
+          <br>
+
+          <label for="openTankSpill">Open Tank Spill Level (m): </label>
+          <input id="openTankSpill" type="range" name="openTankSpill" min="2" max="5" step="0.1" value="3.5" style="width: 215px;">
+          <span id="openTankSpillValue">3.5</span>
+          <br>
+
+          <label for="roofsTankArea">Roofs Tank Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
+          <input id="roofsTankArea" type="range" name="roofsTankArea" min="10" max="100" step="1" value="50" style="width: 260px;">
+          <span id="roofsTankAreaValue">50</span>
+          <br>
+
+          <label for="roofsTankSpill">Roofs Tank Spill Level (m): </label>
+          <input id="roofsTankSpill" type="range" name="roofsTankSpill" min="4" max="8" step="0.2" value="5" style="width: 215px;">
+          <span id="roofsTankSpillValue">5</span>
+          <br>
+
+          <label for="tank2Area">Tank 2 Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
+          <input id="tank2Area" type="range" name="tank2Area" min="10" max="40" step="1" value="25" style="width: 300px;">
+          <span id="tank2AreaValue">25</span>
+          <br>
+
+          <label for="tank2Spill">Tank 2 Spill Level (m): </label>
+          <input id="tank2Spill" type="range" name="tank2Spill" min="2" max="5" step="0.1" value="3.5" style="width: 255px;">
+          <span id="tank2SpillValue">3.5</span>
+          <br>
+
+          <label for="subsurfaceTankArea">Subsurface Tank Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
+          <input id="subsurfaceTankArea" type="range" name="subsurfaceTankArea" min="100" max="400" step="10" value="250" style="width: 197px;">
+          <span id="subsurfaceTankAreaValue">250</span>
+          <br>
+
+          <label for="subsurfaceTankSpill">Subsurface Tank Spill Level (m): </label>
+          <input id="subsurfaceTankSpill" type="range" name="subsurfaceTankSpill" min="5" max="15" step="0.5" value="10" style="width: 160px;">
+          <span id="subsurfaceTankSpillValue">10</span>
+          <br>
+
+          <label for="tank2MinVolPercentage">Tank 2 Minimum Volume Percentage: </label>
+          <input id="tank2MinVolPercentage" type="range" name="tank2MinVolPercentage" min="0.1" max="0.3" step="0.01" value="0.2" style="width: 160px;">
+          <span id="tank2MinVolPercentageValue">0.2</span>
+          <br>
+
+          <label for="subsurfaceTankMaxVolPercentage">Subsurface Tank Maximum Volume Percentage: </label>
+          <input id="subsurfaceTankMaxVolPercentage" type="range" name="subsurfaceTankMaxVolPercentage" min="0.5" max="0.9" step="0.01" value="0.7" style="width: 160px;">
+          <span id="subsurfaceTankMaxVolPercentageValue">0.7</span>
+
+          <button type="button" id="water-tower-ok">OK</button>
+     </div>
+
+     <div class="crop-menu">
+          <!-- <label for="irrigation">Irrigation Demand (mm): </label>
+          <input id="irrigation" type="range" name="irrigation" min="5" max="200" step="1" value="25" style="width: 200px;">
+          <span id="irrigationValue">25</span>
+          <br> -->
+
+          <label for="stormwaterArea">Stormwater Area (m <span style="position: relative; bottom: 5px; right: 4px;">2</span>): </label>
+          <input id="stormwaterArea" type="range" name="stormwaterArea" min="100000" max="1000000" step="20000" value="500000" style="width: 200px;">
+          <span id="stormwaterAreaValue">500000</span>
+          <br>
+
+          <label for="stormwaterCoeff">Stormwater Runoff Coefficient: </label>
+          <input id="stormwaterCoeff" type="range" name="stormwaterCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 120px; margin-bottom: 40px;">
+          <span id="stormwaterCoeffValue">0.65</span>
+          <br>
+
+          <p style="font-size: 26px; color: #cccccc; margin-left:110px;"><b>Bioswale System Characteristics</b></p>
+
+          <label for="BioswaleInfiltrationRate">Bioswale Infiltration Rate: </label>
+          <input id="BioswaleInfiltrationRate" type="range" name="BioswaleInfiltrationRate" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 340px;">
+          <span id="BioswaleInfiltrationRateValue">0.65</span>
+          <br>
+
+          <label for="BioswaleB">Width (m): </label>
+          <input id="BioswaleB" type="range" name="BioswaleB" min="0.2" max="1.6" step="0.1" value="0.9" style="width: 340px;">
+          <span id="BioswaleBValue">0.9</span>
+          <br>
+
+          <label for="BioswaleZ">Height (m): </label>
+          <input id="BioswaleZ" type="range" name="BioswaleZ" min="0.5" max="2" step="0.1" value="1.2" style="width: 330px;">
+          <span id="BioswaleZValue">1.2</span>
+          <br>
+
+          <label for="BioswaleJ">Slope (%): </label>
+          <input id="BioswaleJ" type="range" name="BioswaleJ" min="0.01" max="0.1" step="0.01" value="0.05" style="width: 330px;">
+          <span id="BioswaleJValue">0.05</span>
+          <br>
+
+          <label for="BioswaleN">Manning's n: </label>
+          <input id="BioswaleN" type="range" name="BioswaleN" min="0.01" max="0.05" step="0.005" value="0.03" style="width: 293px;">
+          <span id="BioswaleNValue">0.03</span>
+          <br>
+
+          <label for="BioswaleYo">Yo (m): </label>
+          <input id="BioswaleYo" type="range" name="BioswaleYo" min="0.3" max="0.9" step="0.05" value="0.6" style="width: 355px;">
+          <span id="BioswaleYoValue">0.6</span>
+
+          <button type="button" id="crop-ok">OK</button>
+     </div>
+
+     <button type="button" class="simulation-button">Run Simulation</button>
+
+     <div class="results">
+          <p class="results-text"></p>
+          <button type="button" id="results-ok">OK</button>
+     </div>
+
+     <div class="budget"></div>
+
+     <div class="time"></div>
+
+     <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

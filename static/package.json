@@ -1,0 +1,15 @@
+{
+  "name": "Hydrousa",
+  "version": "1.0.0",
+  "description": "Hydrousa Serious Game",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Spyros Tsattalios",
+  "license": "NTUA",
+  "dependencies": {
+    "lil-gui": "^0.16.0",
+    "three": "^0.137.5"
+  }
+}
