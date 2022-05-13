@@ -34,11 +34,57 @@ body, label, input, button {
      transition: transform 0.3s;
 }
 
+/* INTRODUCTION MENU */
+.introduction-menu {
+     position: absolute;
+     top: 15%;
+     left: 27%;
+     background-color: #007FFF;
+     padding: 10px;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-family: Helvetica, Arial, sans-serif;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     width: 600px;
+     height: 400px;
+}
+
+.introduction-menu.visible {
+     transform: scale(1, 1);
+}
+
+#introduction-menu-text {
+     font-size: 33px;
+     color: #ffffff;
+     position: absolute;
+     top: 5%;
+     left: 5%;
+     padding: 10px;
+}
+
+#introduction-menu-button {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 20px;
+     position: absolute;
+     left: 37%;
+     bottom: 5%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     font-size: 25px;
+     transition: background-color 0.15s;
+}
+
+#introduction-menu-button:hover {
+     background-color: #0000ff;
+}
+
 /* GAME DIFFICUTLY */
 .game-difficulty {
      position: absolute;
      top: 30%;
-     left: 25%;
+     left: 27%;
      background-color: #007FFF;
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
@@ -58,8 +104,8 @@ body, label, input, button {
      font-size: 40px;
      color: #ffffff;
      position: absolute;
-     top: 10%;
-     left: 20%;
+     top: 16%;
+     left: 21%;
 }
 
 #easy-button {
@@ -113,6 +159,35 @@ body, label, input, button {
      background-color: #0000ff;
 }
 
+/* SOUND CONTROL */
+.sound-control {
+     position: absolute;
+     top: 12%;
+     left: 1%;
+     /* background-color: #007FFF;
+     padding: 10px; */
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     /* font-family: Helvetica, Arial, sans-serif;
+     border: 3px solid #333333;
+     border-radius: 7px;
+     width: 20px;
+     height: 200px; */
+}
+
+.sound-control.visible {
+     transform: scale(1, 1);
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* Chromium */
+    width: 6px;
+    height: 250px;
+    padding: 0 5px;
+}
+
 .city-menu {
      position: absolute;
      top: 27%;
@@ -137,8 +212,8 @@ body, label, input, button {
 
 .water-tower-menu {
      position: absolute;
-     top: 10%;
-     left: 20%;
+     top: 13%;
+     left: 21%;
      background-color: #007FFF;
      color: #333333;
      padding: 10px;
@@ -160,8 +235,8 @@ body, label, input, button {
 
 .crop-menu {
      position: absolute;
-     top: 10%;
-     left: 20%;
+     top: 13%;
+     left: 22%;
      background-color: #007FFF;
      color: #ffffff;
      padding: 10px;
@@ -229,8 +304,8 @@ body, label, input, button {
 
 .time {
      position: absolute;
-     top: 40px;
-     left: 40%;
+     top: 25px;
+     left: 37%;
      color: #ffffff;
      transform: scale(0, 0);
      transition: transform 0.3s;

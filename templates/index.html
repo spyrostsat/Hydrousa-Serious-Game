@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name='viewport' content='width=device-width, initial-scale=1'>
     <title>HYDROUSA SERIOUS GAME</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
      <canvas id="webgl"></canvas>
@@ -13,6 +14,13 @@
      <!-- Lets play button -->
      <button type="button" class="play">Let's Play!</button>
 
+     <!-- Introduction Menu providing information about the game -->
+     <div class="introduction-menu">
+          <p id="introduction-menu-text" style="position: absolute; top: 40%; left:3%">Welcome to Hydrousa Serious Game!</p>
+          <button type="button" id="introduction-menu-button">GOT IT</button>
+     </div>
+
+     <!-- Difficulty Menu -->
      <div class="game-difficulty">
           <p id="difficulty-text">Choose Difficulty</p>
           <button type="button" id="easy-button">EASY</button>
@@ -89,7 +97,7 @@
           <br>
 
           <label for="tank2MinVolPercentage">Tank 2 Minimum Volume Percentage: </label>
-          <input id="tank2MinVolPercentage" type="range" name="tank2MinVolPercentage" min="0.1" max="0.3" step="0.01" value="0.2" style="width: 160px;">
+          <input id="tank2MinVolPercentage" type="range" name="tank2MinVolPercentage" min="0.05" max="0.35" step="0.01" value="0.2" style="width: 160px;">
           <span id="tank2MinVolPercentageValue">0.2</span>
           <br>
 
@@ -148,6 +156,12 @@
           <span id="BioswaleYoValue">0.6</span>
 
           <button type="button" id="crop-ok">OK</button>
+     </div>
+
+     <div class="sound-control">
+          <i class="fa fa-volume-up" style='font-size:30px'></i>
+          <br>
+          <input id="sound-mixer" type="range" name="sound-mixer" min="0" max="1" step="0.025" value="0.5" orient="vertical">
      </div>
 
      <button type="button" class="simulation-button">Run Simulation</button>
