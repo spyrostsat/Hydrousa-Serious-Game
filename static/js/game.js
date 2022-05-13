@@ -789,7 +789,7 @@ class Game {
           })
 
           // audio files: https://www.chosic.com/
-          const background_choices = ["/static/models/chill.mp3", "/static/models/acoustic1.mp3", "/static/models/acoustic2.mp3"]
+          const background_choices = ["/static/models/have_you_ever_seen_the_rain.mp3"]
           this.audioLoader.load(background_choices[Math.floor(Math.random() * background_choices.length)],
           (buffer) => {
                this.sound2.setBuffer(buffer)
