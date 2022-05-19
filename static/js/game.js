@@ -74,35 +74,40 @@ class Game {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
                     this.introductionMenuText.style.top = "15%"
-                    this.introductionMenuText.style.left = "8%"
-                    this.introductionMenuText.innerHTML = "The game is designed in a way, so that stakeholders can consider alternative methods for resolving their town's water management issues, referring to the satisfactory coverage of:<br /><br />1) irrigation demands and 2) non-potable household uses."
+                    this.introductionMenuText.style.left = "5%"
+                    this.introductionMenuText.style.right = "5%"
+                    this.introductionMenuText.innerHTML = "The game is designed in a way, that stakeholders can consider alternative methods for resolving their town's water management issues, referring to the coverage of:<br /><br />1) irrigation and 2) non-potable household uses."
                }
                else if (currentNumberOfParagraphs == 3) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "3%"
+                    this.introductionMenuText.style.top = "13%"
                     this.introductionMenuText.style.left = "5%"
-                    this.introductionMenuText.innerHTML = "These methods take advantage of the aquifer (i.e., it fills with water during the winter and provides water to the town in the summer).<br />The water falling to the houses' roofs (Roofs Area) and the town's paving (Residential Yards Area) is collected and exploited. The somewhat 'cleaner' roofs water is primarily used for household uses (it is stored in the Roofs Tank) and the probable overflows head to Tank 2, where they meet the water collected from the paving."
+                    this.introductionMenuText.style.right = "5%"
+                    this.introductionMenuText.innerHTML = "The water falling on the houses' roofs (Roofs Area) and the town's paving (Residential Yards Area) is collected. The roofs water is used for household uses (it is stored in the Roofs Tank) and the probable overflows head to Tank 2, where they meet the water collected from the paving."
                }
                else if (currentNumberOfParagraphs == 4) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "3%"
+                    this.introductionMenuText.style.top = "14%"
                     this.introductionMenuText.style.left = "5%"
-                    this.introductionMenuText.innerHTML = "The Tank 2 water is exclusively used for irrigation coverage. The player can decide to send water from Tank 2 to the aquifer to prevent probable overflows in the future, by specifying the Tank 2 Minimum Volume Percentage (minimum water remaining in Tank 2 and not heading to the aquifer)."
+                    this.introductionMenuText.style.right = "5%"
+                    this.introductionMenuText.innerHTML = "The Tank 2 water is exclusively used for irrigation. You can decide to send water from Tank 2 to the aquifer to prevent probable overflows in the future, by specifying the Tank 2 Minimum Volume Percentage."
                }
                else if (currentNumberOfParagraphs == 5) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "8%"
-                    this.introductionMenuText.style.left = "5%"
-                    this.introductionMenuText.innerHTML = "There is additional water being collected from the crops (Stormwater Area), by taking advantage of a Bioswale System. This water is saved in the Open Tank and is also used for irrigation coverage. The probable overflows head to the aquifer. The aquifer sends water back to Tank 2, to support the irrigation coverage, by specifying the Subsurface Tank Maximum Volume Percentage (threshold above which the water is sent to Tank 2)."
+                    this.introductionMenuText.style.top = "10%"
+                    this.introductionMenuText.style.left = "3%"
+                    this.introductionMenuText.style.right = "3%"
+                    this.introductionMenuText.innerHTML = "There is additional water being collected from the crops (Stormwater Area), via a Bioswale System. This water is saved in the Open Tank and is also used for irrigation. The probable overflows head to the aquifer. The aquifer sends water back to Tank 2, by specifying the Subsurface Tank Maximum Volume Percentage."
                }
                else if (currentNumberOfParagraphs == 6) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
                     this.introductionMenuText.style.top = "5%"
                     this.introductionMenuText.style.left = "5%"
+                    this.introductionMenuText.style.right = "5%"
                     this.introductionMenuText.innerHTML = "Goal of the game is finding an adequate system design, that fulfils the corresponding irrigation and non-potable household demands, within the given budget and time.<br /><br />There are 3 Difficulty Levels, which configure multiple game settings (i.e., rainfall, irrigation demand, town population, available budget and time)."
                }
                else if (currentNumberOfParagraphs == 7) {
@@ -110,7 +115,8 @@ class Game {
                     this.introductionMenuText.style.position = "absolute"
                     this.introductionMenuText.style.top = "5%"
                     this.introductionMenuText.style.left = "5%"
-                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus.<br /><br /><br />The menus can open only when the player approaches the corresponding city components.<br /><br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
+                    this.introductionMenuText.style.right = "5%"
+                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus (Town Menu, Water Tower Menu, Crops Menu).<br /><br />The menus open only when you approach the corresponding city components.<br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
                }
                else if (currentNumberOfParagraphs == 8) {
                     this.introductionMenu.classList.remove('visible')
@@ -129,15 +135,15 @@ class Game {
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 5000 // higher the difficulty higher the population (to increase household demand)
-               this.remainingBudget = 100000 // higher the difficulty lower the budget
+               this.remainingBudget = 120000 // higher the difficulty lower the budget
                this.remainingTime = 600 // available time in seconds
                this.rainfallMultiplyIndex = 1 + Math.random() // higher the difficulty lower the index (to reduce total rainfall)
                this.irrigationMultiplyIndex = 0.5 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
-               // each person is considered to need 5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.005 // in m3/day
+               // each person is considered to need 5.5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
+               this.totalNonPotableHouseholdDemand = this.population * 0.0055 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -155,16 +161,16 @@ class Game {
           this.mediumDifficulty.onclick = () => {
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
-               this.population = 7500 // higher the difficulty higher the population (to increase household demand)
-               this.remainingBudget = 80000 // higher the difficulty lower the budget
+               this.population = 6000 // higher the difficulty higher the population (to increase household demand)
+               this.remainingBudget = 110000 // higher the difficulty lower the budget
                this.remainingTime = 300 // available time in seconds
                this.rainfallMultiplyIndex = 0.8 + Math.random() * 0.4 // higher the difficulty lower the index (to reduce total rainfall)
                this.irrigationMultiplyIndex = 0.8 + Math.random() * 0.4 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
-               // each person is considered to need 5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.005 // in m3/day
+               // each person is considered to need 5.5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
+               this.totalNonPotableHouseholdDemand = this.population * 0.0055 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -182,16 +188,16 @@ class Game {
           this.hardDifficulty.onclick = () => {
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
-               this.population = 10000 // higher the difficulty higher the population (to increase household demand)
-               this.remainingBudget = 70000 // higher the difficulty lower the budget
+               this.population = 7000 // higher the difficulty higher the population (to increase household demand)
+               this.remainingBudget = 100000 // higher the difficulty lower the budget
                this.remainingTime = 180 // available time in seconds
                this.rainfallMultiplyIndex = 0.7 + Math.random() * 0.3 // higher the difficulty lower the index (to reduce total rainfall)
                this.irrigationMultiplyIndex = 1 + Math.random() * 0.3 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
-               // each person is considered to need 5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.005 // in m3/day
+               // each person is considered to need 5.5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
+               this.totalNonPotableHouseholdDemand = this.population * 0.0055 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -297,7 +303,7 @@ class Game {
 
           const openTankAreaTag = document.getElementById('openTankArea')
           const openTankAreaValue = document.getElementById('openTankAreaValue')
-          const openTankArray = this.range(10, 30, 1)
+          const openTankArray = this.range(10, 50, 1)
           openTankAreaTag.value = openTankArray[Math.floor(Math.random() * openTankArray.length)]
 
           let previousOpenTankValue = parseFloat(openTankAreaTag.value)
@@ -317,7 +323,7 @@ class Game {
 
           const openTankSpillTag = document.getElementById('openTankSpill')
           const openTankSpillValue = document.getElementById('openTankSpillValue')
-          const openTankSpillArray = this.range(2, 4, 0.1)
+          const openTankSpillArray = this.range(2, 5, 0.1)
           openTankSpillTag.value = openTankSpillArray[Math.floor(Math.random() * openTankSpillArray.length)]
 
           let previousOpenTankSpillValue = parseFloat(openTankSpillTag.value)
@@ -337,7 +343,7 @@ class Game {
 
           const roofsTankAreaTag = document.getElementById('roofsTankArea')
           const roofsTankAreaValue = document.getElementById('roofsTankAreaValue')
-          const roofsTankArray = this.range(10, 60, 1)
+          const roofsTankArray = this.range(10, 80, 1)
           roofsTankAreaTag.value = roofsTankArray[Math.floor(Math.random() * roofsTankArray.length)]
 
           let previousRoofsTankValue = parseFloat(roofsTankAreaTag.value)
@@ -377,7 +383,7 @@ class Game {
 
           const tank2AreaTag = document.getElementById('tank2Area')
           const tank2AreaValue = document.getElementById('tank2AreaValue')
-          const tank2Array = this.range(10, 30, 1)
+          const tank2Array = this.range(10, 60, 1)
           tank2AreaTag.value = tank2Array[Math.floor(Math.random() * tank2Array.length)]
 
           let previousTank2Value = parseFloat(tank2AreaTag.value)
@@ -397,7 +403,7 @@ class Game {
 
           const tank2SpillTag = document.getElementById('tank2Spill')
           const tank2SpillValue = document.getElementById('tank2SpillValue')
-          const tank2SpillArray = this.range(2, 4, 0.1)
+          const tank2SpillArray = this.range(2, 5, 0.1)
           tank2SpillTag.value = tank2SpillArray[Math.floor(Math.random() * tank2SpillArray.length)]
 
           let previousTank2SpillValue = parseFloat(tank2SpillTag.value)
@@ -497,7 +503,7 @@ class Game {
 
           const stormwaterAreaTag = document.getElementById('stormwaterArea')
           const stormwaterAreaValue = document.getElementById('stormwaterAreaValue')
-          const stormwaterAreaArray = this.range(100000, 600000, 20000)
+          const stormwaterAreaArray = this.range(100000, 500000, 20000)
           stormwaterAreaTag.value = stormwaterAreaArray[Math.floor(Math.random() * stormwaterAreaArray.length)]
 
           let previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
@@ -1469,7 +1475,7 @@ class Game {
           if (this.simulationRuns == 1) {
                this.timeCountingStarted = true
                this.previousTimeElapsed = Date.now()
-               this.resultsText.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potbale Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3<br>Try to optimize the system!</span>`
+               this.resultsText.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3<br>Try to optimize the system!</span>`
                this.resultsOK.onclick = () => {
                     if (this.simulationRuns == 1) {
                          this.simulationButton.disabled = false
