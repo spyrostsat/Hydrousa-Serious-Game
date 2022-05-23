@@ -1568,16 +1568,15 @@ class Game {
                     // Activating - Deactivating raindrops and corresponding sounds
                     if (this.rainShowingCounter % 1000 == 0) {
                          const change_possibility = Math.random()
-                         console.log(change_possibility)
                          if (!this.raindrops.visible) {
-                              if (change_possibility < 0.45) {
+                              if (change_possibility < 0.5) {
                                    this.raindrops.visible = true
                                    this.sound.play()
                                    // this.sound2.setVolume(0.5)
                               }
                          }
                          else {
-                              if (change_possibility < 0.55) {
+                              if (change_possibility < 0.5) {
                                    this.raindrops.visible = false
                                    // this.sound2.setVolume(0.6)
                                    this.sound.pause()
