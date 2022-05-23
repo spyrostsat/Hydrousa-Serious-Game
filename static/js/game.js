@@ -696,12 +696,13 @@ class Game {
           let far = 90
           this.camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far)
 
-          this.cameraOffsetX = 9
-          this.cameraOffsetY = 5
-          this.cameraOffsetZ = 8
+          this.camera.position.set(0, 5, -9)
 
+          this.cameraDistanceToPlayer = 8
+          this.cameraCounter = 0
+          this.previousBodyRotationY = 0
+          this.currentBodyRotationY = 0
 
-          this.camera.position.set(0, this.cameraOffsetY, this.cameraOffsetZ)
           // Put our camera in our scene
           this.scene.add(this.camera)
 
@@ -864,7 +865,7 @@ class Game {
 
           this.handleWindowResizing()
 
-          this.handleFullScreen()
+          // this.handleFullScreen()
 
           this.townLoaded = false
           this.characterLoaded = false
@@ -913,6 +914,7 @@ class Game {
                this.gltfCharacter = gltf
                // this.gltfCharacter.scene.scale.set(1.1, 1.1, 1.1)
                this.gltfCharacter.scene.position.y = 0.3
+               this.gltfCharacter.scene.rotation.y = 0
                this.characterMixer = new THREE.AnimationMixer(this.gltfCharacter.scene)
                this.scene.add(this.gltfCharacter.scene)
                this.characterIdling = this.characterMixer.clipAction(this.gltfCharacter.animations[0])
@@ -1266,6 +1268,8 @@ class Game {
 
           // Update character body rotation
           if (this.rotationState) {
+               this.previousBodyRotationY = this.currentBodyRotationY
+
                if (finalPosX != currentPosX && finalPosZ != currentPosZ) {
                     if (finalPosX > currentPosX && finalPosZ > currentPosZ) { // 0 < φ < π/2
                          this.gltfCharacter.scene.rotation.y = Math.atan((finalPosX - currentPosX) / (finalPosZ - currentPosZ))
@@ -1284,29 +1288,8 @@ class Game {
                          this.characterLookingDirection = "ne"
                     }
                }
+               this.currentBodyRotationY = this.gltfCharacter.scene.rotation.y
                this.rotationState = false
-          }
-
-
-          // Update camera position
-          if (finalPosX != currentPosX) {
-               const angle = Math.atan(Math.abs((finalPosZ - currentPosZ)) / Math.abs((finalPosX - currentPosX)))
-          }
-          if (finalPosX > currentPosX && finalPosZ > currentPosZ) { // 0 < φ < π/2
-                    this.camera.position.x = this.gltfCharacter.scene.position.x - this.cameraOffsetX / 2
-                    this.camera.position.z = this.gltfCharacter.scene.position.z - this.cameraOffsetZ / 2
-               }
-          else if (finalPosX > currentPosX && finalPosZ < currentPosZ) { // π/2 < φ < π
-                    this.camera.position.x = this.gltfCharacter.scene.position.x
-                    this.camera.position.z = this.gltfCharacter.scene.position.z + this.cameraOffsetZ
-          }
-          else if (finalPosX < currentPosX && finalPosZ < currentPosZ) { // π < φ < 3π/2
-               this.camera.position.x = this.gltfCharacter.scene.position.x
-               this.camera.position.z = this.gltfCharacter.scene.position.z + this.cameraOffsetZ
-          }
-          else if (finalPosX < currentPosX && finalPosZ > currentPosZ) { // 3π2 < φ < 2π
-               this.camera.position.x = this.gltfCharacter.scene.position.x - this.cameraOffsetX / 2
-               this.camera.position.z = this.gltfCharacter.scene.position.z - this.cameraOffsetZ * 1.1
           }
 
           // Update character position
@@ -1563,20 +1546,7 @@ class Game {
                     this.moveCharacter()
                }
 
-               // Update camera lookat() method depending on the character's moving direction
-               // this.orbitControls.target.set(this.gltfCharacter.scene.position)
-               if (this.characterLookingDirection == "nw") {
-                    this.camera.lookAt(this.gltfCharacter.scene.position.x + this.cameraOffsetX, this.gltfCharacter.scene.position.y, this.gltfCharacter.scene.position.z + this.cameraOffsetZ)
-               }
-               else if (this.characterLookingDirection == "sw") {
-                    this.camera.lookAt(this.gltfCharacter.scene.position.x + this.cameraOffsetX, this.gltfCharacter.scene.position.y, this.gltfCharacter.scene.position.z - this.cameraOffsetZ)
-               }
-               else if (this.characterLookingDirection == "se") {
-                    this.camera.lookAt(this.gltfCharacter.scene.position.x - this.cameraOffsetX, this.gltfCharacter.scene.position.y, this.gltfCharacter.scene.position.z - this.cameraOffsetZ)
-               }
-               else if (this.characterLookingDirection == "ne") {
-                    this.camera.lookAt(this.gltfCharacter.scene.position.x - this.cameraOffsetX, this.gltfCharacter.scene.position.y, this.gltfCharacter.scene.position.z + this.cameraOffsetZ)
-               }
+               this.camera.lookAt(this.gltfCharacter.scene.position.x, this.gltfCharacter.scene.position.y, this.gltfCharacter.scene.position.z)
 
                // Move the rain
                if (this.rainAdded) {
@@ -1639,6 +1609,37 @@ class Game {
                // Update OrbitControls
                // this.orbitControls.update()
 
+               // Rotate the camera smoothly around the player
+               if (!(this.previousBodyRotationY < 1.5 && this.currentBodyRotationY > 5.0) && ((this.currentBodyRotationY > this.previousBodyRotationY) || (this.previousBodyRotationY > 5 && this.currentBodyRotationY < 1.5))) {
+                    if (Math.abs(this.cameraCounter - this.gltfCharacter.scene.rotation.y) > 0.06) {
+                         this.cameraCounter += 0.05
+                         this.camera.position.x = Math.sin(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.x
+                         this.camera.position.z = Math.cos(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.z
+                    }
+                    else {
+                         this.camera.position.x = Math.sin(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.x
+                         this.camera.position.z = Math.cos(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.z
+                    }
+               }
+               else {
+                    if (Math.abs(Math.abs(this.cameraCounter) - this.gltfCharacter.scene.rotation.y) > 0.06)
+                    {
+                         this.cameraCounter -= 0.05
+                         this.camera.position.x = Math.sin(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.x
+                         this.camera.position.z = Math.cos(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.z
+                    }
+                    else {
+                         this.camera.position.x = Math.sin(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.x
+                         this.camera.position.z = Math.cos(this.cameraCounter + Math.PI) * this.cameraDistanceToPlayer + this.gltfCharacter.scene.position.z
+                    }
+               }
+
+               if (this.cameraCounter > Math.PI * 2) {
+                    this.cameraCounter = 0
+               }
+               if (this.cameraCounter < 0) {
+                    this.cameraCounter = Math.PI * 2
+               }
                // Render our scene
                this.renderer.render(this.scene, this.camera)
 
