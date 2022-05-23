@@ -969,7 +969,7 @@ class Game {
 
 
      addRain() {
-          this.rainDropsCount = 20000 // maybe this will need some reducing in the future to reduce the computational burden
+          this.rainDropsCount = 20000 // maybe less raindrops in the future to reduce the computational burden
           const rainGeometry = new THREE.BufferGeometry()
           const positions = new Float32Array(this.rainDropsCount * 3)
           for (let i = 0; i < this.rainDropsCount; i++) {
@@ -991,6 +991,7 @@ class Game {
           this.raindrops = new THREE.Points(rainGeometry, rainMaterial)
           this.scene.add(this.raindrops)
           this.rainAdded = true
+          this.raindrops.visible = false
      }
 
 
@@ -1551,8 +1552,8 @@ class Game {
                // Move the rain
                if (this.rainAdded) {
                     this.rainShowingCounter++;
-                    if (this.rainShowingCounter == 10) {
-                         this.sound.play()
+                    if (this.rainShowingCounter == 5) { // just to make sure everything is loaded and to avoid the browser's warning message: Audio is already playing.
+                         // this.sound.play()
                          this.sound2.play()
                     }
                     for (let n = 0; n < this.rainDropsCount; n++) {
@@ -1567,15 +1568,16 @@ class Game {
                     // Activating - Deactivating raindrops and corresponding sounds
                     if (this.rainShowingCounter % 1000 == 0) {
                          const change_possibility = Math.random()
+                         console.log(change_possibility)
                          if (!this.raindrops.visible) {
-                              if (change_possibility < 0.5) {
+                              if (change_possibility < 0.45) {
                                    this.raindrops.visible = true
                                    this.sound.play()
                                    // this.sound2.setVolume(0.5)
                               }
                          }
                          else {
-                              if (change_possibility < 0.5) {
+                              if (change_possibility < 0.55) {
                                    this.raindrops.visible = false
                                    // this.sound2.setVolume(0.6)
                                    this.sound.pause()
