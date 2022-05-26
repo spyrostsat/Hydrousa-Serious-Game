@@ -12,11 +12,11 @@
      <div id="loading-bar"></div>
 
      <!-- Lets play button -->
-     <button type="button" class="play">Let's Play!</button>
+     <button type="button" class="play" disabled>Let's Play!</button>
 
      <!-- Introduction Menu providing information about the game -->
      <div class="introduction-menu">
-          <p id="introduction-menu-text" style="position: absolute; top: 40%; left:20%">Welcome to Hydrousa!</p>
+          <p id="introduction-menu-text" style="position: absolute; top: 35%; left:20%">Welcome to Hydrousa!</p>
           <button type="button" id="introduction-menu-button">GOT IT</button>
      </div>
 
@@ -175,6 +175,19 @@
 
      <div class="time"></div>
 
+     <div id="hydrousa-logo-container">
+          <a href="https://www.hydrousa.org/" target="_blank"><img src="../static/models/hydrousa_logo.PNG" alt="Hydrousa Logo" width="75"></a>
+     </div>
+
+     <div id="ntua-logo-container">
+          <a href="https://www.ntua.gr/en/" target="_blank"><img src="../static/models/ntua_logo.png" alt="NTUA Logo" width="75"></a>
+     </div>
+
+     <div id="uwmh-logo-container">
+          <a href="https://uwmh.eu/" target="_blank"><img src="../static/models/uwmh_logo.jpg" alt="UWMH Logo" width="230"></a>
+     </div>
+
+     <p id="copyright-text">&copy; 2022 URBAN WATER MANAGEMENT AND HYRDRO-INFORMATICS GROUP.</p>
      <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

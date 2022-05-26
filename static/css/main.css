@@ -7,7 +7,7 @@ html, body {
     overflow: hidden;
 }
 
-body, label, input, button {
+body, label, input, button, img {
      cursor: url("/static/models/lol.cur"), auto;
 }
 
@@ -36,9 +36,10 @@ body, label, input, button {
 
 /* INTRODUCTION MENU */
 .introduction-menu {
+     opacity: 0.94;
      position: absolute;
-     top: 15%;
-     left: 27%;
+     top: 20%;
+     left: 22.5%;
      background-color: #007FFF;
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
@@ -46,8 +47,8 @@ body, label, input, button {
      font-family: Helvetica, Arial, sans-serif;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 600px;
-     height: 400px;
+     width: 650px;
+     height: 320px;
 }
 
 .introduction-menu.visible {
@@ -55,6 +56,7 @@ body, label, input, button {
 }
 
 #introduction-menu-text {
+     text-align: justify;
      font-size: 33px;
      color: #ffffff;
      position: absolute;
@@ -193,7 +195,7 @@ input[type=range][orient=vertical]
      top: 27%;
      left: 24%;
      background-color: #007FFF;
-     color: #333333;
+     color: #ffffff;
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
@@ -215,7 +217,7 @@ input[type=range][orient=vertical]
      top: 13%;
      left: 21%;
      background-color: #007FFF;
-     color: #333333;
+     color: #ffffff;
      padding: 10px;
      transform: scale(0, 0); /*initialy the water-tower-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
@@ -414,8 +416,8 @@ button.play {
      color: #ffffff;
      padding: 20px;
      position: absolute;
-     left: 37%;
-     bottom: 23%;
+     left: 36.5%;
+     bottom: 9%;
      border: 3px solid #333333;
      border-radius: 15px;
      transform: scale(0, 0);
@@ -425,10 +427,37 @@ button.play {
      transition: background-color 0.15s;
 }
 
-button.play:hover {
+button.play:enabled:hover {
      background-color: #0000ff;
 }
 
 button.play.visible {
      transform: scale(1, 1);
+}
+
+#hydrousa-logo-container {
+     position: absolute;
+     top: 0.4%;
+     left: 0.2%;
+}
+
+#ntua-logo-container {
+     position: absolute;
+     top: 0.4%;
+     right: 0.2%;
+}
+
+#uwmh-logo-container {
+     position: absolute;
+     top: 2%;
+     left: 38.3%;
+}
+
+#copyright-text {
+     position: absolute;
+     bottom: 1%;
+     right: 1.5%;
+     font-family: Helvetica, Arial, sans-serif;
+     font-size: 16px;
+     color: #ffffff;
 }

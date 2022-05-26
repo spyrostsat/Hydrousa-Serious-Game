@@ -26,6 +26,11 @@ class Game {
 
           // Get control of our menus html elements
 
+          this.hydrousaLogo = document.getElementById('hydrousa-logo-container')
+          this.ntuaLogo = document.getElementById('ntua-logo-container')
+          this.uwmhLogo = document.getElementById('uwmh-logo-container')
+          this.copyright = document.getElementById('copyright-text')
+
           this.playButton = document.querySelector('.play')
 
           this.cityMenu = document.querySelector('.city-menu')
@@ -67,13 +72,15 @@ class Game {
           this.introductionMenuText = document.getElementById('introduction-menu-text')
           this.introductionMenuButton = document.getElementById('introduction-menu-button')
 
+          this.introductionMenu.classList.add('visible')
+
           let currentNumberOfParagraphs = 1
           this.introductionMenuButton.onclick = () => {
                currentNumberOfParagraphs++
                if (currentNumberOfParagraphs == 2) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "15%"
+                    this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
                     this.introductionMenuText.innerHTML = "The game is designed in a way, that stakeholders can consider alternative methods for resolving their town's water management issues, referring to the coverage of:<br /><br />1) irrigation and 2) non-potable household uses."
@@ -81,7 +88,7 @@ class Game {
                else if (currentNumberOfParagraphs == 3) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "13%"
+                    this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
                     this.introductionMenuText.innerHTML = "The water falling on the houses' roofs (Roofs Area) and the town's paving (Residential Yards Area) is collected. The roofs water is used for household uses (it is stored in the Roofs Tank) and the probable overflows head to Tank 2, where they meet the water collected from the paving."
@@ -89,7 +96,7 @@ class Game {
                else if (currentNumberOfParagraphs == 4) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "14%"
+                    this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
                     this.introductionMenuText.innerHTML = "The Tank 2 water is exclusively used for irrigation. You can decide to send water from Tank 2 to the aquifer to prevent probable overflows in the future, by specifying the Tank 2 Minimum Volume Percentage."
@@ -97,7 +104,7 @@ class Game {
                else if (currentNumberOfParagraphs == 5) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "10%"
+                    this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "3%"
                     this.introductionMenuText.style.right = "3%"
                     this.introductionMenuText.innerHTML = "There is additional water being collected from the crops (Stormwater Area), via a Bioswale System. This water is saved in the Open Tank and is also used for irrigation. The probable overflows head to the aquifer. The aquifer sends water back to Tank 2, by specifying the Subsurface Tank Maximum Volume Percentage."
@@ -105,22 +112,22 @@ class Game {
                else if (currentNumberOfParagraphs == 6) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "5%"
+                    this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
-                    this.introductionMenuText.innerHTML = "Goal of the game is finding an adequate system design, that fulfils the corresponding irrigation and non-potable household demands, within the given budget and time.<br /><br />There are 3 Difficulty Levels, which configure multiple game settings (i.e., rainfall, irrigation demand, town population, available budget and time)."
+                    this.introductionMenuText.innerHTML = "Goal of the game is finding an adequate system design, that fulfils the corresponding irrigation and non-potable household demands, within the given budget and time.<br />There are 3 Difficulty Levels, configuring multiple game settings (i.e., rainfall, irrigation demand, town population, available budget and time)."
                }
                else if (currentNumberOfParagraphs == 7) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "5%"
+                    this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
-                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus (Town Menu, Water Tower Menu, Crops Menu).<br /><br />The menus open only when you approach the corresponding city components.<br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
+                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus (Town Menu, Water Tower Menu, Crops Menu).The menus open only when you approach the city components.<br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
                }
                else if (currentNumberOfParagraphs == 8) {
                     this.introductionMenu.classList.remove('visible')
-                    this.gameDifficulty.classList.add('visible')
+                    this.playButton.disabled = false
                }
           }
 
@@ -224,7 +231,7 @@ class Game {
 
           const roofsTag = document.getElementById('roofs')
           const roofsValue = document.getElementById('roofsValue')
-          const roofsArray = this.range(100000, 350000, 10000)
+          const roofsArray = this.range(100000, 300000, 10000)
           roofsTag.value = roofsArray[Math.floor(Math.random() * roofsArray.length)]
           let previousRoofsValue = parseFloat(roofsTag.value)
           let differenceRoofsValue = 0
@@ -303,7 +310,7 @@ class Game {
 
           const openTankAreaTag = document.getElementById('openTankArea')
           const openTankAreaValue = document.getElementById('openTankAreaValue')
-          const openTankArray = this.range(10, 50, 1)
+          const openTankArray = this.range(10, 45, 1)
           openTankAreaTag.value = openTankArray[Math.floor(Math.random() * openTankArray.length)]
 
           let previousOpenTankValue = parseFloat(openTankAreaTag.value)
@@ -323,7 +330,7 @@ class Game {
 
           const openTankSpillTag = document.getElementById('openTankSpill')
           const openTankSpillValue = document.getElementById('openTankSpillValue')
-          const openTankSpillArray = this.range(2, 5, 0.1)
+          const openTankSpillArray = this.range(2, 4.5, 0.1)
           openTankSpillTag.value = openTankSpillArray[Math.floor(Math.random() * openTankSpillArray.length)]
 
           let previousOpenTankSpillValue = parseFloat(openTankSpillTag.value)
@@ -343,7 +350,7 @@ class Game {
 
           const roofsTankAreaTag = document.getElementById('roofsTankArea')
           const roofsTankAreaValue = document.getElementById('roofsTankAreaValue')
-          const roofsTankArray = this.range(10, 80, 1)
+          const roofsTankArray = this.range(10, 75, 1)
           roofsTankAreaTag.value = roofsTankArray[Math.floor(Math.random() * roofsTankArray.length)]
 
           let previousRoofsTankValue = parseFloat(roofsTankAreaTag.value)
@@ -363,7 +370,7 @@ class Game {
 
           const roofsTankSpillTag = document.getElementById('roofsTankSpill')
           const roofsTankSpillValue = document.getElementById('roofsTankSpillValue')
-          const roofsTankSpillArray = this.range(4, 6.5, 0.2)
+          const roofsTankSpillArray = this.range(4, 6, 0.2)
           roofsTankSpillTag.value = roofsTankSpillArray[Math.floor(Math.random() * roofsTankSpillArray.length)]
 
           let previousRoofsTankSpillValue = parseFloat(roofsTankSpillTag.value)
@@ -383,7 +390,7 @@ class Game {
 
           const tank2AreaTag = document.getElementById('tank2Area')
           const tank2AreaValue = document.getElementById('tank2AreaValue')
-          const tank2Array = this.range(10, 60, 1)
+          const tank2Array = this.range(10, 55, 1)
           tank2AreaTag.value = tank2Array[Math.floor(Math.random() * tank2Array.length)]
 
           let previousTank2Value = parseFloat(tank2AreaTag.value)
@@ -403,7 +410,7 @@ class Game {
 
           const tank2SpillTag = document.getElementById('tank2Spill')
           const tank2SpillValue = document.getElementById('tank2SpillValue')
-          const tank2SpillArray = this.range(2, 5, 0.1)
+          const tank2SpillArray = this.range(2, 4.5, 0.1)
           tank2SpillTag.value = tank2SpillArray[Math.floor(Math.random() * tank2SpillArray.length)]
 
           let previousTank2SpillValue = parseFloat(tank2SpillTag.value)
@@ -443,7 +450,7 @@ class Game {
 
           const subsurfaceTankSpillTag = document.getElementById('subsurfaceTankSpill')
           const subsurfaceTankSpillValue = document.getElementById('subsurfaceTankSpillValue')
-          const subsurfaceTankSpillArray = this.range(5, 12, 0.5)
+          const subsurfaceTankSpillArray = this.range(5, 10, 0.5)
           subsurfaceTankSpillTag.value = subsurfaceTankSpillArray[Math.floor(Math.random() * subsurfaceTankSpillArray.length)]
 
           let previousSubsurfaceTankSpillValue = parseFloat(subsurfaceTankSpillTag.value)
@@ -503,7 +510,7 @@ class Game {
 
           const stormwaterAreaTag = document.getElementById('stormwaterArea')
           const stormwaterAreaValue = document.getElementById('stormwaterAreaValue')
-          const stormwaterAreaArray = this.range(100000, 500000, 20000)
+          const stormwaterAreaArray = this.range(100000, 350000, 20000)
           stormwaterAreaTag.value = stormwaterAreaArray[Math.floor(Math.random() * stormwaterAreaArray.length)]
 
           let previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
@@ -718,7 +725,7 @@ class Game {
           })
           this.renderer.setSize(this.sizes.width, this.sizes.height)
           this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-          // this.renderer.setClearColor("#262837") // ετσι αλλαζει το background χρωμα
+          this.renderer.setClearColor("#00aaff") // ετσι αλλαζει το background χρωμα
 
 
           // Add our clock
@@ -739,12 +746,17 @@ class Game {
 
                          this.playButton.onclick = () => {
                               this.pageLoaded = true
+                              this.hydrousaLogo.hidden = true
+                              this.ntuaLogo.hidden = true
+                              this.uwmhLogo.hidden = true
                               this.loadingBar.style.transform = `scaleX(0)`
                               this.simulationButton.classList.add('visible')
                               this.playButton.classList.remove('visible')
-                              this.introductionMenu.classList.add('visible')
+                              this.introductionMenu.classList.remove('visible')
+                              this.copyright.hidden = true
                               // this.gameDifficulty.classList.add('visible')
                               this.soundControl.classList.add('visible')
+                              this.gameDifficulty.classList.add('visible')
 
                               // this.irrigationTimeseries = Array.from({length: 100}, () => 0.5 + Math.random() * 3)
                               this.irrigationTimeseries = Array.from({length: 100}, () => 25 + Math.random() * 20)
@@ -808,14 +820,14 @@ class Game {
           (buffer) => {
                this.sound3.setBuffer(buffer)
                this.sound3.setLoop(false)
-               this.sound3.setVolume(0.5)
+               this.sound3.setVolume(0.3)
           })
 
           this.audioLoader.load("/static/models/lose.mp3",
           (buffer) => {
                this.sound4.setBuffer(buffer)
                this.sound4.setLoop(false)
-               this.sound4.setVolume(0.5)
+               this.sound4.setVolume(0.3)
           })
 
           // Lets write some 3D TEXT 'Hydrousa' in the first scene/camera while the page is loading
