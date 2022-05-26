@@ -1524,7 +1524,7 @@ class Game {
 
           if (!this.pageLoaded) {
                if (this.textLoaded) {
-                    this.text.position.x += (this.deltaTime / 10) * 12
+                    this.text.position.x += (this.deltaTime / 10) * 3
                     if (this.text.position.x > 4.9) {
                          this.text.position.set(-5.4, 1.2, 0)
                     }
