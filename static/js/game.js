@@ -43,13 +43,124 @@ class Game {
           this.budgetTag = document.querySelector('.budget')
           this.soundControl = document.querySelector('.sound-control')
           this.timeTag = document.querySelector('.time')
+          this.irrigationHouseholdInfoTag = document.querySelector('.irrigation-household-info')
 
           this.results = document.querySelector('.results')
           this.resultsText = document.querySelector('.results-text')
           this.resultsOK = document.getElementById('results-ok')
 
+          this.infoText = document.querySelector('.info-text')
+
+          // NEW GAME LOGIC
+          this.newGameButton = document.getElementById('new-game')
+
+          this.newGameButton.onclick = () => {
+               this.timeTag.style.color = "#ffffff"
+               this.gltfCharacter.scene.position.x = - 0.5 + Math.random() * 3
+               this.gltfCharacter.scene.position.z = -110 + Math.random() * 100
+
+               this.resultsOK.hidden = false
+               this.gameEnded = false
+               this.simulationButton.disabled = true
+               this.results.classList.remove('visible')
+               this.newGameButton.hidden = true
+               this.newGameButton.disabled = true
+               this.gameDifficulty.classList.add('visible')
+               this.difficultyChosen = false
+               this.budgetTag.classList.remove('visible')
+               this.timeTag.classList.remove('visible')
+               roofsTag.value = roofsArray[Math.floor(Math.random() * roofsArray.length)]
+               previousRoofsValue = parseFloat(roofsTag.value)
+               differenceRoofsValue = 0
+               this.roofsArea = parseFloat(roofsTag.value)
+               roofsValue.innerHTML = this.roofsArea
+
+               roofsCoeffTag.value = roofsCoeffArray[Math.floor(Math.random() * roofsCoeffArray.length)]
+               previousRoofsCoeffValue = parseFloat(roofsCoeffTag.value)
+               differenceRoofsCoeffValue = 0
+               this.roofsCoeff = parseFloat(roofsCoeffTag.value)
+               roofsCoeffValue.innerHTML = this.roofsCoeff
+
+               yardsTag.value = yardsArray[Math.floor(Math.random() * yardsArray.length)]
+               previousYardsValue = parseFloat(yardsTag.value)
+               differenceYardsValue = 0
+               this.yardsArea = parseFloat(yardsTag.value)
+               yardsValue.innerHTML = this.yardsArea
+
+               yardsCoeffTag.value = yardsCoeffArray[Math.floor(Math.random() * yardsCoeffArray.length)]
+               previousYardsCoeffValue = parseFloat(yardsCoeffTag.value)
+               differenceYardsCoeffValue = 0
+               this.yardsCoeff = parseFloat(yardsCoeffTag.value)
+               yardsCoeffValue.innerHTML = this.yardsCoeff
+
+               openTankVolumeTag.value = openTankArray[Math.floor(Math.random() * openTankArray.length)]
+               previousOpenTankValue = parseFloat(openTankVolumeTag.value)
+               differenceOpenTankValue = 0
+               this.openTankMaxVol = parseFloat(openTankVolumeTag.value)
+               openTankVolumeValue.innerHTML = this.openTankMaxVol
+
+               roofsTankVolumeTag.value = roofsTankArray[Math.floor(Math.random() * roofsTankArray.length)]
+               previousRoofsTankValue = parseFloat(roofsTankVolumeTag.value)
+               differenceRoofsTankValue = 0
+               this.roofsTankMaxVol = parseFloat(roofsTankVolumeTag.value)
+               roofsTankVolumeValue.innerHTML = this.roofsTankMaxVol
+
+               tank2VolumeTag.value = tank2Array[Math.floor(Math.random() * tank2Array.length)]
+               previousTank2Value = parseFloat(tank2VolumeTag.value)
+               differenceTank2Value = 0
+               this.tank2MaxVol = parseFloat(tank2VolumeTag.value)
+               tank2VolumeValue.innerHTML = this.tank2MaxVol
+
+               subsurfaceTankVolumeTag.value = subsurfaceTankArray[Math.floor(Math.random() * subsurfaceTankArray.length)]
+               previousSubsurfaceTankValue = parseFloat(subsurfaceTankVolumeTag.value)
+               differenceSubsurfaceTankValue = 0
+               this.subsurfaceTankMaxVol = parseFloat(subsurfaceTankVolumeTag.value)
+               subsurfaceTankVolumeValue.innerHTML = this.subsurfaceTankMaxVol
+
+               tank2MinVolPercentageTag.value = tank2VolArray[Math.floor(Math.random() * tank2VolArray.length)]
+               previousTank2MinVolPerValue = parseFloat(tank2MinVolPercentageTag.value)
+               differenceTank2MinVolPerValue = 0
+               this.tank2MinVolPercentage = parseFloat(tank2MinVolPercentageTag.value)
+               tank2MinVolPercentageValue.innerHTML = this.tank2MinVolPercentage
+
+               subsurfaceTankMaxVolPercentageTag.value = subsurfaceTankVolArray[Math.floor(Math.random() * subsurfaceTankVolArray.length)]
+               previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
+               differenceSubsurfaceTankMaxVolPerValue = 0
+               this.subsurfaceTankMaxVolPercentage = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
+               subsurfaceTankMaxVolPercentageValue.innerHTML = this.subsurfaceTankMaxVolPercentage
+
+               stormwaterAreaTag.value = stormwaterAreaArray[Math.floor(Math.random() * stormwaterAreaArray.length)]
+               previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
+               differenceStormwaterValue = 0
+               this.stormwaterArea = parseFloat(stormwaterAreaTag.value)
+               stormwaterAreaValue.innerHTML = this.stormwaterArea
+
+               stormwaterCoeffTag.value = stormwaterCoeffArray[Math.floor(Math.random() * stormwaterCoeffArray.length)]
+               previousStormwaterCoeffValue = parseFloat(stormwaterCoeffTag.value)
+               differenceStormwaterCoeffValue = 0
+               this.stormwaterCoeff = parseFloat(stormwaterCoeffTag.value)
+               stormwaterCoeffValue.innerHTML = this.stormwaterCoeff
+
+               bioswaleInfiltrationRateTag.value = infiltrationArray[Math.floor(Math.random() * infiltrationArray.length)]
+               previousBioswaleInfilValue = parseFloat(bioswaleInfiltrationRateTag.value)
+               differenceBioswaleInfilValue = 0
+               this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
+               bioswaleInfiltrationRateValue.innerHTML = this.BioswaleInfiltrationRate
+
+               bioswaleQmaxTag.value = bioswaleQmaxArray[Math.floor(Math.random() * bioswaleQmaxArray.length)]
+               previousBioswaleQmaxValue = parseFloat(bioswaleQmaxTag.value)
+               differenceBioswaleQmaxValue = 0
+               this.BioswaleQmax = parseFloat(bioswaleQmaxTag.value)
+               bioswaleQmaxValue.innerHTML = this.BioswaleQmax
+
+               this.simulationRuns = 0
+               this.newSimulationRun = false
+          }
+
+          this.gameEnded = false
           // Method to run the simulation
           this.simulationButton.onclick = () => {
+               this.gameEnded = true
                this.runSimulation()
           }
 
@@ -132,6 +243,7 @@ class Game {
           }
 
           // GAME DIFFICUTLY
+          this.finalDifficulty = null
           this.difficultyChosen = false
           this.gameDifficulty = document.querySelector('.game-difficulty')
           this.easyDifficulty = document.getElementById('easy-button')
@@ -139,6 +251,7 @@ class Game {
           this.hardDifficulty = document.getElementById('hard-button')
 
           this.easyDifficulty.onclick = () => {
+               this.finalDifficulty = "easy"
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 5000 // higher the difficulty higher the population (to increase household demand)
@@ -166,6 +279,7 @@ class Game {
           }
 
           this.mediumDifficulty.onclick = () => {
+               this.finalDifficulty = "medium"
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 6000 // higher the difficulty higher the population (to increase household demand)
@@ -193,6 +307,7 @@ class Game {
           }
 
           this.hardDifficulty.onclick = () => {
+               this.finalDifficulty = "hard"
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 7000 // higher the difficulty higher the population (to increase household demand)
@@ -227,14 +342,18 @@ class Game {
                this.sound2.setVolume(vol)
           }
 
+          // A simulation will be running on the background automatically when the player changes the menu sliders
+          // in order to know whether he's reaching an adequate system design or not ONLY on EASY difficulty
+          this.newSimulationRun = false
+
           // Get control of all input tags
 
           const roofsTag = document.getElementById('roofs')
           const roofsValue = document.getElementById('roofsValue')
           const roofsArray = this.range(100000, 300000, 10000)
           roofsTag.value = roofsArray[Math.floor(Math.random() * roofsArray.length)]
-          let previousRoofsValue = parseFloat(roofsTag.value)
-          let differenceRoofsValue = 0
+          var previousRoofsValue = parseFloat(roofsTag.value)
+          var differenceRoofsValue = 0
           this.roofsArea = parseFloat(roofsTag.value)
           roofsValue.innerHTML = this.roofsArea
 
@@ -246,15 +365,27 @@ class Game {
                previousRoofsValue = this.roofsArea
                this.remainingBudget -= differenceRoofsValue * this.roofsAreaUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
+
+          this.roofsImage = document.getElementById('roofs-area-img')
+          this.roofsImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Roofs Area`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.roofsImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
 
           const roofsCoeffTag = document.getElementById('roofsCoeff')
           const roofsCoeffValue = document.getElementById('roofsCoeffValue')
           const roofsCoeffArray = this.range(0.4, 0.7, 0.05)
           roofsCoeffTag.value = roofsCoeffArray[Math.floor(Math.random() * roofsCoeffArray.length)]
 
-          let previousRoofsCoeffValue = parseFloat(roofsCoeffTag.value)
-          let differenceRoofsCoeffValue = 0
+          var previousRoofsCoeffValue = parseFloat(roofsCoeffTag.value)
+          var differenceRoofsCoeffValue = 0
           this.roofsCoeff = parseFloat(roofsCoeffTag.value)
           roofsCoeffValue.innerHTML = this.roofsCoeff
 
@@ -266,15 +397,27 @@ class Game {
                previousRoofsCoeffValue = this.roofsCoeff
                this.remainingBudget -= differenceRoofsCoeffValue * this.roofsCoeffUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
+
+          this.roofsCoeffImage = document.getElementById('roofs-coeff-img')
+          this.roofsCoeffImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Roofs Coeff`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.roofsCoeffImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
 
           const yardsTag = document.getElementById('yards')
           const yardsValue = document.getElementById('yardsValue')
           const yardsArray = this.range(10000, 60000, 5000)
           yardsTag.value = yardsArray[Math.floor(Math.random() * yardsArray.length)]
 
-          let previousYardsValue = parseFloat(yardsTag.value)
-          let differenceYardsValue = 0
+          var previousYardsValue = parseFloat(yardsTag.value)
+          var differenceYardsValue = 0
           this.yardsArea = parseFloat(yardsTag.value)
           yardsValue.innerHTML = this.yardsArea
 
@@ -286,15 +429,27 @@ class Game {
                previousYardsValue = this.yardsArea
                this.remainingBudget -= differenceYardsValue * this.yardsAreaUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
+
+          this.yardsImage = document.getElementById('yards-area-img')
+          this.yardsImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Yards Area`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.yardsImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
 
           const yardsCoeffTag = document.getElementById('yardsCoeff')
           const yardsCoeffValue = document.getElementById('yardsCoeffValue')
           const yardsCoeffArray = this.range(0.4, 0.7, 0.05)
           yardsCoeffTag.value = yardsCoeffArray[Math.floor(Math.random() * yardsCoeffArray.length)]
 
-          let previousYardsCoeffValue = parseFloat(yardsCoeffTag.value)
-          let differenceYardsCoeffValue = 0
+          var previousYardsCoeffValue = parseFloat(yardsCoeffTag.value)
+          var differenceYardsCoeffValue = 0
           this.yardsCoeff = parseFloat(yardsCoeffTag.value)
           yardsCoeffValue.innerHTML = this.yardsCoeff
 
@@ -306,175 +461,155 @@ class Game {
                previousYardsCoeffValue = this.yardsCoeff
                this.remainingBudget -= differenceYardsCoeffValue * this.yardsCoeffUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
 
-          const openTankAreaTag = document.getElementById('openTankArea')
-          const openTankAreaValue = document.getElementById('openTankAreaValue')
-          const openTankArray = this.range(10, 45, 1)
-          openTankAreaTag.value = openTankArray[Math.floor(Math.random() * openTankArray.length)]
+          this.yardsCoeffImage = document.getElementById('yards-coeff-img')
+          this.yardsCoeffImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Yards Coeff`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.yardsCoeffImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
 
-          let previousOpenTankValue = parseFloat(openTankAreaTag.value)
-          let differenceOpenTankValue = 0
-          this.openTankArea = parseFloat(openTankAreaTag.value)
-          openTankAreaValue.innerHTML = this.openTankArea
 
-          this.openTankAreaUnitCost = 350 // in Euros/m2 - needs calibration
-          openTankAreaTag.onchange = () => {
-               this.openTankArea = parseFloat(openTankAreaTag.value)
-               openTankAreaValue.innerHTML = this.openTankArea
-               differenceOpenTankValue = this.openTankArea - previousOpenTankValue
-               previousOpenTankValue = this.openTankArea
-               this.remainingBudget -= differenceOpenTankValue * this.openTankAreaUnitCost
+          const openTankVolumeTag = document.getElementById('openTankVolume')
+          const openTankVolumeValue = document.getElementById('openTankVolumeValue')
+          const openTankArray = this.range(20, 100, 10)
+          openTankVolumeTag.value = openTankArray[Math.floor(Math.random() * openTankArray.length)]
+
+          var previousOpenTankValue = parseFloat(openTankVolumeTag.value)
+          var differenceOpenTankValue = 0
+          this.openTankMaxVol = parseFloat(openTankVolumeTag.value)
+          openTankVolumeValue.innerHTML = this.openTankMaxVol
+
+          this.openTankVolumeUnitCost = 40 // in Euros/m2 - needs calibration
+          openTankVolumeTag.onchange = () => {
+               this.openTankMaxVol = parseFloat(openTankVolumeTag.value)
+               openTankVolumeValue.innerHTML = this.openTankMaxVol
+               differenceOpenTankValue = this.openTankMaxVol - previousOpenTankValue
+               previousOpenTankValue = this.openTankMaxVol
+               this.remainingBudget -= differenceOpenTankValue * this.openTankVolumeUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
 
-          const openTankSpillTag = document.getElementById('openTankSpill')
-          const openTankSpillValue = document.getElementById('openTankSpillValue')
-          const openTankSpillArray = this.range(2, 4.5, 0.1)
-          openTankSpillTag.value = openTankSpillArray[Math.floor(Math.random() * openTankSpillArray.length)]
+          this.openTankImage = document.getElementById('open-tank-img')
+          this.openTankImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Open Tank`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.openTankImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
 
-          let previousOpenTankSpillValue = parseFloat(openTankSpillTag.value)
-          let differenceOpenTankSpillValue = 0
-          this.openTankSpill = parseFloat(openTankSpillTag.value)
-          openTankSpillValue.innerHTML = this.openTankSpill
 
-          this.openTankSpillUnitCost = 1500 // in Euros/m2 - needs calibration
-          openTankSpillTag.onchange = () => {
-               this.openTankSpill = parseFloat(openTankSpillTag.value)
-               openTankSpillValue.innerHTML = this.openTankSpill
-               differenceOpenTankSpillValue = this.openTankSpill - previousOpenTankSpillValue
-               previousOpenTankSpillValue = this.openTankSpill
-               this.remainingBudget -= differenceOpenTankSpillValue * this.openTankSpillUnitCost
+          const roofsTankVolumeTag = document.getElementById('roofsTankVolume')
+          const roofsTankVolumeValue = document.getElementById('roofsTankVolumeValue')
+          const roofsTankArray = this.range(40, 250, 10)
+          roofsTankVolumeTag.value = roofsTankArray[Math.floor(Math.random() * roofsTankArray.length)]
+
+          var previousRoofsTankValue = parseFloat(roofsTankVolumeTag.value)
+          var differenceRoofsTankValue = 0
+          this.roofsTankMaxVol = parseFloat(roofsTankVolumeTag.value)
+          roofsTankVolumeValue.innerHTML = this.roofsTankMaxVol
+
+          this.roofsTankVolumeUnitCost = 25 // in Euros/m2 - needs calibration
+          roofsTankVolumeTag.onchange = () => {
+               this.roofsTankMaxVol = parseFloat(roofsTankVolumeTag.value)
+               roofsTankVolumeValue.innerHTML = this.roofsTankMaxVol
+               differenceRoofsTankValue = this.roofsTankMaxVol - previousRoofsTankValue
+               previousRoofsTankValue = this.roofsTankMaxVol
+               this.remainingBudget -= differenceRoofsTankValue * this.roofsTankVolumeUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
 
-          const roofsTankAreaTag = document.getElementById('roofsTankArea')
-          const roofsTankAreaValue = document.getElementById('roofsTankAreaValue')
-          const roofsTankArray = this.range(10, 75, 1)
-          roofsTankAreaTag.value = roofsTankArray[Math.floor(Math.random() * roofsTankArray.length)]
+          this.roofsTankImage = document.getElementById('roofs-tank-img')
+          this.roofsTankImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Roofs Tank`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.roofsTankImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
 
-          let previousRoofsTankValue = parseFloat(roofsTankAreaTag.value)
-          let differenceRoofsTankValue = 0
-          this.roofsTankArea = parseFloat(roofsTankAreaTag.value)
-          roofsTankAreaValue.innerHTML = this.roofsTankArea
 
-          this.roofsTankAreaUnitCost = 250 // in Euros/m2 - needs calibration
-          roofsTankAreaTag.onchange = () => {
-               this.roofsTankArea = parseFloat(roofsTankAreaTag.value)
-               roofsTankAreaValue.innerHTML = this.roofsTankArea
-               differenceRoofsTankValue = this.roofsTankArea - previousRoofsTankValue
-               previousRoofsTankValue = this.roofsTankArea
-               this.remainingBudget -= differenceRoofsTankValue * this.roofsTankAreaUnitCost
+          const tank2VolumeTag = document.getElementById('tank2Volume')
+          const tank2VolumeValue = document.getElementById('tank2VolumeValue')
+          const tank2Array = this.range(20, 100, 10)
+          tank2VolumeTag.value = tank2Array[Math.floor(Math.random() * tank2Array.length)]
+
+          var previousTank2Value = parseFloat(tank2VolumeTag.value)
+          var differenceTank2Value = 0
+          this.tank2MaxVol = parseFloat(tank2VolumeTag.value)
+          tank2VolumeValue.innerHTML = this.tank2MaxVol
+
+          this.tank2VolumeUnitCost = 40 // in Euros/m2 - needs calibration
+          tank2VolumeTag.onchange = () => {
+               this.tank2MaxVol = parseFloat(tank2VolumeTag.value)
+               tank2VolumeValue.innerHTML = this.tank2MaxVol
+               differenceTank2Value = this.tank2MaxVol - previousTank2Value
+               previousTank2Value = this.tank2MaxVol
+               this.remainingBudget -= differenceTank2Value * this.tank2VolumeUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
 
-          const roofsTankSpillTag = document.getElementById('roofsTankSpill')
-          const roofsTankSpillValue = document.getElementById('roofsTankSpillValue')
-          const roofsTankSpillArray = this.range(4, 6, 0.2)
-          roofsTankSpillTag.value = roofsTankSpillArray[Math.floor(Math.random() * roofsTankSpillArray.length)]
+          this.tank2Image = document.getElementById('tank2-img')
+          this.tank2Image.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Tank 2`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.tank2Image.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
 
-          let previousRoofsTankSpillValue = parseFloat(roofsTankSpillTag.value)
-          let differenceRoofsTankSpillValue = 0
-          this.roofsTankSpill = parseFloat(roofsTankSpillTag.value)
-          roofsTankSpillValue.innerHTML = this.roofsTankSpill
 
-          this.roofsTankSpillUnitCost = 800 // in Euros/m2 - needs calibration
-          roofsTankSpillTag.onchange = () => {
-               this.roofsTankSpill = parseFloat(roofsTankSpillTag.value)
-               roofsTankSpillValue.innerHTML = this.roofsTankSpill
-               differenceRoofsTankSpillValue = this.roofsTankSpill - previousRoofsTankSpillValue
-               previousRoofsTankSpillValue = this.roofsTankSpill
-               this.remainingBudget -= differenceRoofsTankSpillValue * this.roofsTankSpillUnitCost
+          const subsurfaceTankVolumeTag = document.getElementById('subsurfaceTankVolume')
+          const subsurfaceTankVolumeValue = document.getElementById('subsurfaceTankVolumeValue')
+          const subsurfaceTankArray = this.range(500, 1000, 50)
+          subsurfaceTankVolumeTag.value = subsurfaceTankArray[Math.floor(Math.random() * subsurfaceTankArray.length)]
+
+          var previousSubsurfaceTankValue = parseFloat(subsurfaceTankVolumeTag.value)
+          var differenceSubsurfaceTankValue = 0
+          this.subsurfaceTankMaxVol = parseFloat(subsurfaceTankVolumeTag.value)
+          subsurfaceTankVolumeValue.innerHTML = this.subsurfaceTankMaxVol
+
+          this.subsurfaceTankVolumeUnitCost = 3.5 // in Euros/m2 - needs calibration
+          subsurfaceTankVolumeTag.onchange = () => {
+               this.subsurfaceTankMaxVol = parseFloat(subsurfaceTankVolumeTag.value)
+               subsurfaceTankVolumeValue.innerHTML = this.subsurfaceTankMaxVol
+               differenceSubsurfaceTankValue = this.subsurfaceTankMaxVol - previousSubsurfaceTankValue
+               previousSubsurfaceTankValue = this.subsurfaceTankMaxVol
+               this.remainingBudget -= differenceSubsurfaceTankValue * this.subsurfaceTankVolumeUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
 
-          const tank2AreaTag = document.getElementById('tank2Area')
-          const tank2AreaValue = document.getElementById('tank2AreaValue')
-          const tank2Array = this.range(10, 55, 1)
-          tank2AreaTag.value = tank2Array[Math.floor(Math.random() * tank2Array.length)]
-
-          let previousTank2Value = parseFloat(tank2AreaTag.value)
-          let differenceTank2Value = 0
-          this.tank2Area = parseFloat(tank2AreaTag.value)
-          tank2AreaValue.innerHTML = this.tank2Area
-
-          this.tank2AreaUnitCost = 330 // in Euros/m2 - needs calibration
-          tank2AreaTag.onchange = () => {
-               this.tank2Area = parseFloat(tank2AreaTag.value)
-               tank2AreaValue.innerHTML = this.tank2Area
-               differenceTank2Value = this.tank2Area - previousTank2Value
-               previousTank2Value = this.tank2Area
-               this.remainingBudget -= differenceTank2Value * this.tank2AreaUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+          this.subsurfaceTankImage = document.getElementById('subsurface-tank-img')
+          this.subsurfaceTankImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Subsurface Tank`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.subsurfaceTankImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
           }
 
-          const tank2SpillTag = document.getElementById('tank2Spill')
-          const tank2SpillValue = document.getElementById('tank2SpillValue')
-          const tank2SpillArray = this.range(2, 4.5, 0.1)
-          tank2SpillTag.value = tank2SpillArray[Math.floor(Math.random() * tank2SpillArray.length)]
-
-          let previousTank2SpillValue = parseFloat(tank2SpillTag.value)
-          let differenceTank2SpillValue = 0
-          this.tank2Spill = parseFloat(tank2SpillTag.value)
-          tank2SpillValue.innerHTML = this.tank2Spill
-
-          this.tank2SpillUnitCost = 1200 // in Euros/m2 - needs calibration
-          tank2SpillTag.onchange = () => {
-               this.tank2Spill = parseFloat(tank2SpillTag.value)
-               tank2SpillValue.innerHTML = this.tank2Spill
-               differenceTank2SpillValue = this.tank2Spill - previousTank2SpillValue
-               previousTank2SpillValue = this.tank2Spill
-               this.remainingBudget -= differenceTank2SpillValue * this.tank2SpillUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
-          }
-
-          const subsurfaceTankAreaTag = document.getElementById('subsurfaceTankArea')
-          const subsurfaceTankAreaValue = document.getElementById('subsurfaceTankAreaValue')
-          const subsurfaceTankArray = this.range(100, 280, 10)
-          subsurfaceTankAreaTag.value = subsurfaceTankArray[Math.floor(Math.random() * subsurfaceTankArray.length)]
-
-          let previousSubsurfaceTankValue = parseFloat(subsurfaceTankAreaTag.value)
-          let differenceSubsurfaceTankValue = 0
-          this.subsurfaceTankArea = parseFloat(subsurfaceTankAreaTag.value)
-          subsurfaceTankAreaValue.innerHTML = this.subsurfaceTankArea
-
-          this.subsurfaceTankAreaUnitCost = 65 // in Euros/m2 - needs calibration
-          subsurfaceTankAreaTag.onchange = () => {
-               this.subsurfaceTankArea = parseFloat(subsurfaceTankAreaTag.value)
-               subsurfaceTankAreaValue.innerHTML = this.subsurfaceTankArea
-               differenceSubsurfaceTankValue = this.subsurfaceTankArea - previousSubsurfaceTankValue
-               previousSubsurfaceTankValue = this.subsurfaceTankArea
-               this.remainingBudget -= differenceSubsurfaceTankValue * this.subsurfaceTankAreaUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
-          }
-
-          const subsurfaceTankSpillTag = document.getElementById('subsurfaceTankSpill')
-          const subsurfaceTankSpillValue = document.getElementById('subsurfaceTankSpillValue')
-          const subsurfaceTankSpillArray = this.range(5, 10, 0.5)
-          subsurfaceTankSpillTag.value = subsurfaceTankSpillArray[Math.floor(Math.random() * subsurfaceTankSpillArray.length)]
-
-          let previousSubsurfaceTankSpillValue = parseFloat(subsurfaceTankSpillTag.value)
-          let differenceSubsurfaceTankSpillValue = 0
-          this.subsurfaceTankSpill = parseFloat(subsurfaceTankSpillTag.value)
-          subsurfaceTankSpillValue.innerHTML = this.subsurfaceTankSpill
-
-          this.subsurfaceTankSpillUnitCost = 600 // in Euros/m2 - needs calibration
-          subsurfaceTankSpillTag.onchange = () => {
-               this.subsurfaceTankSpill = parseFloat(subsurfaceTankSpillTag.value)
-               subsurfaceTankSpillValue.innerHTML = this.subsurfaceTankSpill
-               differenceSubsurfaceTankSpillValue = this.subsurfaceTankSpill - previousSubsurfaceTankSpillValue
-               previousSubsurfaceTankSpillValue = this.subsurfaceTankSpill
-               this.remainingBudget -= differenceSubsurfaceTankSpillValue * this.subsurfaceTankSpillUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
-          }
 
           const tank2MinVolPercentageTag = document.getElementById('tank2MinVolPercentage')
           const tank2MinVolPercentageValue = document.getElementById('tank2MinVolPercentageValue')
           const tank2VolArray = this.range(0.05, 0.35, 0.01)
           tank2MinVolPercentageTag.value = tank2VolArray[Math.floor(Math.random() * tank2VolArray.length)]
 
-          let previousTank2MinVolPerValue = parseFloat(tank2MinVolPercentageTag.value)
-          let differenceTank2MinVolPerValue = 0
+          var previousTank2MinVolPerValue = parseFloat(tank2MinVolPercentageTag.value)
+          var differenceTank2MinVolPerValue = 0
           this.tank2MinVolPercentage = parseFloat(tank2MinVolPercentageTag.value) // we don't ever want to let the water level of Tank2 go BELOW 20%
           tank2MinVolPercentageValue.innerHTML = this.tank2MinVolPercentage
 
@@ -486,15 +621,27 @@ class Game {
                previousTank2MinVolPerValue = this.tank2MinVolPercentage
                this.remainingBudget -= differenceTank2MinVolPerValue * this.tank2MinVolPercentageUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
+
+          this.tank2MinVolPerImage = document.getElementById('tank2-min-vol-per')
+          this.tank2MinVolPerImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Tank2 Minimum Volume Percentage`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.tank2MinVolPerImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
 
           const subsurfaceTankMaxVolPercentageTag = document.getElementById('subsurfaceTankMaxVolPercentage')
           const subsurfaceTankMaxVolPercentageValue = document.getElementById('subsurfaceTankMaxVolPercentageValue')
           const subsurfaceTankVolArray = this.range(0.5, 0.9, 0.01)
           subsurfaceTankMaxVolPercentageTag.value = subsurfaceTankVolArray[Math.floor(Math.random() * subsurfaceTankVolArray.length)]
 
-          let previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
-          let differenceSubsurfaceTankMaxVolPerValue = 0
+          var previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
+          var differenceSubsurfaceTankMaxVolPerValue = 0
           this.subsurfaceTankMaxVolPercentage = parseFloat(subsurfaceTankMaxVolPercentageTag.value) // we don't ever want to let the water level of SubsurfaceTank go ABOVE 80%
           subsurfaceTankMaxVolPercentageValue.innerHTML = this.subsurfaceTankMaxVolPercentage
 
@@ -506,15 +653,28 @@ class Game {
                previousSubsurfaceTankMaxVolPerValue = this.subsurfaceTankMaxVolPercentage
                this.remainingBudget -= differenceSubsurfaceTankMaxVolPerValue * this.subsurfaceTankMaxVolPercentageUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
+
+          this.subsurfaceTankMaxVolPerImage = document.getElementById('sub-tank-max-vol-per')
+          this.subsurfaceTankMaxVolPerImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Subsurface Tank Maximum Volume Percentage`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.subsurfaceTankMaxVolPerImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
+
 
           const stormwaterAreaTag = document.getElementById('stormwaterArea')
           const stormwaterAreaValue = document.getElementById('stormwaterAreaValue')
           const stormwaterAreaArray = this.range(100000, 350000, 20000)
           stormwaterAreaTag.value = stormwaterAreaArray[Math.floor(Math.random() * stormwaterAreaArray.length)]
 
-          let previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
-          let differenceStormwaterValue = 0
+          var previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
+          var differenceStormwaterValue = 0
           this.stormwaterArea = parseFloat(stormwaterAreaTag.value)
           stormwaterAreaValue.innerHTML = this.stormwaterArea
 
@@ -526,15 +686,27 @@ class Game {
                previousStormwaterValue = this.stormwaterArea
                this.remainingBudget -= differenceStormwaterValue * this.stormwaterAreaUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
+
+          this.stormwaterImage = document.getElementById('storm-area-img')
+          this.stormwaterImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Stormwater Area`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.stormwaterImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
 
           const stormwaterCoeffTag = document.getElementById('stormwaterCoeff')
           const stormwaterCoeffValue = document.getElementById('stormwaterCoeffValue')
           const stormwaterCoeffArray = this.range(0.4, 0.7, 0.05)
           stormwaterCoeffTag.value = stormwaterCoeffArray[Math.floor(Math.random() * stormwaterCoeffArray.length)]
 
-          let previousStormwaterCoeffValue = parseFloat(stormwaterCoeffTag.value)
-          let differenceStormwaterCoeffValue = 0
+          var previousStormwaterCoeffValue = parseFloat(stormwaterCoeffTag.value)
+          var differenceStormwaterCoeffValue = 0
           this.stormwaterCoeff = parseFloat(stormwaterCoeffTag.value)
           stormwaterCoeffValue.innerHTML = this.stormwaterCoeff
 
@@ -546,15 +718,27 @@ class Game {
                previousStormwaterCoeffValue = this.stormwaterCoeff
                this.remainingBudget -= differenceStormwaterCoeffValue * this.stormwaterCoeffUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
+
+          this.stormwaterCoeffImage = document.getElementById('storm-coeff-img')
+          this.stormwaterCoeffImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Stormwater Coeff`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.stormwaterCoeffImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
 
           const bioswaleInfiltrationRateTag = document.getElementById('BioswaleInfiltrationRate')
           const bioswaleInfiltrationRateValue = document.getElementById('BioswaleInfiltrationRateValue')
           const infiltrationArray = this.range(0.4, 0.7, 0.05)
           bioswaleInfiltrationRateTag.value = infiltrationArray[Math.floor(Math.random() * infiltrationArray.length)]
 
-          let previousBioswaleInfilValue = parseFloat(bioswaleInfiltrationRateTag.value)
-          let differenceBioswaleInfilValue = 0
+          var previousBioswaleInfilValue = parseFloat(bioswaleInfiltrationRateTag.value)
+          var differenceBioswaleInfilValue = 0
           this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
           bioswaleInfiltrationRateValue.innerHTML = this.BioswaleInfiltrationRate
 
@@ -566,107 +750,51 @@ class Game {
                previousBioswaleInfilValue = this.BioswaleInfiltrationRate
                this.remainingBudget -= differenceBioswaleInfilValue * this.BioswaleInfiltrationRateUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
 
-          const bioswaleBTag = document.getElementById('BioswaleB')
-          const bioswaleBValue = document.getElementById('BioswaleBValue')
-          const bioswaleBArray = this.range(0.2, 1, 0.1)
-          bioswaleBTag.value = bioswaleBArray[Math.floor(Math.random() * bioswaleBArray.length)]
+          this.bioswaleInfilImage = document.getElementById('bios-infil-img')
+          this.bioswaleInfilImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Bioswale Infiltration Rate`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.bioswaleInfilImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
 
-          let previousBioswaleBValue = parseFloat(bioswaleBTag.value)
-          let differenceBioswaleBValue = 0
-          this.BioswaleB = parseFloat(bioswaleBTag.value)
-          bioswaleBValue.innerHTML = this.BioswaleB
 
-          this.BioswaleBUnitCost = 3000 // in Euros/m2 - needs calibration
-          bioswaleBTag.onchange = () => {
-               this.BioswaleB = parseFloat(bioswaleBTag.value)
-               bioswaleBValue.innerHTML = this.BioswaleB
-               differenceBioswaleBValue = this.BioswaleB - previousBioswaleBValue
-               previousBioswaleBValue = this.BioswaleB
-               this.remainingBudget -= differenceBioswaleBValue * this.BioswaleBUnitCost
+          const bioswaleQmaxTag = document.getElementById('bioswaleQmax')
+          const bioswaleQmaxValue = document.getElementById('bioswaleQmaxValue')
+          const bioswaleQmaxArray = this.range(10, 100, 10)
+          bioswaleQmaxTag.value = bioswaleQmaxArray[Math.floor(Math.random() * bioswaleQmaxArray.length)]
+
+          var previousBioswaleQmaxValue = parseFloat(bioswaleQmaxTag.value)
+          var differenceBioswaleQmaxValue = 0
+          this.BioswaleQmax = parseFloat(bioswaleQmaxTag.value)
+          bioswaleQmaxValue.innerHTML = this.BioswaleQmax
+
+          this.BioswaleQmaxUnitCost = 20
+          bioswaleQmaxTag.onchange = () => {
+               this.BioswaleQmax = parseFloat(bioswaleQmaxTag.value)
+               bioswaleQmaxValue.innerHTML = this.BioswaleQmax
+               differenceBioswaleQmaxValue = this.BioswaleQmax - previousBioswaleQmaxValue
+               previousBioswaleQmaxValue = this.BioswaleQmax
+               this.remainingBudget -= differenceBioswaleQmaxValue * this.BioswaleQmaxUnitCost
                this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+               this.newSimulationRun = true
           }
 
-          const bioswaleZTag = document.getElementById('BioswaleZ')
-          const bioswaleZValue = document.getElementById('BioswaleZValue')
-          const bioswaleZArray = this.range(0.5, 1.5, 0.1)
-          bioswaleZTag.value = bioswaleZArray[Math.floor(Math.random() * bioswaleZArray.length)]
-
-          let previousBioswaleZValue = parseFloat(bioswaleZTag.value)
-          let differenceBioswaleZValue = 0
-          this.BioswaleZ = parseFloat(bioswaleZTag.value)
-          bioswaleZValue.innerHTML = this.BioswaleZ
-
-          this.BioswaleZUnitCost = 4300 // in Euros/m2 - needs calibration
-          bioswaleZTag.onchange = () => {
-               this.BioswaleZ = parseFloat(bioswaleZTag.value)
-               bioswaleZValue.innerHTML = this.BioswaleZ
-               differenceBioswaleZValue = this.BioswaleZ - previousBioswaleZValue
-               previousBioswaleZValue = this.BioswaleZ
-               this.remainingBudget -= differenceBioswaleZValue * this.BioswaleZUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
+          this.bioswaleQmaxImage = document.getElementById('bios-qmax-img')
+          this.bioswaleQmaxImage.onmouseover = () => {
+               this.infoText.innerHTML = `Info on Bioswale Qmax`
+               // this.infoText.style.
+               this.infoText.classList.add('visible')
+          }
+          this.bioswaleQmaxImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
           }
 
-          const bioswaleJTag = document.getElementById('BioswaleJ')
-          const bioswaleJValue = document.getElementById('BioswaleJValue')
-          const bioswaleJArray = this.range(0.01, 0.06, 0.01)
-          bioswaleJTag.value = bioswaleJArray[Math.floor(Math.random() * bioswaleJArray.length)]
-
-          let previousBioswaleJValue = parseFloat(bioswaleJTag.value)
-          let differenceBioswaleJValue = 0
-          this.BioswaleJ = parseFloat(bioswaleJTag.value)
-          bioswaleJValue.innerHTML = this.BioswaleJ
-
-          this.BioswaleJUnitCost = 27000 // in Euros/m2 - needs calibration
-          bioswaleJTag.onchange = () => {
-               this.BioswaleJ = parseFloat(bioswaleJTag.value)
-               bioswaleJValue.innerHTML = this.BioswaleJ
-               differenceBioswaleJValue = this.BioswaleJ - previousBioswaleJValue
-               previousBioswaleJValue = this.BioswaleJ
-               this.remainingBudget -= differenceBioswaleJValue * this.BioswaleJUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
-          }
-
-          const bioswaleNTag = document.getElementById('BioswaleN')
-          const bioswaleNValue = document.getElementById('BioswaleNValue')
-          const bioswaleNArray = this.range(0.01, 0.05, 0.005)
-          bioswaleNTag.value = bioswaleNArray[Math.floor(Math.random() * bioswaleNArray.length)]
-
-          let previousBioswaleNValue = parseFloat(bioswaleNTag.value)
-          let differenceBioswaleNValue = 0
-          this.BioswaleN = parseFloat(bioswaleNTag.value)
-          bioswaleNValue.innerHTML = this.BioswaleN
-
-          this.BioswaleNUnitCost = 110000 // in Euros/m2 - needs calibration
-          bioswaleNTag.onchange = () => {
-               this.BioswaleN = parseFloat(bioswaleNTag.value)
-               bioswaleNValue.innerHTML = this.BioswaleN
-               differenceBioswaleNValue = this.BioswaleN - previousBioswaleNValue
-               previousBioswaleNValue = this.BioswaleN
-               this.remainingBudget += differenceBioswaleNValue * this.BioswaleNUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
-          }
-
-          const bioswaleYoTag = document.getElementById('BioswaleYo')
-          const bioswaleYoValue = document.getElementById('BioswaleYoValue')
-          const bioswaleYoArray = this.range(0.3, 0.7, 0.05)
-          bioswaleYoTag.value = bioswaleYoArray[Math.floor(Math.random() * bioswaleYoArray.length)]
-
-          let previousBioswaleYoValue = parseFloat(bioswaleYoTag.value)
-          let differenceBioswaleYoValue = 0
-          this.BioswaleYo = parseFloat(bioswaleYoTag.value)
-          bioswaleYoValue.innerHTML = this.BioswaleYo
-
-          this.BioswaleYoUnitCost = 6000 // in Euros/m2 - needs calibration
-          bioswaleYoTag.onchange = () => {
-               this.BioswaleYo = parseFloat(bioswaleYoTag.value)
-               bioswaleYoValue.innerHTML = this.BioswaleYo
-               differenceBioswaleYoValue = this.BioswaleYo - previousBioswaleYoValue
-               previousBioswaleYoValue = this.BioswaleYo
-               this.remainingBudget -= differenceBioswaleYoValue * this.BioswaleYoUnitCost
-               this.budgetTag.innerHTML = `Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`;
-          }
 
           // Get control of our loading-bar html element
           this.loadingBar = document.getElementById('loading-bar')
@@ -830,31 +958,31 @@ class Game {
                this.sound4.setVolume(0.3)
           })
 
-          // Lets write some 3D TEXT 'Hydrousa' in the first scene/camera while the page is loading
-          this.fontLoader = new FontLoader(this.loadingManager)
-          this.textLoaded = false
-          this.fontLoader.load("/static/models/fonts/helvetiker_regular.typeface.json", (font) => {
-               const secondTextureLoader = new THREE.TextureLoader()
-               const matcapTexture = secondTextureLoader.load("/static/models/matcaps/10.png")
-               this.textGeometry = new TextGeometry('Hydrousa', {
-                    font: font,
-                    size: 0.8,
-                    height: 0.4,
-                    curveSegments: 6,
-                    bevelEnabled: true,
-                    bevelThickness: 0.03,
-                    bevelSize: 0.02,
-                    bevelOffset: 0,
-                    bevelSegments: 4
-               })
-               this.textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
-               this.text = new THREE.Mesh(this.textGeometry, this.textMaterial)
-
-               this.text.position.set(-5, 1.2, 0)
-               this.text.scale.set(0.5, 0.5, 0.5)
-               this.loadingScene.add(this.text)
-               this.textLoaded = true
-          })
+          // // Lets write some 3D TEXT 'Hydrousa' in the first scene/camera while the page is loading
+          // this.fontLoader = new FontLoader(this.loadingManager)
+          // this.textLoaded = false
+          // this.fontLoader.load("/static/models/fonts/helvetiker_regular.typeface.json", (font) => {
+          //      const secondTextureLoader = new THREE.TextureLoader()
+          //      const matcapTexture = secondTextureLoader.load("/static/models/matcaps/10.png")
+          //      this.textGeometry = new TextGeometry('Hydrousa', {
+          //           font: font,
+          //           size: 0.8,
+          //           height: 0.4,
+          //           curveSegments: 6,
+          //           bevelEnabled: true,
+          //           bevelThickness: 0.03,
+          //           bevelSize: 0.02,
+          //           bevelOffset: 0,
+          //           bevelSegments: 4
+          //      })
+          //      this.textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+          //      this.text = new THREE.Mesh(this.textGeometry, this.textMaterial)
+          //
+          //      this.text.position.set(-5, 1.2, 0)
+          //      this.text.scale.set(0.5, 0.5, 0.5)
+          //      this.loadingScene.add(this.text)
+          //      this.textLoaded = true
+          // })
 
           // Create an AnimationMixer property
           this.characterMixer = null
@@ -938,6 +1066,8 @@ class Game {
                this.characterRunning.enabled = false
                this.characterLoaded = true
                this.characterLookingDirection = "sw"
+               // this.gltfCharacter.scene.position.x = - 0.5 + Math.random() * 3
+               // this.gltfCharacter.scene.position.z = -110 + Math.random() * 100
                this.updateAllMaterials()
           }
      )
@@ -1324,27 +1454,6 @@ class Game {
      runSimulation() {
           this.simulationRuns++
 
-          // First let's make sure all other menus are closed
-          this.cityMenu.classList.remove('visible')
-          this.waterTowerMenu.classList.remove('visible')
-          this.cropMenu.classList.remove('visible')
-
-          this.openTankMaxVol = this.openTankArea * this.openTankSpill
-          this.roofsTankMaxVol = this.roofsTankArea * this.roofsTankSpill
-          this.tank2MaxVol = this.tank2Area * this.tank2Spill
-          this.subsurfaceTankMaxVol = this.subsurfaceTankArea * this.subsurfaceTankSpill
-
-          // to bioswale sistima exei mia stigmiaia paroxeteutikothta (analoga th diametro toy), epomenws
-          // pera apo to this.BioswaleQmax poy antistoixei sthn megisth hmerhsia paroxh poy mporei na metaferei
-          // iparxei kai o epipleon periorismos tou infiltration, o opoios 8ewroume aplopoiitika oti
-          // dhmiourgi kata meso oro apwleies 30% kai epomenws to infiltration_rate einai 70%
-
-          this.BioswaleA = (this.BioswaleB + this.BioswaleZ * this.BioswaleYo) * this.BioswaleYo
-          this.BioswaleP = this.BioswaleB + 2 * this.BioswaleYo * Math.sqrt(1 + this.BioswaleZ ** 2)
-          this.BioswaleR = this.BioswaleA / this.BioswaleP
-          this.BioswaleQmax = (this.BioswaleA * this.BioswaleR ** (2 / 3) * Math.sqrt(this.BioswaleJ / 100)) / this.BioswaleN // in m3/s
-          this.BioswaleQmax = this.BioswaleQmax * 3600 * 24 // in m3/day
-
           // total rainfall in mm
           this.rainfall = this.rainfallTimeseries.reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0)
 
@@ -1466,14 +1575,16 @@ class Game {
 
           this.totalHouseholdDeficit = this.householdDeficitTimeseries.reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0)
 
-          this.results.classList.add('visible')
-
           if (this.simulationRuns == 1) {
+               this.cityMenu.classList.remove('visible')
+               this.waterTowerMenu.classList.remove('visible')
+               this.cropMenu.classList.remove('visible')
+               this.results.classList.add('visible')
                this.timeCountingStarted = true
                this.previousTimeElapsed = Date.now()
-               this.resultsText.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3<br>Try to optimize the system!</span>`
+               this.resultsText.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3<br><br>Try to find an adequate system design!</span>`
                this.resultsOK.onclick = () => {
-                    if (this.simulationRuns == 1) {
+                    if (this.simulationRuns < 3) { // this needs debugging - i dont know whats happening
                          this.simulationButton.disabled = false
                          this.results.classList.remove('visible')
                          this.clicksEnabled = true
@@ -1481,19 +1592,39 @@ class Game {
                }
           }
           else {
-               this.timeCountingStarted = false
-               this.simulationButton.disabled = true
-               this.clicksEnabled = false
-               this.resultsOK.hidden = true
-               // this.sound.setVolume(0.30)
-               // this.sound2.setVolume(0.30)
-               if (this.totalIrrigationDeficit == 0 && this.totalHouseholdDeficit == 0 && this.remainingBudget >= 0) {
-                    this.resultsText.innerHTML = `Congratulations! The irrigation and non-potable household demands are being satisfied!<br>Nice Work!<br><b>Refresh</b> the page to play again!`
-                    this.sound3.play()
+               if (this.gameEnded) {
+                    this.irrigationHouseholdInfoTag.classList.remove('visible')
+                    this.cityMenu.classList.remove('visible')
+                    this.waterTowerMenu.classList.remove('visible')
+                    this.cropMenu.classList.remove('visible')
+                    this.results.classList.add('visible')
+                    this.timeCountingStarted = false
+                    this.simulationButton.disabled = true
+                    this.clicksEnabled = false
+                    this.resultsOK.hidden = true
+                    this.newGameButton.hidden = false
+                    this.newGameButton.disabled = false
+
+                    // this.sound.setVolume(0.30)
+                    // this.sound2.setVolume(0.30)
+                    if (this.totalIrrigationDeficit == 0 && this.totalHouseholdDeficit == 0 && this.remainingBudget >= 0) {
+                         this.resultsText.innerHTML = `Congratulations! The irrigation and non-potable household demands are being satisfied!<br>Nice Work!`
+                         this.sound3.play()
+                    }
+                    else if (this.totalIrrigationDeficit == 0 && this.totalHouseholdDeficit == 0 && this.remainingBudget < 0) {
+                         this.resultsText.innerHTML = `Oops! This is not a cost-effective design!<br>Irrigation Deficit Remaining: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
+                         this.sound4.play()
+                    }
+                    else {
+                         this.resultsText.innerHTML = `Oops! The demands are not being satisfied!<br>Irrigation Deficit Remaining: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
+                         this.sound4.play()
+                    }
                }
                else {
-                    this.resultsText.innerHTML = `Oops! The demands are not being satisfied!<br>Irrigation Deficit Remaining: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC<br><b>Refresh</b> the page to try again!`
-                    this.sound4.play()
+                    if (this.finalDifficulty !== "hard") {
+                         this.irrigationHouseholdInfoTag.classList.add('visible')
+                         this.irrigationHouseholdInfoTag.innerHTML = `Irrigation Deficit Remaining: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3`
+                    }
                }
           }
      }
@@ -1523,12 +1654,12 @@ class Game {
           this.previousTime = this.elapsedTime
 
           if (!this.pageLoaded) {
-               if (this.textLoaded) {
-                    this.text.position.x += (this.deltaTime / 10) * 3
-                    if (this.text.position.x > 4.9) {
-                         this.text.position.set(-5.4, 1.2, 0)
-                    }
-               }
+               // if (this.textLoaded) {
+               //      this.text.position.x += (this.deltaTime / 10) * 3
+               //      if (this.text.position.x > 4.9) {
+               //           this.text.position.set(-5.4, 1.2, 0)
+               //      }
+               // }
                this.renderer.render(this.loadingScene, this.loadingCamera)
                window.requestAnimationFrame(() => {this.animate()})
           }
@@ -1537,13 +1668,14 @@ class Game {
                     this.differenceTimeElapsed = Date.now() - this.previousTimeElapsed
                     this.previousTimeElapsed = Date.now()
                     this.remainingTime -= this.differenceTimeElapsed / 1000
-                    if (this.remainingTime < 30) {
+                    if (this.remainingTime < 60) {
                          this.timeTag.style.color = "#ff0000"
                     }
                     this.timeTag.innerHTML = `Remaining Time: ${this.toHHMMSS(this.remainingTime)}`;
                     if (this.remainingTime <= 0) {
                          this.timeCountingStarted = false
                          this.timeTag.innerHTML = `Remaining Time: 00:00:00 `;
+                         this.gameEnded = true
                          this.runSimulation()
                     }
                }
@@ -1652,6 +1784,12 @@ class Game {
                }
                if (this.cameraCounter < 0) {
                     this.cameraCounter = Math.PI * 2
+               }
+
+               // Let's run a simulation whenever the player changes a menu slider on the EASY difficulty
+               if (this.finalDifficulty !== "hard" && this.newSimulationRun === true) {
+                    this.runSimulation()
+                    this.newSimulationRun = false
                }
                // Render our scene
                this.renderer.render(this.scene, this.camera)
