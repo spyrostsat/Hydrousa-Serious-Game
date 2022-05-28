@@ -792,7 +792,7 @@ class Game {
 
           const bioswaleQmaxTag = document.getElementById('bioswaleQmax')
           const bioswaleQmaxValue = document.getElementById('bioswaleQmaxValue')
-          const bioswaleQmaxArray = this.range(0.05, 0.08, 0.01)
+          const bioswaleQmaxArray = this.range(1, 10, 1)
           bioswaleQmaxTag.value = bioswaleQmaxArray[Math.floor(Math.random() * bioswaleQmaxArray.length)]
 
           var previousBioswaleQmaxValue = parseFloat(bioswaleQmaxTag.value)
