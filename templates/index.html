@@ -45,24 +45,19 @@
           <span id="roofsCoeffValue">0.65</span>
           <br>
 
-          <label for="yards"><img src="../static/models/info.png" alt="info" width="24" id="yards-area-img"> &nbspResidential Yards Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
+          <label for="yards"><img src="../static/models/info.png" alt="info" width="24" id="yards-area-img"> &nbspPaving Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
           <input id="yards" type="range" name="yards" min="10000" max="150000" step="5000" value="50000" style="width: 175px;">
           <span id="yardsValue">50000</span>
           <br>
 
-          <label for="yardsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="yards-coeff-img"> &nbspResidential Yards Runoff Coefficient: </label>
+          <label for="yardsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="yards-coeff-img"> &nbspPaving Runoff Coefficient: </label>
           <input id="yardsCoeff" type="range" name="yardsCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 100px;">
           <span id="yardsCoeffValue">0.65</span>
           <button type="button" id="city-ok">OK</button>
      </div>
 
      <div class="water-tower-menu">
-          <label for="openTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="open-tank-img"> &nbspOpen Tank Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="openTankVolume" type="range" name="openTankVolume" min="1" max="100" step="1" value="1" style="width: 260px; margin-bottom: 40px;">
-          <span id="openTankVolumeValue">1</span>
-          <br>
-
-          <label for="roofsTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="roofs-tank-img"> &nbspRoofs Tank Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
+          <label for="roofsTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="roofs-tank-img"> &nbspTank 1 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
           <input id="roofsTankVolume" type="range" name="roofsTankVolume" min="10" max="600" step="10" value="10" style="width: 260px; margin-bottom: 40px;">
           <span id="roofsTankVolumeValue">10</span>
           <br>
@@ -72,7 +67,12 @@
           <span id="tank2VolumeValue">100</span>
           <br>
 
-          <label for="subsurfaceTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="subsurface-tank-img"> &nbspSubsurface Tank Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
+          <label for="openTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="open-tank-img"> &nbspTank 3 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
+          <input id="openTankVolume" type="range" name="openTankVolume" min="1" max="100" step="1" value="1" style="width: 260px; margin-bottom: 40px;">
+          <span id="openTankVolumeValue">1</span>
+          <br>
+
+          <label for="subsurfaceTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="subsurface-tank-img"> &nbspAquifer Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
           <input id="subsurfaceTankVolume" type="range" name="subsurfaceTankVolume" min="50" max="1000" step="10" value="100" style="width: 197px; margin-bottom: 40px;">
           <span id="subsurfaceTankVolumeValue">100</span>
           <br>
@@ -82,7 +82,7 @@
           <span id="tank2MinVolPercentageValue">0.2</span>
           <br>
 
-          <label for="subsurfaceTankMaxVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="sub-tank-max-vol-per"> &nbspSubsurface Tank Max Volume Percentage: </label>
+          <label for="subsurfaceTankMaxVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="sub-tank-max-vol-per"> &nbspAquifer Max Volume Percentage: </label>
           <input id="subsurfaceTankMaxVolPercentage" type="range" name="subsurfaceTankMaxVolPercentage" min="0.5" max="0.9" step="0.01" value="0.7" style="width: 160px;">
           <span id="subsurfaceTankMaxVolPercentageValue">0.7</span>
 
@@ -95,12 +95,12 @@
           <span id="irrigationValue">25</span>
           <br> -->
 
-          <label for="stormwaterArea"><img src="../static/models/info.png" alt="info" width="24" id="storm-area-img"> &nbspStormwater Area (m <span style="position: relative; bottom: 5px; right: 4px;">2</span>): </label>
+          <label for="stormwaterArea"><img src="../static/models/info.png" alt="info" width="24" id="storm-area-img"> &nbspCrops Area (m <span style="position: relative; bottom: 5px; right: 4px;">2</span>): </label>
           <input id="stormwaterArea" type="range" name="stormwaterArea" min="100000" max="1200000" step="20000" value="500000" style="width: 200px;">
           <span id="stormwaterAreaValue">500000</span>
           <br>
 
-          <label for="stormwaterCoeff"><img src="../static/models/info.png" alt="info" width="24" id="storm-coeff-img"> &nbspStormwater Runoff Coefficient: </label>
+          <label for="stormwaterCoeff"><img src="../static/models/info.png" alt="info" width="24" id="storm-coeff-img"> &nbspCrops Runoff Coefficient: </label>
           <input id="stormwaterCoeff" type="range" name="stormwaterCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 120px; margin-bottom: 40px;">
           <span id="stormwaterCoeffValue">0.65</span>
           <br>
