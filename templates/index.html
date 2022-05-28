@@ -58,23 +58,23 @@
 
      <div class="water-tower-menu">
           <label for="openTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="open-tank-img"> &nbspOpen Tank Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="openTankVolume" type="range" name="openTankVolume" min="20" max="800" step="10" value="100" style="width: 260px; margin-bottom: 40px;">
-          <span id="openTankVolumeValue">100</span>
+          <input id="openTankVolume" type="range" name="openTankVolume" min="1" max="100" step="1" value="1" style="width: 260px; margin-bottom: 40px;">
+          <span id="openTankVolumeValue">1</span>
           <br>
 
           <label for="roofsTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="roofs-tank-img"> &nbspRoofs Tank Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="roofsTankVolume" type="range" name="roofsTankVolume" min="40" max="1200" step="10" value="100" style="width: 260px; margin-bottom: 40px;">
-          <span id="roofsTankVolumeValue">100</span>
+          <input id="roofsTankVolume" type="range" name="roofsTankVolume" min="10" max="600" step="10" value="10" style="width: 260px; margin-bottom: 40px;">
+          <span id="roofsTankVolumeValue">10</span>
           <br>
 
           <label for="tank2Volume"><img src="../static/models/info.png" alt="info" width="24" id="tank2-img"> &nbspTank 2 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="tank2Volume" type="range" name="tank2Volume" min="20" max="800" step="10" value="100" style="width: 300px; margin-bottom: 40px;">
+          <input id="tank2Volume" type="range" name="tank2Volume" min="50" max="700" step="10" value="100" style="width: 300px; margin-bottom: 40px;">
           <span id="tank2VolumeValue">100</span>
           <br>
 
           <label for="subsurfaceTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="subsurface-tank-img"> &nbspSubsurface Tank Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="subsurfaceTankVolume" type="range" name="subsurfaceTankVolume" min="500" max="8000" step="50" value="1000" style="width: 197px; margin-bottom: 40px;">
-          <span id="subsurfaceTankVolumeValue">1000</span>
+          <input id="subsurfaceTankVolume" type="range" name="subsurfaceTankVolume" min="50" max="1000" step="10" value="100" style="width: 197px; margin-bottom: 40px;">
+          <span id="subsurfaceTankVolumeValue">100</span>
           <br>
 
           <label for="tank2MinVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="tank2-min-vol-per"> &nbspTank 2 Min Volume Percentage: </label>
@@ -111,8 +111,8 @@
           <br>
 
           <label for="bioswaleQmax"><img src="../static/models/info.png" alt="info" width="24" id="bios-qmax-img"> &nbspBioswale System Max Supply: (m <span style="position: relative; bottom: 5px; right: 4px;">3</span>/day): </label>
-          <input id="bioswaleQmax" type="range" name="bioswaleQmax" min="10" max="1500" step="10" value="100" style="width: 200px;">
-          <span id="bioswaleQmaxValue">100</span>
+          <input id="bioswaleQmax" type="range" name="bioswaleQmax" min="0.05" max="0.4" step="0.01" value="0.05" style="width: 200px;">
+          <span id="bioswaleQmaxValue">0.05</span>
 
           <button type="button" id="crop-ok">OK</button>
      </div>
