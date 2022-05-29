@@ -56,6 +56,7 @@ body, label, input, button, img {
 }
 
 #introduction-menu-text {
+     line-height: 1.5;
      text-align: justify;
      font-size: 33px;
      color: #ffffff;
@@ -86,7 +87,7 @@ body, label, input, button, img {
 .game-difficulty {
      position: absolute;
      top: 30%;
-     left: 27%;
+     left: 19%;
      background-color: #007FFF;
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
@@ -94,7 +95,7 @@ body, label, input, button, img {
      font-family: Helvetica, Arial, sans-serif;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 540px;
+     width: 700px;
      height: 240px;
 }
 
@@ -107,7 +108,7 @@ body, label, input, button, img {
      color: #ffffff;
      position: absolute;
      top: 16%;
-     left: 21%;
+     left: 30%;
 }
 
 #easy-button {
@@ -132,7 +133,7 @@ body, label, input, button, img {
      color: #ffffff;
      padding: 20px;
      position: absolute;
-     left: 33%;
+     left: 34.5%;
      bottom: 20%;
      border: 3px solid #333333;
      border-radius: 7px;
@@ -305,6 +306,7 @@ input[type=range][orient=vertical]
 }
 
 .irrigation-household-info {
+     line-height: 1.7;
      position: absolute;
      bottom: 12px;
      right: 12px;
@@ -453,7 +455,7 @@ button.play {
      color: #ffffff;
      padding: 20px;
      position: absolute;
-     left: 36.5%;
+     left: 35.5%;
      bottom: 9%;
      border: 3px solid #333333;
      border-radius: 15px;
@@ -473,6 +475,7 @@ button.play.visible {
 }
 
 .info-text {
+     line-height: 1.8;
      text-align: justify;
      border: 3px solid #333333;
      border-radius: 7px;
@@ -547,7 +550,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 30px;
   width: 15px;
   border-radius: 5px;
-  background: #FFFFFF;
+  background: #007FFF;
   -webkit-appearance: none;
   margin-top: -11px;
 }
@@ -568,7 +571,7 @@ input[type=range]::-moz-range-thumb {
   height: 30px;
   width: 15px;
   border-radius: 5px;
-  background: #FFFFFF;
+  background: #007FFF;
 }
 input[type=range]::-ms-track {
   width: 100%;
@@ -596,7 +599,7 @@ input[type=range]::-ms-thumb {
   height: 30px;
   width: 15px;
   border-radius: 5px;
-  background: #FFFFFF;
+  background: #007FFF;
 }
 input[type=range]:focus::-ms-fill-lower {
   background: #3071A9;

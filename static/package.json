@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Spyros Tsattalios",
-  "license": "NTUA",
+  "license": "MIT License",
   "dependencies": {
     "lil-gui": "^0.16.0",
-    "three": "^0.137.5"
+    "three": "^0.137.5",
+    "chart.js": "^3.8.0"
   }
 }

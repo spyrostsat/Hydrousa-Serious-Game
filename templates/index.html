@@ -24,9 +24,9 @@
      <!-- Difficulty Menu -->
      <div class="game-difficulty">
           <p id="difficulty-text">Choose Difficulty</p>
-          <button type="button" id="easy-button">EASY</button>
-          <button type="button" id="medium-button">MEDIUM</button>
-          <button type="button" id="hard-button">HARD</button>
+          <button type="button" id="easy-button"><img src="../static/models/info.png" alt="info" width="24" id="easy-img"> &nbspEASY</button>
+          <button type="button" id="medium-button"><img src="../static/models/info.png" alt="info" width="24" id="medium-img"> &nbspMEDIUM</button>
+          <button type="button" id="hard-button"><img src="../static/models/info.png" alt="info" width="24" id="hard-img"> &nbspHARD</button>
      </div>
 
      <div class="city-menu">
@@ -36,34 +36,34 @@
           <br> -->
 
           <label for="roofs"><img src="../static/models/info.png" alt="info" width="24" id="roofs-area-img"> &nbspRoofs Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
-          <input id="roofs" type="range" name="roofs" min="100000" max="600000" step="10000" value="300000" style="width: 300px;">
-          <span id="roofsValue">300000</span>
+          <input id="roofs" type="range" name="roofs" min="1000" max="140000" step="1000" value="1000" style="width: 300px;">
+          <span id="roofsValue">1000</span>
           <br>
 
           <label for="roofsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="roofs-coeff-img"> &nbspRoofs Runoff Coefficient: </label>
-          <input id="roofsCoeff" type="range" name="roofsCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 225px; margin-bottom: 40px;">
-          <span id="roofsCoeffValue">0.65</span>
+          <input id="roofsCoeff" type="range" name="roofsCoeff" min="0.01" max="0.9" step="0.01" value="0.01" style="width: 225px; margin-bottom: 40px;">
+          <span id="roofsCoeffValue">0.01</span>
           <br>
 
           <label for="yards"><img src="../static/models/info.png" alt="info" width="24" id="yards-area-img"> &nbspPaving Area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>): </label>
-          <input id="yards" type="range" name="yards" min="10000" max="150000" step="5000" value="50000" style="width: 175px;">
-          <span id="yardsValue">50000</span>
+          <input id="yards" type="range" name="yards" min="1000" max="100000" step="1000" value="1000" style="width: 175px;">
+          <span id="yardsValue">1000</span>
           <br>
 
           <label for="yardsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="yards-coeff-img"> &nbspPaving Runoff Coefficient: </label>
-          <input id="yardsCoeff" type="range" name="yardsCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 100px;">
-          <span id="yardsCoeffValue">0.65</span>
+          <input id="yardsCoeff" type="range" name="yardsCoeff" min="0.01" max="0.9" step="0.01" value="0.01" style="width: 100px;">
+          <span id="yardsCoeffValue">0.01</span>
           <button type="button" id="city-ok">OK</button>
      </div>
 
      <div class="water-tower-menu">
           <label for="roofsTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="roofs-tank-img"> &nbspTank 1 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="roofsTankVolume" type="range" name="roofsTankVolume" min="10" max="600" step="10" value="10" style="width: 260px; margin-bottom: 40px;">
+          <input id="roofsTankVolume" type="range" name="roofsTankVolume" min="10" max="800" step="10" value="10" style="width: 260px; margin-bottom: 40px;">
           <span id="roofsTankVolumeValue">10</span>
           <br>
 
           <label for="tank2Volume"><img src="../static/models/info.png" alt="info" width="24" id="tank2-img"> &nbspTank 2 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="tank2Volume" type="range" name="tank2Volume" min="50" max="700" step="10" value="100" style="width: 300px; margin-bottom: 40px;">
+          <input id="tank2Volume" type="range" name="tank2Volume" min="50" max="1000" step="10" value="100" style="width: 300px; margin-bottom: 40px;">
           <span id="tank2VolumeValue">100</span>
           <br>
 
@@ -78,13 +78,13 @@
           <br>
 
           <label for="tank2MinVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="tank2-min-vol-per"> &nbspTank 2 Min Volume Percentage: </label>
-          <input id="tank2MinVolPercentage" type="range" name="tank2MinVolPercentage" min="0.05" max="0.35" step="0.01" value="0.2" style="width: 160px;">
-          <span id="tank2MinVolPercentageValue">0.2</span>
+          <input id="tank2MinVolPercentage" type="range" name="tank2MinVolPercentage" min="0.01" max="0.5" step="0.01" value="0.01" style="width: 160px;">
+          <span id="tank2MinVolPercentageValue">0.01</span>
           <br>
 
           <label for="subsurfaceTankMaxVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="sub-tank-max-vol-per"> &nbspAquifer Max Volume Percentage: </label>
-          <input id="subsurfaceTankMaxVolPercentage" type="range" name="subsurfaceTankMaxVolPercentage" min="0.5" max="0.9" step="0.01" value="0.7" style="width: 160px;">
-          <span id="subsurfaceTankMaxVolPercentageValue">0.7</span>
+          <input id="subsurfaceTankMaxVolPercentage" type="range" name="subsurfaceTankMaxVolPercentage" min="0.5" max="0.99" step="0.01" value="0.5" style="width: 160px;">
+          <span id="subsurfaceTankMaxVolPercentageValue">0.5</span>
 
           <button type="button" id="water-tower-ok">OK</button>
      </div>
@@ -96,23 +96,23 @@
           <br> -->
 
           <label for="stormwaterArea"><img src="../static/models/info.png" alt="info" width="24" id="storm-area-img"> &nbspCrops Area (m <span style="position: relative; bottom: 5px; right: 4px;">2</span>): </label>
-          <input id="stormwaterArea" type="range" name="stormwaterArea" min="100000" max="1200000" step="20000" value="500000" style="width: 200px;">
-          <span id="stormwaterAreaValue">500000</span>
+          <input id="stormwaterArea" type="range" name="stormwaterArea" min="10000" max="200000" step="10000" value="10000" style="width: 200px;">
+          <span id="stormwaterAreaValue">10000</span>
           <br>
 
           <label for="stormwaterCoeff"><img src="../static/models/info.png" alt="info" width="24" id="storm-coeff-img"> &nbspCrops Runoff Coefficient: </label>
-          <input id="stormwaterCoeff" type="range" name="stormwaterCoeff" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 120px; margin-bottom: 40px;">
-          <span id="stormwaterCoeffValue">0.65</span>
+          <input id="stormwaterCoeff" type="range" name="stormwaterCoeff" min="0.01" max="0.9" step="0.01" value="0.01" style="width: 120px; margin-bottom: 40px;">
+          <span id="stormwaterCoeffValue">0.01</span>
           <br>
 
           <label for="BioswaleInfiltrationRate"><img src="../static/models/info.png" alt="info" width="24" id="bios-infil-img"> &nbspBioswale Infiltration Rate: </label>
-          <input id="BioswaleInfiltrationRate" type="range" name="BioswaleInfiltrationRate" min="0.4" max="0.9" step="0.05" value="0.65" style="width: 340px;">
-          <span id="BioswaleInfiltrationRateValue">0.65</span>
+          <input id="BioswaleInfiltrationRate" type="range" name="BioswaleInfiltrationRate" min="0.01" max="0.99" step="0.01" value="0.01" style="width: 340px;">
+          <span id="BioswaleInfiltrationRateValue">0.01</span>
           <br>
 
           <label for="bioswaleQmax"><img src="../static/models/info.png" alt="info" width="24" id="bios-qmax-img"> &nbspBioswale System Max Supply: (m <span style="position: relative; bottom: 5px; right: 4px;">3</span>/day): </label>
-          <input id="bioswaleQmax" type="range" name="bioswaleQmax" min="1" max="200" step="1" value="1" style="width: 200px;">
-          <span id="bioswaleQmaxValue">1</span>
+          <input id="bioswaleQmax" type="range" name="bioswaleQmax" min="10" max="5000" step="10" value="10" style="width: 200px;">
+          <span id="bioswaleQmaxValue">10</span>
 
           <button type="button" id="crop-ok">OK</button>
      </div>

@@ -4,6 +4,7 @@ import * as THREE from '../node_modules/three/build/three.module.js'
 import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js'
 import { TextGeometry } from '../node_modules/three/examples/jsm/geometries/TextGeometry.js'
 import { FontLoader } from '../node_modules/three/examples/jsm/loaders/FontLoader.js'
+import * as CHART from '../node_modules/chart.js/dist/chart.esm.js'
 
 
 class Game {
@@ -194,7 +195,7 @@ class Game {
                     this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
-                    this.introductionMenuText.innerHTML = "The game is designed in a way, that stakeholders can consider alternative methods for resolving their town's water management issues, referring to the coverage of:<br /><br />1) irrigation and 2) non-potable household uses."
+                    this.introductionMenuText.innerHTML = "The game is designed in a way, that stakeholders can consider alternative methods for resolving their town's water management issues, referring to the coverage of:<br />1) irrigation and 2) non-potable household uses."
                }
                else if (currentNumberOfParagraphs == 3) {
                     this.introductionMenuText.style.fontSize = "25px"
@@ -215,7 +216,7 @@ class Game {
                else if (currentNumberOfParagraphs == 5) {
                     this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
-                    this.introductionMenuText.style.top = "2%"
+                    this.introductionMenuText.style.top = "1.2%"
                     this.introductionMenuText.style.left = "3%"
                     this.introductionMenuText.style.right = "3%"
                     this.introductionMenuText.innerHTML = "There is additional water being collected from the town's crops via a Bioswale System. This water is saved in Tank 3 and is also used for irrigation. The probable overflows head to the aquifer. The aquifer can send water back to Tank 2, when needed, to support the irrigation coverage."
@@ -226,7 +227,7 @@ class Game {
                     this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
-                    this.introductionMenuText.innerHTML = "Goal of the game is finding an adequate system design, that fulfils the corresponding irrigation and non-potable household demands.<br /><br />There are 3 Difficulty Levels (Easy, Medium, Hard), which configure multiple game settings."
+                    this.introductionMenuText.innerHTML = "Goal of the game is finding an adequate system design, that fulfils the corresponding irrigation and non-potable household demands.<br />There are 3 Difficulty Levels (Easy, Medium, Hard), which configure multiple game settings."
                }
                else if (currentNumberOfParagraphs == 7) {
                     this.introductionMenuText.style.fontSize = "25px"
@@ -234,7 +235,7 @@ class Game {
                     this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
-                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus. The menus open only when you approach the city components.<br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
+                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus. The menus open only when you approach the city components.<br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
                }
                else if (currentNumberOfParagraphs == 8) {
                     this.introductionMenu.classList.remove('visible')
@@ -255,7 +256,7 @@ class Game {
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 5000 // higher the difficulty higher the population (to increase household demand)
-               this.remainingBudget = 100000 // higher the difficulty lower the budget
+               this.remainingBudget = 180000 // higher the difficulty lower the budget
                this.remainingTime = 600 // available time in seconds
                this.rainfallMultiplyIndex = 1 + Math.random() // higher the difficulty lower the index (to reduce total rainfall)
                this.irrigationMultiplyIndex = 0.5 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
@@ -263,7 +264,7 @@ class Game {
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.005 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.003 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -283,7 +284,7 @@ class Game {
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 6000 // higher the difficulty higher the population (to increase household demand)
-               this.remainingBudget = 80000 // higher the difficulty lower the budget
+               this.remainingBudget = 150000 // higher the difficulty lower the budget
                this.remainingTime = 300 // available time in seconds
                this.rainfallMultiplyIndex = 0.8 + Math.random() * 0.4 // higher the difficulty lower the index (to reduce total rainfall)
                this.irrigationMultiplyIndex = 0.8 + Math.random() * 0.4 // higher the difficulty higher the index (to increase total irrigation demand)
@@ -291,7 +292,7 @@ class Game {
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4.5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.007 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.004 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -311,7 +312,7 @@ class Game {
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 7000 // higher the difficulty higher the population (to increase household demand)
-               this.remainingBudget = 60000 // higher the difficulty lower the budget
+               this.remainingBudget = 120000 // higher the difficulty lower the budget
                this.remainingTime = 180 // available time in seconds
                this.rainfallMultiplyIndex = 0.7 + Math.random() * 0.3 // higher the difficulty lower the index (to reduce total rainfall)
                this.irrigationMultiplyIndex = 1 + Math.random() * 0.3 // higher the difficulty higher the index (to increase total irrigation demand)
@@ -319,7 +320,7 @@ class Game {
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.01 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.005 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -332,6 +333,45 @@ class Game {
                this.timeTag.classList.add('visible')
 
                this.runSimulation()
+          }
+
+          this.easyImage = document.getElementById('easy-img')
+          this.easyImage.onmouseover = () => {
+               this.infoText.innerHTML = `Time : 10 Min<br>Budget : 180.000 \u20AC<br>Help Info : Available<br>Population : 5.000 Inhabitants<br>Rainfall : High<br>Irrigation Demand : Low`
+               this.infoText.style.lineHeight = "1.8"
+               this.infoText.style.top = "30%"
+               this.infoText.style.height = "240px"
+               this.infoText.style.width = "310px"
+               this.infoText.classList.add('visible')
+          }
+          this.easyImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
+          this.mediumImage = document.getElementById('medium-img')
+          this.mediumImage.onmouseover = () => {
+               this.infoText.innerHTML = `Time : 5 Min<br>Budget : 150.000 \u20AC<br>Help Info : Available<br>Population : 10.000 Inhabitants<br>Rainfall : Moderate<br>Irrigation Demand : Moderate`
+               this.infoText.style.lineHeight = "1.8"
+               this.infoText.style.top = "30%"
+               this.infoText.style.height = "240px"
+               this.infoText.style.width = "310px"
+               this.infoText.classList.add('visible')
+          }
+          this.mediumImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
+          }
+
+          this.hardImage = document.getElementById('hard-img')
+          this.hardImage.onmouseover = () => {
+               this.infoText.innerHTML = `Time : 3 Min<br>Budget : 120.000 \u20AC<br>Help Info : Not Available<br>Population : 15.000 Inhabitants<br>Rainfall : Low<br>Irrigation Demand : High`
+               this.infoText.style.lineHeight = "1.8"
+               this.infoText.style.top = "30%"
+               this.infoText.style.height = "240px"
+               this.infoText.style.width = "310px"
+               this.infoText.classList.add('visible')
+          }
+          this.hardImage.onmouseout = () => {
+               this.infoText.classList.remove('visible')
           }
 
           // First lets take care of our sound slider
@@ -350,14 +390,14 @@ class Game {
 
           const roofsTag = document.getElementById('roofs')
           const roofsValue = document.getElementById('roofsValue')
-          const roofsArray = this.range(100000, 300000, 10000)
+          const roofsArray = this.range(1000, 5000, 1000)
           roofsTag.value = roofsArray[Math.floor(Math.random() * roofsArray.length)]
           var previousRoofsValue = parseFloat(roofsTag.value)
           var differenceRoofsValue = 0
           this.roofsArea = parseFloat(roofsTag.value)
           roofsValue.innerHTML = this.roofsArea
 
-          this.roofsAreaUnitCost = 0.05 // in Euros/m2 - needs calibration
+          this.roofsAreaUnitCost = 0.2 // in Euros/m2 - needs calibration
           roofsTag.onchange = () => {
                this.roofsArea = parseFloat(roofsTag.value)
                roofsValue.innerHTML = this.roofsArea
@@ -371,8 +411,8 @@ class Game {
           this.roofsImage = document.getElementById('roofs-area-img')
           this.roofsImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of water that can be collected via the town's roofs to be stored in Tank 1.`
-               this.infoText.style.top = "34%"
-               this.infoText.style.height = "120px"
+               this.infoText.style.top = "32%"
+               this.infoText.style.height = "150px"
                this.infoText.style.width = "320px"
                this.infoText.classList.add('visible')
           }
@@ -383,7 +423,7 @@ class Game {
 
           const roofsCoeffTag = document.getElementById('roofsCoeff')
           const roofsCoeffValue = document.getElementById('roofsCoeffValue')
-          const roofsCoeffArray = this.range(0.4, 0.7, 0.05)
+          const roofsCoeffArray = this.range(0.01, 0.05, 0.01)
           roofsCoeffTag.value = roofsCoeffArray[Math.floor(Math.random() * roofsCoeffArray.length)]
 
           var previousRoofsCoeffValue = parseFloat(roofsCoeffTag.value)
@@ -391,7 +431,7 @@ class Game {
           this.roofsCoeff = parseFloat(roofsCoeffTag.value)
           roofsCoeffValue.innerHTML = this.roofsCoeff
 
-          this.roofsCoeffUnitCost = 13000 // in Euros/m2 - needs calibration
+          this.roofsCoeffUnitCost = 5500 // in Euros/m2 - needs calibration
           roofsCoeffTag.onchange = () => {
                this.roofsCoeff = parseFloat(roofsCoeffTag.value)
                roofsCoeffValue.innerHTML = this.roofsCoeff
@@ -405,8 +445,8 @@ class Game {
           this.roofsCoeffImage = document.getElementById('roofs-coeff-img')
           this.roofsCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the rainwater percentage that doesn't get lost during its trasfer from the roofs to Tank 1.`
-               this.infoText.style.top = "34%"
-               this.infoText.style.height = "120px"
+               this.infoText.style.top = "32%"
+               this.infoText.style.height = "150px"
                this.infoText.style.width = "320px"
                this.infoText.classList.add('visible')
           }
@@ -425,7 +465,7 @@ class Game {
           this.yardsArea = parseFloat(yardsTag.value)
           yardsValue.innerHTML = this.yardsArea
 
-          this.yardsAreaUnitCost = 0.2 // in Euros/m2 - needs calibration
+          this.yardsAreaUnitCost = 0.3 // in Euros/m2 - needs calibration
           yardsTag.onchange = () => {
                this.yardsArea = parseFloat(yardsTag.value)
                yardsValue.innerHTML = this.yardsArea
@@ -439,8 +479,8 @@ class Game {
           this.yardsImage = document.getElementById('yards-area-img')
           this.yardsImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of water that can be collected via the town's paving to be stored in Tank 2.`
-               this.infoText.style.top = "34%"
-               this.infoText.style.height = "120px"
+               this.infoText.style.top = "32%"
+               this.infoText.style.height = "150px"
                this.infoText.style.width = "320px"
                this.infoText.classList.add('visible')
           }
@@ -451,7 +491,7 @@ class Game {
 
           const yardsCoeffTag = document.getElementById('yardsCoeff')
           const yardsCoeffValue = document.getElementById('yardsCoeffValue')
-          const yardsCoeffArray = this.range(0.4, 0.7, 0.05)
+          const yardsCoeffArray = this.range(0.01, 0.05, 0.01)
           yardsCoeffTag.value = yardsCoeffArray[Math.floor(Math.random() * yardsCoeffArray.length)]
 
           var previousYardsCoeffValue = parseFloat(yardsCoeffTag.value)
@@ -459,7 +499,7 @@ class Game {
           this.yardsCoeff = parseFloat(yardsCoeffTag.value)
           yardsCoeffValue.innerHTML = this.yardsCoeff
 
-          this.yardsCoeffUnitCost = 13000 // in Euros/m2 - needs calibration
+          this.yardsCoeffUnitCost = 5500 // in Euros/m2 - needs calibration
           yardsCoeffTag.onchange = () => {
                this.yardsCoeff = parseFloat(yardsCoeffTag.value)
                yardsCoeffValue.innerHTML = this.yardsCoeff
@@ -473,8 +513,8 @@ class Game {
           this.yardsCoeffImage = document.getElementById('yards-coeff-img')
           this.yardsCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the rainwater percentage that doesn't get lost during its trasfer from the town's paving to Tank 2.`
-               this.infoText.style.top = "34%"
-               this.infoText.style.height = "120px"
+               this.infoText.style.top = "32%"
+               this.infoText.style.height = "150px"
                this.infoText.style.width = "320px"
                this.infoText.classList.add('visible')
           }
@@ -507,8 +547,8 @@ class Game {
           this.openTankImage = document.getElementById('open-tank-img')
           this.openTankImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the capacity of Tank 3, the water of which is used for irrigation purposes. The probable overflows, in order to not be wasted, head to the aquifer.`
-               this.infoText.style.top = "32%"
-               this.infoText.style.height = "180px"
+               this.infoText.style.top = "27%"
+               this.infoText.style.height = "230px"
                this.infoText.style.width = "280px"
                this.infoText.classList.add('visible')
           }
@@ -527,7 +567,7 @@ class Game {
           this.roofsTankMaxVol = parseFloat(roofsTankVolumeTag.value)
           roofsTankVolumeValue.innerHTML = this.roofsTankMaxVol
 
-          this.roofsTankVolumeUnitCost = 26 // in Euros/m2 - needs calibration
+          this.roofsTankVolumeUnitCost = 20 // in Euros/m2 - needs calibration
           roofsTankVolumeTag.onchange = () => {
                this.roofsTankMaxVol = parseFloat(roofsTankVolumeTag.value)
                roofsTankVolumeValue.innerHTML = this.roofsTankMaxVol
@@ -541,8 +581,8 @@ class Game {
           this.roofsTankImage = document.getElementById('roofs-tank-img')
           this.roofsTankImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the capacity of Tank 1, the water of which is primarily used for non-potable household uses and the probable overflows head to Tank 2.`
-               this.infoText.style.top = "32%"
-               this.infoText.style.height = "180px"
+               this.infoText.style.top = "27%"
+               this.infoText.style.height = "230px"
                this.infoText.style.width = "280px"
                this.infoText.classList.add('visible')
           }
@@ -575,8 +615,8 @@ class Game {
           this.tank2Image = document.getElementById('tank2-img')
           this.tank2Image.onmouseover = () => {
                this.infoText.innerHTML = `Determines the capacity of Tank 2, the water of which is used exclusively for irrigation purposes. You can decide to send the water leftovers to the aquifer, in order to prevent probable overflows of Tank 2 in the future.`
-               this.infoText.style.top = "30%"
-               this.infoText.style.height = "230px"
+               this.infoText.style.top = "18%"
+               this.infoText.style.height = "360px"
                this.infoText.style.width = "280px"
                this.infoText.classList.add('visible')
           }
@@ -609,8 +649,8 @@ class Game {
           this.subsurfaceTankImage = document.getElementById('subsurface-tank-img')
           this.subsurfaceTankImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the capacity of the aquifer. The aquifer can be used to transfer water to Tank 2 when needed, especially during summertime, to support the irrigation coverage.`
-               this.infoText.style.top = "30%"
-               this.infoText.style.height = "190px"
+               this.infoText.style.top = "23%"
+               this.infoText.style.height = "270px"
                this.infoText.style.width = "280px"
                this.infoText.classList.add('visible')
           }
@@ -621,7 +661,7 @@ class Game {
 
           const tank2MinVolPercentageTag = document.getElementById('tank2MinVolPercentage')
           const tank2MinVolPercentageValue = document.getElementById('tank2MinVolPercentageValue')
-          const tank2VolArray = this.range(0.05, 0.35, 0.01)
+          const tank2VolArray = this.range(0.01, 0.5, 0.01)
           tank2MinVolPercentageTag.value = tank2VolArray[Math.floor(Math.random() * tank2VolArray.length)]
 
           var previousTank2MinVolPerValue = parseFloat(tank2MinVolPercentageTag.value)
@@ -643,8 +683,8 @@ class Game {
           this.tank2MinVolPerImage = document.getElementById('tank2-min-vol-per')
           this.tank2MinVolPerImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the minimum water percentage that will always remain in Tank 2 and not head to the aquifer.`
-               this.infoText.style.top = "37%"
-               this.infoText.style.height = "110px"
+               this.infoText.style.top = "33%"
+               this.infoText.style.height = "160px"
                this.infoText.style.width = "280px"
                this.infoText.classList.add('visible')
           }
@@ -655,7 +695,7 @@ class Game {
 
           const subsurfaceTankMaxVolPercentageTag = document.getElementById('subsurfaceTankMaxVolPercentage')
           const subsurfaceTankMaxVolPercentageValue = document.getElementById('subsurfaceTankMaxVolPercentageValue')
-          const subsurfaceTankVolArray = this.range(0.5, 0.9, 0.01)
+          const subsurfaceTankVolArray = this.range(0.5, 0.99, 0.01)
           subsurfaceTankMaxVolPercentageTag.value = subsurfaceTankVolArray[Math.floor(Math.random() * subsurfaceTankVolArray.length)]
 
           var previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
@@ -677,8 +717,8 @@ class Game {
           this.subsurfaceTankMaxVolPerImage = document.getElementById('sub-tank-max-vol-per')
           this.subsurfaceTankMaxVolPerImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the maximum water amount that can be stored in the aquifer, above which the water is headed back to Tank 2.`
-               this.infoText.style.top = "37%"
-               this.infoText.style.height = "120px"
+               this.infoText.style.top = "31%"
+               this.infoText.style.height = "190px"
                this.infoText.style.width = "280px"
                this.infoText.classList.add('visible')
           }
@@ -690,7 +730,7 @@ class Game {
 
           const stormwaterAreaTag = document.getElementById('stormwaterArea')
           const stormwaterAreaValue = document.getElementById('stormwaterAreaValue')
-          const stormwaterAreaArray = this.range(100000, 350000, 20000)
+          const stormwaterAreaArray = this.range(10000, 20000, 10000)
           stormwaterAreaTag.value = stormwaterAreaArray[Math.floor(Math.random() * stormwaterAreaArray.length)]
 
           var previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
@@ -698,7 +738,7 @@ class Game {
           this.stormwaterArea = parseFloat(stormwaterAreaTag.value)
           stormwaterAreaValue.innerHTML = this.stormwaterArea
 
-          this.stormwaterAreaUnitCost = 0.023 // in Euros/m2 - needs calibration
+          this.stormwaterAreaUnitCost = 0.1 // in Euros/m2 - needs calibration
           stormwaterAreaTag.onchange = () => {
                this.stormwaterArea = parseFloat(stormwaterAreaTag.value)
                stormwaterAreaValue.innerHTML = this.stormwaterArea
@@ -712,8 +752,8 @@ class Game {
           this.stormwaterImage = document.getElementById('storm-area-img')
           this.stormwaterImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of water that can be collected from the town's crops, via a Bioswale system, to be stored in Tank 3.`
-               this.infoText.style.top = "38%"
-               this.infoText.style.height = "21%"
+               this.infoText.style.top = "32%"
+               this.infoText.style.height = "28%"
                this.infoText.style.width = "300px"
                this.infoText.classList.add('visible')
           }
@@ -724,7 +764,7 @@ class Game {
 
           const stormwaterCoeffTag = document.getElementById('stormwaterCoeff')
           const stormwaterCoeffValue = document.getElementById('stormwaterCoeffValue')
-          const stormwaterCoeffArray = this.range(0.4, 0.7, 0.05)
+          const stormwaterCoeffArray = this.range(0.01, 0.05, 0.01)
           stormwaterCoeffTag.value = stormwaterCoeffArray[Math.floor(Math.random() * stormwaterCoeffArray.length)]
 
           var previousStormwaterCoeffValue = parseFloat(stormwaterCoeffTag.value)
@@ -732,7 +772,7 @@ class Game {
           this.stormwaterCoeff = parseFloat(stormwaterCoeffTag.value)
           stormwaterCoeffValue.innerHTML = this.stormwaterCoeff
 
-          this.stormwaterCoeffUnitCost = 13000 // in Euros/m2 - needs calibration
+          this.stormwaterCoeffUnitCost = 5500 // in Euros/m2 - needs calibration
           stormwaterCoeffTag.onchange = () => {
                this.stormwaterCoeff = parseFloat(stormwaterCoeffTag.value)
                stormwaterCoeffValue.innerHTML = this.stormwaterCoeff
@@ -746,8 +786,8 @@ class Game {
           this.stormwaterCoeffImage = document.getElementById('storm-coeff-img')
           this.stormwaterCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the rainwater percentage that doesn't get lost during its trasfer from the town's crops to Tank 3.`
-               this.infoText.style.top = "38%"
-               this.infoText.style.height = "18%"
+               this.infoText.style.top = "34%"
+               this.infoText.style.height = "24.5%"
                this.infoText.style.width = "300px"
                this.infoText.classList.add('visible')
           }
@@ -758,7 +798,7 @@ class Game {
 
           const bioswaleInfiltrationRateTag = document.getElementById('BioswaleInfiltrationRate')
           const bioswaleInfiltrationRateValue = document.getElementById('BioswaleInfiltrationRateValue')
-          const infiltrationArray = this.range(0.4, 0.7, 0.05)
+          const infiltrationArray = this.range(0.01, 0.05, 0.01)
           bioswaleInfiltrationRateTag.value = infiltrationArray[Math.floor(Math.random() * infiltrationArray.length)]
 
           var previousBioswaleInfilValue = parseFloat(bioswaleInfiltrationRateTag.value)
@@ -766,7 +806,7 @@ class Game {
           this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
           bioswaleInfiltrationRateValue.innerHTML = this.BioswaleInfiltrationRate
 
-          this.BioswaleInfiltrationRateUnitCost = 16000 // in Euros/m2 - needs calibration
+          this.BioswaleInfiltrationRateUnitCost = 15000 // in Euros/m2 - needs calibration
           bioswaleInfiltrationRateTag.onchange = () => {
                this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
                bioswaleInfiltrationRateValue.innerHTML = this.BioswaleInfiltrationRate
@@ -780,8 +820,8 @@ class Game {
           this.bioswaleInfilImage = document.getElementById('bios-infil-img')
           this.bioswaleInfilImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the rainwater percentage that doesn't get lost during its trasfer from the town's crops to the Bioswale system.`
-               this.infoText.style.top = "38%"
-               this.infoText.style.height = "21%"
+               this.infoText.style.top = "32%"
+               this.infoText.style.height = "28.5%"
                this.infoText.style.width = "300px"
                this.infoText.classList.add('visible')
           }
@@ -792,7 +832,7 @@ class Game {
 
           const bioswaleQmaxTag = document.getElementById('bioswaleQmax')
           const bioswaleQmaxValue = document.getElementById('bioswaleQmaxValue')
-          const bioswaleQmaxArray = this.range(1, 10, 1)
+          const bioswaleQmaxArray = this.range(10, 50, 10)
           bioswaleQmaxTag.value = bioswaleQmaxArray[Math.floor(Math.random() * bioswaleQmaxArray.length)]
 
           var previousBioswaleQmaxValue = parseFloat(bioswaleQmaxTag.value)
@@ -800,7 +840,7 @@ class Game {
           this.BioswaleQmax = parseFloat(bioswaleQmaxTag.value)
           bioswaleQmaxValue.innerHTML = this.BioswaleQmax
 
-          this.BioswaleQmaxUnitCost = 1000
+          this.BioswaleQmaxUnitCost = 5
           bioswaleQmaxTag.onchange = () => {
                this.BioswaleQmax = parseFloat(bioswaleQmaxTag.value)
                bioswaleQmaxValue.innerHTML = this.BioswaleQmax
@@ -814,8 +854,8 @@ class Game {
           this.bioswaleQmaxImage = document.getElementById('bios-qmax-img')
           this.bioswaleQmaxImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the maximum supply capabilities of the Bioswale system. This also determines the water that might be lost during its transfer from the town's crops to the Bioswale system.`
-               this.infoText.style.top = "33%"
-               this.infoText.style.height = "30%"
+               this.infoText.style.top = "25%"
+               this.infoText.style.height = "43%"
                this.infoText.style.width = "300px"
                this.infoText.classList.add('visible')
           }
@@ -915,7 +955,7 @@ class Game {
                               this.gameDifficulty.classList.add('visible')
 
                               // this.irrigationTimeseries = Array.from({length: 100}, () => 0.5 + Math.random() * 3)
-                              this.irrigationTimeseries = Array.from({length: 365}, () => 15 + Math.random() * 20)
+                              this.irrigationTimeseries = Array.from({length: 365}, () => 30 + Math.random() * 20)
 
                               this.rainfallTimeseries = [4.20, 0.60, 2.70, 21.3, 0.00, 4.20, 12.9, 0.90, 0.00, 1.50, 0.30, 8.40, 5.70, 1.50, 11.7, 0.60, 6.60, 0.90, 0.60, 0.00, 0.60, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.30, 3.30, 3.60, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.00, 10.8, 7.80, 9.90, 17.1, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 1.50, 0.90, 5.10, 2.10, 0.00, 0.00, 0.00, 0.30, 30.6, 17.4, 0.00, 0.00, 21.6, 14.7, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.00, 0.00, 1.80, 0.30, 3.30, 0.00, 0.00, 0.00, 2.70, 0.30, 0.00, 0.30, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 3.30, 0.30, 1.80, 0.00, 3.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 14.7, 21.6, 0.00, 0.00, 17.4, 30.6, 0.30, 0.00, 0.00, 0.00, 2.10, 5.10, 0.90, 1.50, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 17.1, 9.90, 7.80, 10.8, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
                          }
@@ -1014,7 +1054,7 @@ class Game {
           this.rotationState = false
 
           // Character movement speed
-          this.movementSpeed = 0.6
+          this.movementSpeed = 0.5 // it used to be 0.6 but it was kind of too fast
 
           // Property to handle character body rotation when he is moving
           this.currentCharacterAngle = 0
@@ -1365,7 +1405,7 @@ class Game {
 
 
      handleCharacterAnimationAndMenus(event) {
-          const _this = this.game // here 'this' refers to the window object (because the method gets triggered from an addEventListener) so I change it manually to refer to the Game object
+          const _this = this.tsat // here 'this' refers to the window object (because the method gets triggered from an addEventListener) so I change it manually to refer to the Game object
           if (_this.pageLoaded && _this.clicksEnabled) {
                _this.mouse.x = ((event.clientX / _this.sizes.width) * 2) - 1 // three.js needs the mouse to take values from -1 to +1 on both x and y axis
                _this.mouse.y = -((event.clientY / _this.sizes.height) * 2) + 1
@@ -1585,7 +1625,6 @@ class Game {
                this.subsurfaceTankStorage[i+1] -= this.subsurfaceTankRecoveryToTank2[i]
                this.tank2SpillTimeseries[i] += Math.max(0, this.tank2Storage[i+1] + this.subsurfaceTankRecoveryToTank2[i] - this.tank2MaxVol)
                this.tank2Storage[i+1] = Math.min(this.tank2Storage[i+1] + this.subsurfaceTankRecoveryToTank2[i], this.tank2MaxVol)
-               // this.subsurfaceTankStorage[i+1] -= this.subsurfaceTankSpillTimeseries[i]
                this.totalOutput += this.irrigationAbstractFromOpenTank[i] + this.householdAbstractFromRoofsTank[i] + this.irrigationAbstractFromTank2[i] + this.tank2SpillTimeseries[i] + this.subsurfaceTankSpillTimeseries[i]
           }
 
@@ -1645,7 +1684,7 @@ class Game {
                else {
                     if (this.finalDifficulty !== "hard") {
                          this.irrigationHouseholdInfoTag.classList.add('visible')
-                         this.irrigationHouseholdInfoTag.innerHTML = `Irrigation Deficit Remaining: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3`
+                         this.irrigationHouseholdInfoTag.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3`
                     }
                }
           }
