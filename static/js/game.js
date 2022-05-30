@@ -6,6 +6,8 @@ import { TextGeometry } from '../node_modules/three/examples/jsm/geometries/Text
 import { FontLoader } from '../node_modules/three/examples/jsm/loaders/FontLoader.js'
 import * as CHART from '../node_modules/chart.js/dist/chart.esm.js'
 
+CHART.Chart.register.apply(null, Object.values(CHART).filter((chartClass) => (chartClass.id)));
+
 
 class Game {
      constructor() {
@@ -52,6 +54,113 @@ class Game {
 
           this.infoText = document.querySelector('.info-text')
 
+          // GRAPHS SECTION
+
+          this.daysCounter = Array.from(Array(366),(x, i) => i) // array representing the days from day 0 to day 365
+          this.daysCounter2 = Array.from(Array(365),(x, i) => i) // array representing the days from day 0 to day 364
+
+          // TANK 1 STORAGE
+          this.imgTank1 = document.getElementById('tank1-img')
+
+          this.graphTank1Container = document.querySelector('.graph-tank1-container')
+
+          this.graphTank1Tag = document.getElementById('graph-tank1-canvas').getContext("2d")
+
+          this.imgTank1.onmouseover = () => {
+               this.graphTank1Container.style.opacity = 1
+               this.graphTank1Container.style.zIndex = "1";
+          }
+
+          this.imgTank1.onmouseout = () => {
+               this.graphTank1Container.style.opacity = 0
+               this.graphTank1Container.style.zIndex = "-1";
+          }
+
+          // TANK 2 STORAGE
+          this.imgTank2 = document.getElementById('tank2-img2')
+
+          this.graphTank2Container = document.querySelector('.graph-tank2-container')
+
+          this.graphTank2Tag = document.getElementById('graph-tank2-canvas').getContext("2d")
+
+          this.imgTank2.onmouseover = () => {
+               this.graphTank2Container.style.opacity = 1
+               this.graphTank2Container.style.zIndex = "1";
+          }
+
+          this.imgTank2.onmouseout = () => {
+               this.graphTank2Container.style.opacity = 0
+               this.graphTank2Container.style.zIndex = "-1";
+          }
+
+          // TANK 3 STORAGE
+          this.imgTank3 = document.getElementById('tank3-img')
+
+          this.graphTank3Container = document.querySelector('.graph-tank3-container')
+
+          this.graphTank3Tag = document.getElementById('graph-tank3-canvas').getContext("2d")
+
+          this.imgTank3.onmouseover = () => {
+               this.graphTank3Container.style.opacity = 1
+               this.graphTank3Container.style.zIndex = "1";
+          }
+
+          this.imgTank3.onmouseout = () => {
+               this.graphTank3Container.style.opacity = 0
+               this.graphTank3Container.style.zIndex = "-1";
+          }
+
+          // AQUIFER STORAGE
+          this.imgTank4 = document.getElementById('tank4-img')
+
+          this.graphTank4Container = document.querySelector('.graph-tank4-container')
+
+          this.graphTank4Tag = document.getElementById('graph-tank4-canvas').getContext("2d")
+
+          this.imgTank4.onmouseover = () => {
+               this.graphTank4Container.style.opacity = 1
+               this.graphTank4Container.style.zIndex = "1";
+          }
+
+          this.imgTank4.onmouseout = () => {
+               this.graphTank4Container.style.opacity = 0
+               this.graphTank4Container.style.zIndex = "-1";
+          }
+
+          // IRRIGATION DEFICIT
+          this.imgIrrigation = document.getElementById('irrigation-img')
+
+          this.graphIrrigationContainer = document.querySelector('.graph-irrigation-container')
+
+          this.graphIrrigationTag = document.getElementById('graph-irrigation-canvas').getContext("2d")
+
+          this.imgIrrigation.onmouseover = () => {
+               this.graphIrrigationContainer.style.opacity = 1
+               this.graphIrrigationContainer.style.zIndex = "1";
+          }
+
+          this.imgIrrigation.onmouseout = () => {
+               this.graphIrrigationContainer.style.opacity = 0
+               this.graphIrrigationContainer.style.zIndex = "-1";
+          }
+
+          // HOUSEHOLD DEFICIT
+          this.imgHousehold = document.getElementById('household-img')
+
+          this.graphHouseholdContainer = document.querySelector('.graph-household-container')
+
+          this.graphHouseholdTag = document.getElementById('graph-household-canvas').getContext("2d")
+
+          this.imgHousehold.onmouseover = () => {
+               this.graphHouseholdContainer.style.opacity = 1
+               this.graphHouseholdContainer.style.zIndex = "1";
+          }
+
+          this.imgHousehold.onmouseout = () => {
+               this.graphHouseholdContainer.style.opacity = 0
+               this.graphHouseholdContainer.style.zIndex = "-1";
+          }
+
           // NEW GAME LOGIC
           this.newGameButton = document.getElementById('new-game')
 
@@ -63,6 +172,14 @@ class Game {
                this.resultsOK.hidden = false
                this.gameEnded = false
                this.simulationButton.disabled = true
+
+               this.imgTank1.hidden = true
+               this.imgTank2.hidden = true
+               this.imgTank3.hidden = true
+               this.imgTank4.hidden = true
+               this.imgIrrigation.hidden = true
+               this.imgHousehold.hidden = true
+
                this.results.classList.remove('visible')
                this.newGameButton.hidden = true
                this.newGameButton.disabled = true
@@ -264,7 +381,7 @@ class Game {
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.003 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.0035 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -292,7 +409,7 @@ class Game {
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4.5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.004 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.0045 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -320,7 +437,7 @@ class Game {
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.005 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.006 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -390,14 +507,14 @@ class Game {
 
           const roofsTag = document.getElementById('roofs')
           const roofsValue = document.getElementById('roofsValue')
-          const roofsArray = this.range(1000, 5000, 1000)
+          const roofsArray = this.range(1000, 2000, 1000)
           roofsTag.value = roofsArray[Math.floor(Math.random() * roofsArray.length)]
           var previousRoofsValue = parseFloat(roofsTag.value)
           var differenceRoofsValue = 0
           this.roofsArea = parseFloat(roofsTag.value)
           roofsValue.innerHTML = this.roofsArea
 
-          this.roofsAreaUnitCost = 0.2 // in Euros/m2 - needs calibration
+          this.roofsAreaUnitCost = 0.3 // in Euros/m2 - needs calibration
           roofsTag.onchange = () => {
                this.roofsArea = parseFloat(roofsTag.value)
                roofsValue.innerHTML = this.roofsArea
@@ -431,7 +548,7 @@ class Game {
           this.roofsCoeff = parseFloat(roofsCoeffTag.value)
           roofsCoeffValue.innerHTML = this.roofsCoeff
 
-          this.roofsCoeffUnitCost = 5500 // in Euros/m2 - needs calibration
+          this.roofsCoeffUnitCost = 7500 // in Euros/m2 - needs calibration
           roofsCoeffTag.onchange = () => {
                this.roofsCoeff = parseFloat(roofsCoeffTag.value)
                roofsCoeffValue.innerHTML = this.roofsCoeff
@@ -457,7 +574,7 @@ class Game {
 
           const yardsTag = document.getElementById('yards')
           const yardsValue = document.getElementById('yardsValue')
-          const yardsArray = this.range(10000, 60000, 5000)
+          const yardsArray = this.range(1000, 5000, 1000)
           yardsTag.value = yardsArray[Math.floor(Math.random() * yardsArray.length)]
 
           var previousYardsValue = parseFloat(yardsTag.value)
@@ -525,7 +642,7 @@ class Game {
 
           const openTankVolumeTag = document.getElementById('openTankVolume')
           const openTankVolumeValue = document.getElementById('openTankVolumeValue')
-          const openTankArray = this.range(1, 10, 1)
+          const openTankArray = this.range(10, 20, 10)
           openTankVolumeTag.value = openTankArray[Math.floor(Math.random() * openTankArray.length)]
 
           var previousOpenTankValue = parseFloat(openTankVolumeTag.value)
@@ -533,7 +650,7 @@ class Game {
           this.openTankMaxVol = parseFloat(openTankVolumeTag.value)
           openTankVolumeValue.innerHTML = this.openTankMaxVol
 
-          this.openTankVolumeUnitCost = 26 // in Euros/m2 - needs calibration
+          this.openTankVolumeUnitCost = 25 // in Euros/m2 - needs calibration
           openTankVolumeTag.onchange = () => {
                this.openTankMaxVol = parseFloat(openTankVolumeTag.value)
                openTankVolumeValue.innerHTML = this.openTankMaxVol
@@ -955,7 +1072,7 @@ class Game {
                               this.gameDifficulty.classList.add('visible')
 
                               // this.irrigationTimeseries = Array.from({length: 100}, () => 0.5 + Math.random() * 3)
-                              this.irrigationTimeseries = Array.from({length: 365}, () => 30 + Math.random() * 20)
+                              this.irrigationTimeseries = Array.from({length: 365}, () => 50 + Math.random() * 20)
 
                               this.rainfallTimeseries = [4.20, 0.60, 2.70, 21.3, 0.00, 4.20, 12.9, 0.90, 0.00, 1.50, 0.30, 8.40, 5.70, 1.50, 11.7, 0.60, 6.60, 0.90, 0.60, 0.00, 0.60, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.30, 3.30, 3.60, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.00, 10.8, 7.80, 9.90, 17.1, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 1.50, 0.90, 5.10, 2.10, 0.00, 0.00, 0.00, 0.30, 30.6, 17.4, 0.00, 0.00, 21.6, 14.7, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.00, 0.00, 1.80, 0.30, 3.30, 0.00, 0.00, 0.00, 2.70, 0.30, 0.00, 0.30, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 3.30, 0.30, 1.80, 0.00, 3.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 14.7, 21.6, 0.00, 0.00, 17.4, 30.6, 0.30, 0.00, 0.00, 0.00, 2.10, 5.10, 0.90, 1.50, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 17.1, 9.90, 7.80, 10.8, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
                          }
@@ -1528,16 +1645,16 @@ class Game {
 
           this.timeseriesLength = this.rainfallTimeseries.length
 
-          this.openTankStorage = new Float32Array(this.timeseriesLength + 1)
+          this.openTankStorage = new Float32Array(this.timeseriesLength + 1) // TANK 3
           this.openTankStorage.fill(0)
 
-          this.roofsTankStorage = new Float32Array(this.timeseriesLength + 1)
+          this.roofsTankStorage = new Float32Array(this.timeseriesLength + 1) // TANK 1
           this.roofsTankStorage.fill(0)
 
-          this.tank2Storage = new Float32Array(this.timeseriesLength + 1)
+          this.tank2Storage = new Float32Array(this.timeseriesLength + 1) // TANK 2
           this.tank2Storage.fill(0)
 
-          this.subsurfaceTankStorage = new Float32Array(this.timeseriesLength + 1)
+          this.subsurfaceTankStorage = new Float32Array(this.timeseriesLength + 1) // TANK 4 - AQUIFER
           this.subsurfaceTankStorage.fill(0)
 
           this.subsurfaceTankRecoveryToTank2 = new Float32Array(this.timeseriesLength)
@@ -1636,6 +1753,192 @@ class Game {
 
           this.totalHouseholdDeficit = this.householdDeficitTimeseries.reduce((previousValue, currentValue) => {return previousValue + currentValue}, 0)
 
+          if (this.simulationRuns != 1) {
+               this.tank1Chart.destroy() // destroy the old chart before creating the new one
+               this.tank2Chart.destroy()
+               this.tank3Chart.destroy()
+               this.tank4Chart.destroy()
+               this.irrigationChart.destroy()
+               this.householdChart.destroy()
+
+          }
+          let gradient1 = this.graphTank1Tag.createLinearGradient(0, 0, 0, 400)
+          gradient1.addColorStop(0, "rgba(58, 123, 213, 1)")
+          gradient1.addColorStop(1, "rgba(0, 210, 255, 0.3)")
+          this.tank1Chart = new CHART.Chart(this.graphTank1Tag, {
+               type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+               data: {
+                    labels: this.daysCounter,
+                    datasets: [
+                         { // i can have more than one datasets, i put each dataset in a different js object inside this array
+                         label: 'Tank 1 Storage',
+                         data: this.roofsTankStorage,
+                         backgroundColor: gradient1,
+                         borderColor: "rgba(58, 123, 213, 1)",
+                         // pointBackgroundColor: "#ffffff",
+                         fill: true,
+                         tension: 0.4
+                         }
+                    ]
+               },
+               options: {
+                    radius: 0,
+                    responsive: true,
+                    scales: {
+                         y: {
+                              ticks: {
+                                   callback: (value) => {return `${value} m^3`}
+                              }
+                         }
+                    }
+               }
+          })
+          let gradient2 = this.graphTank2Tag.createLinearGradient(0, 0, 0, 400)
+          gradient2.addColorStop(0, "rgba(58, 123, 213, 1)")
+          gradient2.addColorStop(1, "rgba(0, 210, 255, 0.3)")
+          this.tank2Chart = new CHART.Chart(this.graphTank2Tag, {
+               type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+               data: {
+                    labels: this.daysCounter,
+                    datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
+                         label: 'Tank 2 Storage',
+                         data: this.tank2Storage,
+                         backgroundColor: gradient2,
+                         borderColor: "rgba(58, 123, 213, 1)",
+                         // pointBackgroundColor: "#ffffff",
+                         fill: true,
+                         tension: 0.4
+                    }]
+               },
+               options: {
+                    radius: 0,
+                    responsive: true,
+                    scales: {
+                         y: {
+                              ticks: {
+                                   callback: (value) => {return `${value} m^3`}
+                              }
+                         }
+                    }
+               }
+          })
+          let gradient3 = this.graphTank3Tag.createLinearGradient(0, 0, 0, 400)
+          gradient3.addColorStop(0, "rgba(58, 123, 213, 1)")
+          gradient3.addColorStop(1, "rgba(0, 210, 255, 0.3)")
+          this.tank3Chart = new CHART.Chart(this.graphTank3Tag, {
+               type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+               data: {
+                    labels: this.daysCounter,
+                    datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
+                         label: 'Tank 3 Storage',
+                         data: this.openTankStorage,
+                         backgroundColor: gradient3,
+                         borderColor: "rgba(58, 123, 213, 1)",
+                         // pointBackgroundColor: "#ffffff",
+                         fill: true,
+                         tension: 0.4
+                    }]
+               },
+               options: {
+                    radius: 0,
+                    responsive: true,
+                    scales: {
+                         y: {
+                              ticks: {
+                                   callback: (value) => {return `${value} m^3`}
+                              }
+                         }
+                    }
+               }
+          })
+          let gradient4 = this.graphTank4Tag.createLinearGradient(0, 0, 0, 400)
+          gradient4.addColorStop(0, "rgba(58, 123, 213, 1)")
+          gradient4.addColorStop(1, "rgba(0, 210, 255, 0.3)")
+          this.tank4Chart = new CHART.Chart(this.graphTank4Tag, {
+               type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+               data: {
+                    labels: this.daysCounter,
+                    datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
+                         label: 'Aquifer Storage',
+                         data: this.subsurfaceTankStorage,
+                         backgroundColor: gradient4,
+                         borderColor: "rgba(58, 123, 213, 1)",
+                         // pointBackgroundColor: "#ffffff",
+                         fill: true,
+                         tension: 0.4
+                    }]
+               },
+               options: {
+                    radius: 0,
+                    responsive: true,
+                    scales: {
+                         y: {
+                              ticks: {
+                                   callback: (value) => {return `${value} m^3`}
+                              }
+                         }
+                    }
+               }
+          })
+          let gradient5 = this.graphIrrigationTag.createLinearGradient(0, 0, 0, 400)
+          gradient5.addColorStop(0, "rgba(58, 123, 213, 1)")
+          gradient5.addColorStop(1, "rgba(0, 210, 255, 0.3)")
+          this.irrigationChart = new CHART.Chart(this.graphIrrigationTag, {
+               type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+               data: {
+                    labels: this.daysCounter2,
+                    datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
+                         label: 'Irrigation Deficit',
+                         data: this.irrigationDeficitTimeseries,
+                         backgroundColor: gradient5,
+                         borderColor: "rgba(58, 123, 213, 1)",
+                         // pointBackgroundColor: "#ffffff",
+                         fill: true,
+                         tension: 0.4
+                    }]
+               },
+               options: {
+                    radius: 0,
+                    responsive: true,
+                    scales: {
+                         y: {
+                              ticks: {
+                                   callback: (value) => {return `${value} m^3`}
+                              }
+                         }
+                    }
+               }
+          })
+          let gradient6 = this.graphHouseholdTag.createLinearGradient(0, 0, 0, 400)
+          gradient6.addColorStop(0, "rgba(58, 123, 213, 1)")
+          gradient6.addColorStop(1, "rgba(0, 210, 255, 0.3)")
+          this.householdChart = new CHART.Chart(this.graphHouseholdTag, {
+               type: "line", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+               data: {
+                    labels: this.daysCounter2,
+                    datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
+                         label: 'Non-Potable Household Deficit',
+                         data: this.householdDeficitTimeseries,
+                         backgroundColor: gradient6,
+                         borderColor: "rgba(58, 123, 213, 1)",
+                         // pointBackgroundColor: "#ffffff",
+                         fill: true,
+                         tension: 0.4
+                    }]
+               },
+               options: {
+                    radius: 0,
+                    responsive: true,
+                    scales: {
+                         y: {
+                              ticks: {
+                                   callback: (value) => {return `${value} m^3`}
+                              }
+                         }
+                    }
+               }
+          })
+
           if (this.simulationRuns == 1) {
                this.cityMenu.classList.remove('visible')
                this.waterTowerMenu.classList.remove('visible')
@@ -1649,6 +1952,14 @@ class Game {
                          this.simulationButton.disabled = false
                          this.results.classList.remove('visible')
                          this.clicksEnabled = true
+                         if (this.finalDifficulty !== "hard") {
+                              this.imgTank1.hidden = false
+                              this.imgTank2.hidden = false
+                              this.imgTank3.hidden = false
+                              this.imgTank4.hidden = false
+                              this.imgIrrigation.hidden = false
+                              this.imgHousehold.hidden = false
+                         }
                     }
                }
           }
@@ -1665,6 +1976,18 @@ class Game {
                     this.resultsOK.hidden = true
                     this.newGameButton.hidden = false
                     this.newGameButton.disabled = false
+                    this.tank1Chart.destroy()
+                    this.imgTank1.hidden = true
+                    this.tank2Chart.destroy()
+                    this.imgTank2.hidden = true
+                    this.tank3Chart.destroy()
+                    this.imgTank3.hidden = true
+                    this.tank4Chart.destroy()
+                    this.imgTank4.hidden = true
+                    this.irrigationChart.destroy()
+                    this.imgIrrigation.hidden = true
+                    this.householdChart.destroy()
+                    this.imgHousehold.hidden = true
 
                     // this.sound.setVolume(0.30)
                     // this.sound2.setVolume(0.30)

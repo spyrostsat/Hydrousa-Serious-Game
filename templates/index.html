@@ -68,8 +68,8 @@
           <br>
 
           <label for="openTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="open-tank-img"> &nbspTank 3 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="openTankVolume" type="range" name="openTankVolume" min="1" max="100" step="1" value="1" style="width: 260px; margin-bottom: 40px;">
-          <span id="openTankVolumeValue">1</span>
+          <input id="openTankVolume" type="range" name="openTankVolume" min="10" max="800" step="10" value="10" style="width: 260px; margin-bottom: 40px;">
+          <span id="openTankVolumeValue">10</span>
           <br>
 
           <label for="subsurfaceTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="subsurface-tank-img"> &nbspAquifer Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
@@ -150,6 +150,69 @@
      </div>
 
      <div class="info-text"></div>
+
+
+     <!-- Graphs Section -->
+
+     <!-- TANK 1 STORAGE -->
+     <div id="tank1-container">
+          <img src="../static/models/tank1.png" alt="Tank 1 Image" width="75" id="tank1-img" hidden>
+     </div>
+
+     <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
+     <div class="graph-tank1-container">
+          <canvas id="graph-tank1-canvas"></canvas>
+     </div>
+
+     <!-- TANK 2 STORAGE -->
+     <div id="tank2-container">
+          <img src="../static/models/tank2.png" alt="Tank 2 Image" width="75" id="tank2-img2" hidden>
+     </div>
+
+     <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
+     <div class="graph-tank2-container">
+          <canvas id="graph-tank2-canvas"></canvas>
+     </div>
+
+     <!-- TANK 3 STORAGE -->
+     <div id="tank3-container">
+          <img src="../static/models/tank3.png" alt="Tank 3 Image" width="75" id="tank3-img" hidden>
+     </div>
+
+     <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
+     <div class="graph-tank3-container">
+          <canvas id="graph-tank3-canvas"></canvas>
+     </div>
+
+     <!-- AQUIFER STORAGE -->
+     <div id="tank4-container">
+          <img src="../static/models/tank4.png" alt="Aquifer Image" width="75" id="tank4-img" hidden>
+     </div>
+
+     <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
+     <div class="graph-tank4-container">
+          <canvas id="graph-tank4-canvas"></canvas>
+     </div>
+
+     <!-- IRRIGATION DEFICIT -->
+     <div id="irrigation-container">
+          <img src="../static/models/irrigation.png" alt="Irrigation" width="75" id="irrigation-img" hidden>
+     </div>
+
+     <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
+     <div class="graph-irrigation-container">
+          <canvas id="graph-irrigation-canvas"></canvas>
+     </div>
+
+     <!-- HOUSEHOLD DEFICIT -->
+     <div id="household-container">
+          <img src="../static/models/household.png" alt="Household" width="75" id="household-img" hidden>
+     </div>
+
+     <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
+     <div class="graph-household-container">
+          <canvas id="graph-household-canvas"></canvas>
+     </div>
 
      <p id="copyright-text">&copy; 2022 URBAN WATER MANAGEMENT AND HYRDRO-INFORMATICS GROUP.</p>
      <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>

@@ -165,7 +165,7 @@ body, label, input, button, img {
 /* SOUND CONTROL */
 .sound-control {
      position: absolute;
-     top: 12%;
+     top: 22%;
      left: 1%;
      /* background-color: #007FFF;
      padding: 10px; */
@@ -309,7 +309,7 @@ input[type=range][orient=vertical]
      line-height: 1.7;
      position: absolute;
      bottom: 12px;
-     right: 12px;
+     left: 12px;
      color: #ffffff;
      transform: scale(0, 0);
      transition: transform 0.3s;
@@ -522,7 +522,7 @@ button.play.visible {
      bottom: 1%;
      right: 1.5%;
      font-family: Helvetica, Arial, sans-serif;
-     font-size: 16px;
+     font-size: 14px;
      color: #ffffff;
 }
 
@@ -606,4 +606,120 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #3071A9;
+}
+
+/* GRAPHS SECTION */
+
+/* TANK 1 STORAGE */
+#tank1-container {
+     position: absolute;
+     top: 10%;
+     right: 1%;
+}
+
+.graph-tank1-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* TANK 2 STORAGE */
+#tank2-container {
+     position: absolute;
+     top: 25%;
+     right: 1%;
+}
+
+.graph-tank2-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* TANK 3 STORAGE */
+#tank3-container {
+     position: absolute;
+     top: 40%;
+     right: 1%;
+}
+
+.graph-tank3-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* AQUIFER STORAGE */
+#tank4-container {
+     position: absolute;
+     top: 55%;
+     right: 1%;
+}
+
+.graph-tank4-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* IRRIGATION DEFICIT */
+#irrigation-container {
+     position: absolute;
+     top: 70%;
+     right: 1%;
+}
+
+.graph-irrigation-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* HOUSEHOLD DEFICIT */
+#household-container {
+     position: absolute;
+     top: 85%;
+     right: 1%;
+}
+
+.graph-household-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
 }
