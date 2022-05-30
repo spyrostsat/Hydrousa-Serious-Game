@@ -1991,23 +1991,23 @@ class Game {
 
                     // this.sound.setVolume(0.30)
                     // this.sound2.setVolume(0.30)
-                    if (this.totalIrrigationDeficit == 0 && this.totalHouseholdDeficit == 0 && this.remainingBudget >= 0) {
+                    if (this.totalIrrigationDeficit <= 0 && this.totalHouseholdDeficit <= 0 && this.remainingBudget >= 0) {
                          this.resultsText.innerHTML = `Congratulations! The irrigation and non-potable household demands are being satisfied!<br>Nice Work!`
                          this.sound3.play()
                     }
-                    else if (this.totalIrrigationDeficit == 0 && this.totalHouseholdDeficit == 0 && this.remainingBudget < 0) {
-                         this.resultsText.innerHTML = `Oops! This is not a cost-effective design!<br>Irrigation Deficit Remaining: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
+                    else if (this.totalIrrigationDeficit <= 0 && this.totalHouseholdDeficit <= 0 && this.remainingBudget < 0) {
+                         this.resultsText.innerHTML = `Oops! This is not a cost-effective design!<br>Irrigation Deficit Remaining: ${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${Math.abs(this.totalHouseholdDeficit.toFixed(2))} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
                          this.sound4.play()
                     }
                     else {
-                         this.resultsText.innerHTML = `Oops! The demands are not being satisfied!<br>Irrigation Deficit Remaining: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
+                         this.resultsText.innerHTML = `Oops! The demands are not being satisfied!<br>Irrigation Deficit Remaining: ${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit Remaining: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
                          this.sound4.play()
                     }
                }
                else {
                     if (this.finalDifficulty !== "hard") {
                          this.irrigationHouseholdInfoTag.classList.add('visible')
-                         this.irrigationHouseholdInfoTag.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3`
+                         this.irrigationHouseholdInfoTag.innerHTML = `Irrigation Deficit: ${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${Math.abs(this.totalHouseholdDeficit.toFixed(2))} m<span style="position: relative; bottom: 5px; right: 1px;">3`
                     }
                }
           }
