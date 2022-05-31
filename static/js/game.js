@@ -1147,14 +1147,14 @@ class Game {
           (buffer) => {
                this.sound3.setBuffer(buffer)
                this.sound3.setLoop(false)
-               this.sound3.setVolume(0.3)
+               this.sound3.setVolume(0.09)
           })
 
           this.audioLoader.load("/static/models/lose.mp3",
           (buffer) => {
                this.sound4.setBuffer(buffer)
                this.sound4.setLoop(false)
-               this.sound4.setVolume(0.3)
+               this.sound4.setVolume(0.09)
           })
 
           // // Lets write some 3D TEXT 'Hydrousa' in the first scene/camera while the page is loading
@@ -1247,7 +1247,7 @@ class Game {
                this.cropMaxDistance = 48.5
                this.crop.position.z = -11.5
                this.crop.position.y = -0.4
-               
+
                this.addCharacter()
           }
      )
