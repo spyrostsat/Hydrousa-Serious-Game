@@ -520,9 +520,9 @@ button.play.visible {
 #copyright-text {
      position: absolute;
      bottom: 1%;
-     right: 1.5%;
+     right: 1%;
      font-family: Helvetica, Arial, sans-serif;
-     font-size: 14px;
+     font-size: 13px;
      color: #ffffff;
 }
 

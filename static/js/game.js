@@ -1238,12 +1238,16 @@ class Game {
                this.city = this.simulationTown.children.find((child) => {return child.name === "extra-road"})
                this.cityMaxDistance = 80
                this.waterTower = this.simulationTown.children.find((child) => {return child.name === "water_tower"})
+
                this.waterTowerMaxDistance = 24.5
                this.waterTower.position.x = 20
                this.waterTower.position.z = 23
 
                this.crop = this.simulationTown.children.find((child) => {return child.name === "old-grass-houses"})
                this.cropMaxDistance = 48.5
+               this.crop.position.z = -11.5
+               this.crop.position.y = -0.4
+               
                this.addCharacter()
           }
      )
