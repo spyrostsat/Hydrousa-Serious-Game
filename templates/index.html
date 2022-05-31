@@ -8,6 +8,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="../static/models/favicon.ico"/>
 </head>
 <body>
+     <!-- Create a hidden h1 tag just for the website to be able to be found -->
+     <h1 hidden>Sg Hydrousa</h1>
      <canvas id="webgl"></canvas>
 
      <div id="loading-bar"></div>
@@ -63,8 +65,8 @@
           <br>
 
           <label for="tank2Volume"><img src="../static/models/info.png" alt="info" width="24" id="tank2-img"> &nbspTank 2 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
-          <input id="tank2Volume" type="range" name="tank2Volume" min="50" max="1000" step="10" value="100" style="width: 300px; margin-bottom: 40px;">
-          <span id="tank2VolumeValue">100</span>
+          <input id="tank2Volume" type="range" name="tank2Volume" min="50" max="1000" step="10" value="50" style="width: 300px; margin-bottom: 40px;">
+          <span id="tank2VolumeValue">50</span>
           <br>
 
           <label for="openTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="open-tank-img"> &nbspTank 3 Max Volume (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>): </label>
@@ -156,7 +158,7 @@
 
      <!-- TANK 1 STORAGE -->
      <div id="tank1-container">
-          <img src="../static/models/tank1.png" alt="Tank 1 Image" width="75" id="tank1-img" hidden>
+          <img src="../static/models/tank1.png" alt="Tank 1 Image" width="45" id="tank1-img" hidden>
      </div>
 
      <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
@@ -166,7 +168,7 @@
 
      <!-- TANK 2 STORAGE -->
      <div id="tank2-container">
-          <img src="../static/models/tank2.png" alt="Tank 2 Image" width="75" id="tank2-img2" hidden>
+          <img src="../static/models/tank2.png" alt="Tank 2 Image" width="45" id="tank2-img2" hidden>
      </div>
 
      <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
@@ -176,7 +178,7 @@
 
      <!-- TANK 3 STORAGE -->
      <div id="tank3-container">
-          <img src="../static/models/tank3.png" alt="Tank 3 Image" width="75" id="tank3-img" hidden>
+          <img src="../static/models/tank3.png" alt="Tank 3 Image" width="45" id="tank3-img" hidden>
      </div>
 
      <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
@@ -186,7 +188,7 @@
 
      <!-- AQUIFER STORAGE -->
      <div id="tank4-container">
-          <img src="../static/models/tank4.png" alt="Aquifer Image" width="75" id="tank4-img" hidden>
+          <img src="../static/models/tank4.png" alt="Aquifer Image" width="45" id="tank4-img" hidden>
      </div>
 
      <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
@@ -196,7 +198,7 @@
 
      <!-- IRRIGATION DEFICIT -->
      <div id="irrigation-container">
-          <img src="../static/models/irrigation.png" alt="Irrigation" width="75" id="irrigation-img" hidden>
+          <img src="../static/models/irrigation.png" alt="Irrigation" width="45" id="irrigation-img" hidden>
      </div>
 
      <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->
@@ -206,7 +208,7 @@
 
      <!-- HOUSEHOLD DEFICIT -->
      <div id="household-container">
-          <img src="../static/models/household.png" alt="Household" width="75" id="household-img" hidden>
+          <img src="../static/models/household.png" alt="Household" width="45" id="household-img" hidden>
      </div>
 
      <!-- Both the div container and the actual canvas are VISIBLE the entire time and we change the OPACITY of the container to appear/disappear the graph -->

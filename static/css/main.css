@@ -38,7 +38,7 @@ body, label, input, button, img {
 .introduction-menu {
      opacity: 0.94;
      position: absolute;
-     top: 20%;
+     top: 25%;
      left: 22.5%;
      background-color: #007FFF;
      padding: 10px;
@@ -455,8 +455,8 @@ button.play {
      color: #ffffff;
      padding: 20px;
      position: absolute;
-     left: 35.5%;
-     bottom: 9%;
+     left: 36%;
+     bottom: 2.5%;
      border: 3px solid #333333;
      border-radius: 15px;
      transform: scale(0, 0);
@@ -613,8 +613,8 @@ input[type=range]:focus::-ms-fill-upper {
 /* TANK 1 STORAGE */
 #tank1-container {
      position: absolute;
-     top: 10%;
-     right: 1%;
+     bottom: 2%;
+     left: 55%;
 }
 
 .graph-tank1-container {
@@ -632,8 +632,8 @@ input[type=range]:focus::-ms-fill-upper {
 /* TANK 2 STORAGE */
 #tank2-container {
      position: absolute;
-     top: 25%;
-     right: 1%;
+     bottom: 2%;
+     left: 63%;
 }
 
 .graph-tank2-container {
@@ -651,8 +651,8 @@ input[type=range]:focus::-ms-fill-upper {
 /* TANK 3 STORAGE */
 #tank3-container {
      position: absolute;
-     top: 40%;
-     right: 1%;
+     bottom: 2%;
+     left: 71%;
 }
 
 .graph-tank3-container {
@@ -670,8 +670,8 @@ input[type=range]:focus::-ms-fill-upper {
 /* AQUIFER STORAGE */
 #tank4-container {
      position: absolute;
-     top: 55%;
-     right: 1%;
+     bottom: 2%;
+     left: 79%;
 }
 
 .graph-tank4-container {
@@ -689,8 +689,8 @@ input[type=range]:focus::-ms-fill-upper {
 /* IRRIGATION DEFICIT */
 #irrigation-container {
      position: absolute;
-     top: 70%;
-     right: 1%;
+     bottom: 2%;
+     left: 87%;
 }
 
 .graph-irrigation-container {
@@ -708,8 +708,8 @@ input[type=range]:focus::-ms-fill-upper {
 /* HOUSEHOLD DEFICIT */
 #household-container {
      position: absolute;
-     top: 85%;
-     right: 1%;
+     bottom: 2%;
+     left: 95%;
 }
 
 .graph-household-container {

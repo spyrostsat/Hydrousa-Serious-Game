@@ -7,6 +7,8 @@ import { FontLoader } from '../node_modules/three/examples/jsm/loaders/FontLoade
 import * as CHART from '../node_modules/chart.js/dist/chart.esm.js'
 
 CHART.Chart.register.apply(null, Object.values(CHART).filter((chartClass) => (chartClass.id)));
+CHART.Chart.defaults.font.size = 16;
+CHART.Chart.defaults.font.family = "Helvetica Neue";
 
 
 class Game {
@@ -67,6 +69,9 @@ class Game {
           this.graphTank1Tag = document.getElementById('graph-tank1-canvas').getContext("2d")
 
           this.imgTank1.onmouseover = () => {
+               this.cityMenu.classList.remove('visible')
+               this.waterTowerMenu.classList.remove('visible')
+               this.cropMenu.classList.remove('visible')
                this.graphTank1Container.style.opacity = 1
                this.graphTank1Container.style.zIndex = "1";
           }
@@ -84,6 +89,9 @@ class Game {
           this.graphTank2Tag = document.getElementById('graph-tank2-canvas').getContext("2d")
 
           this.imgTank2.onmouseover = () => {
+               this.cityMenu.classList.remove('visible')
+               this.waterTowerMenu.classList.remove('visible')
+               this.cropMenu.classList.remove('visible')
                this.graphTank2Container.style.opacity = 1
                this.graphTank2Container.style.zIndex = "1";
           }
@@ -101,6 +109,9 @@ class Game {
           this.graphTank3Tag = document.getElementById('graph-tank3-canvas').getContext("2d")
 
           this.imgTank3.onmouseover = () => {
+               this.cityMenu.classList.remove('visible')
+               this.waterTowerMenu.classList.remove('visible')
+               this.cropMenu.classList.remove('visible')
                this.graphTank3Container.style.opacity = 1
                this.graphTank3Container.style.zIndex = "1";
           }
@@ -118,6 +129,9 @@ class Game {
           this.graphTank4Tag = document.getElementById('graph-tank4-canvas').getContext("2d")
 
           this.imgTank4.onmouseover = () => {
+               this.cityMenu.classList.remove('visible')
+               this.waterTowerMenu.classList.remove('visible')
+               this.cropMenu.classList.remove('visible')
                this.graphTank4Container.style.opacity = 1
                this.graphTank4Container.style.zIndex = "1";
           }
@@ -135,6 +149,9 @@ class Game {
           this.graphIrrigationTag = document.getElementById('graph-irrigation-canvas').getContext("2d")
 
           this.imgIrrigation.onmouseover = () => {
+               this.cityMenu.classList.remove('visible')
+               this.waterTowerMenu.classList.remove('visible')
+               this.cropMenu.classList.remove('visible')
                this.graphIrrigationContainer.style.opacity = 1
                this.graphIrrigationContainer.style.zIndex = "1";
           }
@@ -152,6 +169,9 @@ class Game {
           this.graphHouseholdTag = document.getElementById('graph-household-canvas').getContext("2d")
 
           this.imgHousehold.onmouseover = () => {
+               this.cityMenu.classList.remove('visible')
+               this.waterTowerMenu.classList.remove('visible')
+               this.cropMenu.classList.remove('visible')
                this.graphHouseholdContainer.style.opacity = 1
                this.graphHouseholdContainer.style.zIndex = "1";
           }
@@ -167,7 +187,7 @@ class Game {
           this.newGameButton.onclick = () => {
                this.timeTag.style.color = "#ffffff"
                this.gltfCharacter.scene.position.x = - 0.5 + Math.random() * 3
-               this.gltfCharacter.scene.position.z = -110 + Math.random() * 100
+               this.gltfCharacter.scene.position.z = -110 + Math.random() * 50
 
                this.resultsOK.hidden = false
                this.gameEnded = false
@@ -328,7 +348,7 @@ class Game {
                     this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
-                    this.introductionMenuText.innerHTML = "The Tank 2 water is exclusively used for irrigation. You can decide to send water from Tank 2 to the aquifer to prevent probable overflows in the future."
+                    this.introductionMenuText.innerHTML = "The Tank 2 water is exclusively used for irrigation. You can decide to send water from Tank 2 to the aquifer, in order to prevent probable overflows in the future."
                }
                else if (currentNumberOfParagraphs == 5) {
                     this.introductionMenuText.style.fontSize = "25px"
@@ -352,7 +372,7 @@ class Game {
                     this.introductionMenuText.style.top = "2%"
                     this.introductionMenuText.style.left = "5%"
                     this.introductionMenuText.style.right = "5%"
-                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus. The menus open only when you approach the city components.<br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
+                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus (Houses, Crops, Water Tower). The menus open only when you approach the corresponding city components.<br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspGood Luck!"
                }
                else if (currentNumberOfParagraphs == 8) {
                     this.introductionMenu.classList.remove('visible')
@@ -710,7 +730,7 @@ class Game {
 
           const tank2VolumeTag = document.getElementById('tank2Volume')
           const tank2VolumeValue = document.getElementById('tank2VolumeValue')
-          const tank2Array = this.range(50, 100, 10)
+          const tank2Array = this.range(50, 70, 10)
           tank2VolumeTag.value = tank2Array[Math.floor(Math.random() * tank2Array.length)]
 
           var previousTank2Value = parseFloat(tank2VolumeTag.value)
@@ -812,7 +832,7 @@ class Game {
 
           const subsurfaceTankMaxVolPercentageTag = document.getElementById('subsurfaceTankMaxVolPercentage')
           const subsurfaceTankMaxVolPercentageValue = document.getElementById('subsurfaceTankMaxVolPercentageValue')
-          const subsurfaceTankVolArray = this.range(0.5, 0.99, 0.01)
+          const subsurfaceTankVolArray = this.range(0.95, 0.99, 0.01)
           subsurfaceTankMaxVolPercentageTag.value = subsurfaceTankVolArray[Math.floor(Math.random() * subsurfaceTankVolArray.length)]
 
           var previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
@@ -1216,11 +1236,14 @@ class Game {
                this.walking_field = this.simulationTown.children.find((child) => {return child.name === "Savanna"})
 
                this.city = this.simulationTown.children.find((child) => {return child.name === "extra-road"})
-               this.cityMaxDistance = 85
+               this.cityMaxDistance = 80
                this.waterTower = this.simulationTown.children.find((child) => {return child.name === "water_tower"})
-               this.waterTowerMaxDistance = 30
+               this.waterTowerMaxDistance = 24.5
+               this.waterTower.position.x = 20
+               this.waterTower.position.z = 23
+
                this.crop = this.simulationTown.children.find((child) => {return child.name === "old-grass-houses"})
-               this.cropMaxDistance = 50
+               this.cropMaxDistance = 48.5
                this.addCharacter()
           }
      )
@@ -1233,7 +1256,11 @@ class Game {
                this.gltfCharacter = gltf
                // this.gltfCharacter.scene.scale.set(1.1, 1.1, 1.1)
                this.gltfCharacter.scene.position.y = 0.3
+               this.gltfCharacter.scene.position.x = - 0.5 + Math.random() * 3
+               this.gltfCharacter.scene.position.z = -110 + Math.random() * 50
+
                this.gltfCharacter.scene.rotation.y = 0
+
                this.characterMixer = new THREE.AnimationMixer(this.gltfCharacter.scene)
                this.scene.add(this.gltfCharacter.scene)
                this.characterIdling = this.characterMixer.clipAction(this.gltfCharacter.animations[0])
@@ -1777,17 +1804,57 @@ class Game {
                          borderColor: "rgba(58, 123, 213, 1)",
                          // pointBackgroundColor: "#ffffff",
                          fill: true,
-                         tension: 0.4
+                         tension: 0.4,
+                         borderWidth: 1.5
                          }
                     ]
                },
                options: {
+                    layout: {
+                        padding: {
+                            top: 25,
+                            bottom: 25,
+                            left: 25,
+                            right: 25
+                         }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                       },
+                       title: {
+                            display: true,
+                            text: "Tank 1 Storage",
+                            font: {size: 26}
+                       }
+                    },
                     radius: 0,
                     responsive: true,
                     scales: {
                          y: {
+                              beginAtZero: true,
+                              grid: {display: false},
                               ticks: {
-                                   callback: (value) => {return `${value} m^3`}
+                                   callback: (value) => {return `${value}`}
+                              },
+                              title: {
+                                   display: true,
+                                   text: "Storage in m^3",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
+                              },
+                         },
+                         x: {
+                              grid: {display: false},
+                              title: {
+                                   display: true,
+                                   text: "Days",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
                               }
                          }
                     }
@@ -1807,16 +1874,56 @@ class Game {
                          borderColor: "rgba(58, 123, 213, 1)",
                          // pointBackgroundColor: "#ffffff",
                          fill: true,
-                         tension: 0.4
+                         tension: 0.4,
+                         borderWidth: 1.5
                     }]
                },
                options: {
+                    layout: {
+                        padding: {
+                            top: 25,
+                            bottom: 25,
+                            left: 25,
+                            right: 25
+                         }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                       },
+                       title: {
+                            display: true,
+                            text: "Tank 2 Storage",
+                            font: {size: 26}
+                       }
+                    },
                     radius: 0,
                     responsive: true,
                     scales: {
                          y: {
+                              beginAtZero: true,
+                              grid: {display: false},
                               ticks: {
-                                   callback: (value) => {return `${value} m^3`}
+                                   callback: (value) => {return `${value}`}
+                              },
+                              title: {
+                                   display: true,
+                                   text: "Storage in m^3",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
+                              }
+                         },
+                         x: {
+                              grid: {display: false},
+                              title: {
+                                   display: true,
+                                   text: "Days",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
                               }
                          }
                     }
@@ -1836,16 +1943,56 @@ class Game {
                          borderColor: "rgba(58, 123, 213, 1)",
                          // pointBackgroundColor: "#ffffff",
                          fill: true,
-                         tension: 0.4
+                         tension: 0.4,
+                         borderWidth: 1.5
                     }]
                },
                options: {
+                    layout: {
+                        padding: {
+                            top: 25,
+                            bottom: 25,
+                            left: 25,
+                            right: 25
+                         }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                       },
+                       title: {
+                            display: true,
+                            text: "Tank 3 Storage",
+                            font: {size: 26}
+                       }
+                    },
                     radius: 0,
                     responsive: true,
                     scales: {
                          y: {
+                              beginAtZero: true,
+                              grid: {display: false},
                               ticks: {
-                                   callback: (value) => {return `${value} m^3`}
+                                   callback: (value) => {return `${value}`}
+                              },
+                              title: {
+                                   display: true,
+                                   text: "Storage in m^3",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
+                              }
+                         },
+                         x: {
+                              grid: {display: false},
+                              title: {
+                                   display: true,
+                                   text: "Days",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
                               }
                          }
                     }
@@ -1865,16 +2012,56 @@ class Game {
                          borderColor: "rgba(58, 123, 213, 1)",
                          // pointBackgroundColor: "#ffffff",
                          fill: true,
-                         tension: 0.4
+                         tension: 0.4,
+                         borderWidth: 1.5
                     }]
                },
                options: {
+                    layout: {
+                        padding: {
+                            top: 25,
+                            bottom: 25,
+                            left: 25,
+                            right: 25
+                         }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                       },
+                       title: {
+                            display: true,
+                            text: "Aquifer Storage",
+                            font: {size: 26}
+                       }
+                    },
                     radius: 0,
                     responsive: true,
                     scales: {
                          y: {
+                              beginAtZero: true,
+                              grid: {display: false},
                               ticks: {
-                                   callback: (value) => {return `${value} m^3`}
+                                   callback: (value) => {return `${value}`}
+                              },
+                              title: {
+                                   display: true,
+                                   text: "Storage in m^3",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
+                              }
+                         },
+                         x: {
+                              grid: {display: false},
+                              title: {
+                                   display: true,
+                                   text: "Days",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
                               }
                          }
                     }
@@ -1894,16 +2081,56 @@ class Game {
                          borderColor: "rgba(58, 123, 213, 1)",
                          // pointBackgroundColor: "#ffffff",
                          fill: true,
-                         tension: 0.4
+                         tension: 0.4,
+                         borderWidth: 1.5
                     }]
                },
                options: {
+                    layout: {
+                        padding: {
+                            top: 25,
+                            bottom: 25,
+                            left: 25,
+                            right: 25
+                         }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                       },
+                       title: {
+                            display: true,
+                            text: "Irrigation Deficit",
+                            font: {size: 26}
+                       }
+                    },
                     radius: 0,
                     responsive: true,
                     scales: {
                          y: {
+                              beginAtZero: true,
+                              grid: {display: false},
                               ticks: {
-                                   callback: (value) => {return `${value} m^3`}
+                                   callback: (value) => {return `${value}`}
+                              },
+                              title: {
+                                   display: true,
+                                   text: "Deficit in m^3",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
+                              }
+                         },
+                         x: {
+                              grid: {display: false},
+                              title: {
+                                   display: true,
+                                   text: "Days",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
                               }
                          }
                     }
@@ -1923,16 +2150,56 @@ class Game {
                          borderColor: "rgba(58, 123, 213, 1)",
                          // pointBackgroundColor: "#ffffff",
                          fill: true,
-                         tension: 0.4
+                         tension: 0.4,
+                         borderWidth: 1.5
                     }]
                },
                options: {
+                    layout: {
+                        padding: {
+                            top: 25,
+                            bottom: 25,
+                            left: 25,
+                            right: 25
+                         }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                       },
+                       title: {
+                            display: true,
+                            text: "Non-Potable Household Deficit",
+                            font: {size: 26}
+                       }
+                    },
                     radius: 0,
                     responsive: true,
                     scales: {
                          y: {
+                              beginAtZero: true,
+                              grid: {display: false},
                               ticks: {
-                                   callback: (value) => {return `${value} m^3`}
+                                   callback: (value) => {return `${value}`}
+                              },
+                              title: {
+                                   display: true,
+                                   text: "Deficit in m^3",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
+                              }
+                         },
+                         x: {
+                              grid: {display: false},
+                              title: {
+                                   display: true,
+                                   text: "Days",
+                                   font: {
+                                        size: 18,
+                                        weight: "bold"
+                                   }
                               }
                          }
                     }
