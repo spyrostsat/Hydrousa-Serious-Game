@@ -5,6 +5,8 @@
 
 html, body {
     overflow: hidden;
+    font-size: 20px;
+    font-family: 'Games', sans-serif;
 }
 
 body, label, input, button, img {
@@ -44,7 +46,7 @@ body, label, input, button, img {
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 650px;
@@ -58,7 +60,7 @@ body, label, input, button, img {
 #introduction-menu-text {
      line-height: 1.5;
      text-align: justify;
-     font-size: 33px;
+     font-size: 22px;
      color: #ffffff;
      position: absolute;
      top: 5%;
@@ -71,11 +73,12 @@ body, label, input, button, img {
      color: #ffffff;
      padding: 20px;
      position: absolute;
-     left: 37%;
-     bottom: 5%;
+     left: 40%;
+     bottom: 2%;
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 25px;
+     font-family: 'Games', sans-serif;
      transition: background-color 0.15s;
 }
 
@@ -92,7 +95,7 @@ body, label, input, button, img {
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 700px;
@@ -104,14 +107,16 @@ body, label, input, button, img {
 }
 
 #difficulty-text {
+     font-family: 'Games', sans-serif;
      font-size: 40px;
      color: #ffffff;
      position: absolute;
      top: 16%;
-     left: 30%;
+     left: 23%;
 }
 
 #easy-button {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -129,6 +134,7 @@ body, label, input, button, img {
 }
 
 #medium-button {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -146,6 +152,7 @@ body, label, input, button, img {
 }
 
 #hard-button {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -171,7 +178,7 @@ body, label, input, button, img {
      padding: 10px; */
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     /* font-family: Helvetica, Arial, sans-serif;
+     /* font-family: 'Games', sans-serif;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 20px;
@@ -193,20 +200,20 @@ input[type=range][orient=vertical]
 
 .city-menu {
      position: absolute;
-     top: 23%;
-     left: 23%;
+     top: 15%;
+     left: 20%;
      background-color: #007FFF;
      color: #ffffff;
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-size: 22px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-size: 18px;
+     font-family: 'Games', sans-serif;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 600px;
-     height: 280px;
+     width: 50%;
+     height: 63%;
 }
 
 .city-menu.visible {
@@ -215,20 +222,20 @@ input[type=range][orient=vertical]
 
 .water-tower-menu {
      position: absolute;
-     top: 11%;
-     left: 21%;
+     top: 12%;
+     left: 5%;
      background-color: #007FFF;
      color: #ffffff;
      padding: 10px;
      transform: scale(0, 0); /*initialy the water-tower-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-size: 22px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-size: 18px;
+     font-family: 'Games', sans-serif;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 710px;
-     height: 440px;
+     width: 70%;
+     height: 69%;
 }
 
 .water-tower-menu.visible {
@@ -238,20 +245,20 @@ input[type=range][orient=vertical]
 
 .crop-menu {
      position: absolute;
-     top: 25%;
-     left: 19%;
+     top: 15%;
+     left: 10%;
      background-color: #007FFF;
      color: #ffffff;
      padding: 10px;
      transform: scale(0, 0); /*initialy the crop-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-size: 22px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-size: 18px;
+     font-family: 'Games', sans-serif;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     height:43%;
-     width: 710px;
+     height:60%;
+     width: 60%;
 }
 
 .crop-menu.visible {
@@ -276,7 +283,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
      border: 3px solid #333333;
      border-radius: 10px;
 }
@@ -298,7 +305,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
 }
 
 .budget.visible {
@@ -315,7 +322,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
 }
 
 .irrigation-household-info.visible {
@@ -332,7 +339,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
 }
 
 .time.visible {
@@ -346,7 +353,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0);
      font-size: 26px;
      line-height: 50px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
      padding: 10px;
      background-color: #007FFF;
      color: #ffffff;
@@ -362,6 +369,7 @@ input[type=range][orient=vertical]
 }
 
 #results-ok {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -380,12 +388,13 @@ input[type=range][orient=vertical]
 
 
 #new-game {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 18px;
      position: absolute;
      left: 33%;
-     bottom: 5%;
+     bottom: 3%;
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 30px;
@@ -399,12 +408,13 @@ input[type=range][orient=vertical]
 
 
 #city-ok {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 15px;
      position: absolute;
      left: 42%;
-     bottom: 4%;
+     bottom: 1%;
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 22px;
@@ -416,12 +426,13 @@ input[type=range][orient=vertical]
 }
 
 #water-tower-ok {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 15px;
      position: absolute;
      left: 42%;
-     bottom: 4%;
+     bottom: 1%;
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 22px;
@@ -434,12 +445,13 @@ input[type=range][orient=vertical]
 
 
 #crop-ok {
+     font-family: 'Games', sans-serif;
      background-color: #007FFF;
      color: #ffffff;
      padding: 15px;
      position: absolute;
      left: 42%;
-     bottom: 3%;
+     bottom: 1%;
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 22px;
@@ -461,7 +473,7 @@ button.play {
      border-radius: 15px;
      transform: scale(0, 0);
      font-size: 50px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: 'Games', sans-serif;
      transition: transform 0.5s;
      transition: background-color 0.15s;
 }
@@ -483,15 +495,15 @@ button.play.visible {
      top: 25%;
      right: 0%;
      transform: scale(0, 0);
-     font-size: 22px;
-     font-family: Helvetica, Arial, sans-serif;
+     font-size: 20px;
+     font-family: 'Games', sans-serif;
      padding: 10px;
      background-color: #007FFF;
      color: #ffffff;
      border: 3px solid #444444;
      border-radius: 2px;
-     width: 300px;
-     height: 400px;
+     width: 320px;
+     height: 300px;
      transition: transform 0.3s;
 }
 
@@ -521,8 +533,8 @@ button.play.visible {
      position: absolute;
      bottom: 1%;
      right: 1%;
-     font-family: Helvetica, Arial, sans-serif;
-     font-size: 13px;
+     font-family: 'Games', sans-serif;
+     font-size: 14px;
      color: #ffffff;
 }
 
