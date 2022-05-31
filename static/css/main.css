@@ -5,7 +5,7 @@
 
 html, body {
     overflow: hidden;
-    font-size: 20px;
+    font-size: 14px;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -60,7 +60,7 @@ body, label, input, button, img {
 #introduction-menu-text {
      line-height: 1.5;
      text-align: justify;
-     font-size: 22px;
+     font-size: 15px;
      color: #ffffff;
      position: absolute;
      top: 5%;
@@ -73,11 +73,11 @@ body, label, input, button, img {
      color: #ffffff;
      padding: 20px;
      position: absolute;
-     left: 40%;
+     left: 38%;
      bottom: 2%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 25px;
+     font-size: 16px;
      font-family: 'Press Start 2P', cursive;
      transition: background-color 0.15s;
 }
@@ -108,11 +108,11 @@ body, label, input, button, img {
 
 #difficulty-text {
      font-family: 'Press Start 2P', cursive;
-     font-size: 40px;
+     font-size: 25px;
      color: #ffffff;
      position: absolute;
      top: 16%;
-     left: 23%;
+     left: 20%;
 }
 
 #easy-button {
@@ -125,7 +125,7 @@ body, label, input, button, img {
      bottom: 20%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 30px;
+     font-size: 20px;
      transition: background-color 0.15s;
 }
 
@@ -143,7 +143,7 @@ body, label, input, button, img {
      bottom: 20%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 30px;
+     font-size: 20px;
      transition: background-color 0.15s;
 }
 
@@ -161,7 +161,7 @@ body, label, input, button, img {
      bottom: 20%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 30px;
+     font-size: 20px;
      transition: background-color 0.15s;
 }
 
@@ -201,19 +201,19 @@ input[type=range][orient=vertical]
 .city-menu {
      position: absolute;
      top: 15%;
-     left: 20%;
+     left: 18%;
      background-color: #007FFF;
      color: #ffffff;
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-size: 18px;
+     font-size: 12px;
      font-family: 'Press Start 2P', cursive;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 50%;
-     height: 63%;
+     width: 52%;
+     height: 65%;
 }
 
 .city-menu.visible {
@@ -229,13 +229,13 @@ input[type=range][orient=vertical]
      padding: 10px;
      transform: scale(0, 0); /*initialy the water-tower-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-size: 18px;
+     font-size: 11px;
      font-family: 'Press Start 2P', cursive;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 70%;
-     height: 69%;
+     height: 72%;
 }
 
 .water-tower-menu.visible {
@@ -246,19 +246,19 @@ input[type=range][orient=vertical]
 .crop-menu {
      position: absolute;
      top: 15%;
-     left: 10%;
+     left: 8%;
      background-color: #007FFF;
      color: #ffffff;
      padding: 10px;
      transform: scale(0, 0); /*initialy the crop-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-size: 18px;
+     font-size: 12px;
      font-family: 'Press Start 2P', cursive;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     height:60%;
-     width: 60%;
+     height:59%;
+     width: 63%;
 }
 
 .crop-menu.visible {
@@ -282,7 +282,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0); /*initialy the simulation-button is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
      transition: background-color 0.15s;
-     font-size: 26px;
+     font-size: 16px;
      font-family: 'Press Start 2P', cursive;
      border: 3px solid #333333;
      border-radius: 10px;
@@ -304,7 +304,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0);
      transition: transform 0.3s;
      transition: background-color 0.15s;
-     font-size: 26px;
+     font-size: 16px;
      font-family: 'Press Start 2P', cursive;
 }
 
@@ -321,7 +321,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0);
      transition: transform 0.3s;
      transition: background-color 0.15s;
-     font-size: 26px;
+     font-size: 14px;
      font-family: 'Press Start 2P', cursive;
 }
 
@@ -332,13 +332,13 @@ input[type=range][orient=vertical]
 
 .time {
      position: absolute;
-     top: 25px;
-     left: 37%;
+     top: 35px;
+     left: 32%;
      color: #ffffff;
      transform: scale(0, 0);
      transition: transform 0.3s;
      transition: background-color 0.15s;
-     font-size: 26px;
+     font-size: 16px;
      font-family: 'Press Start 2P', cursive;
 }
 
@@ -348,10 +348,10 @@ input[type=range][orient=vertical]
 
 .results {
      position: absolute;
-     top: 25%;
-     left: 25%;
+     top: 20%;
+     left: 20%;
      transform: scale(0, 0);
-     font-size: 26px;
+     font-size: 15px;
      line-height: 50px;
      font-family: 'Press Start 2P', cursive;
      padding: 10px;
@@ -359,8 +359,8 @@ input[type=range][orient=vertical]
      color: #ffffff;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 650px;
-     height: 330px;
+     width: 680px;
+     height: 350px;
      transition: transform 0.3s;
 }
 
@@ -375,10 +375,10 @@ input[type=range][orient=vertical]
      padding: 20px;
      position: absolute;
      left: 42%;
-     bottom: 8%;
+     bottom: 3%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 22px;
+     font-size: 16px;
      transition: background-color 0.15s;
 }
 
@@ -397,7 +397,7 @@ input[type=range][orient=vertical]
      bottom: 3%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 30px;
+     font-size: 20px;
      transition: background-color 0.15s;
 }
 
@@ -417,7 +417,7 @@ input[type=range][orient=vertical]
      bottom: 1%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 22px;
+     font-size: 16px;
      transition: background-color 0.15s;
 }
 
@@ -435,7 +435,7 @@ input[type=range][orient=vertical]
      bottom: 1%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 22px;
+     font-size: 16px;
      transition: background-color 0.15s;
 }
 
@@ -454,7 +454,7 @@ input[type=range][orient=vertical]
      bottom: 1%;
      border: 3px solid #333333;
      border-radius: 7px;
-     font-size: 22px;
+     font-size: 16px;
      transition: background-color 0.15s;
 }
 
@@ -467,12 +467,12 @@ button.play {
      color: #ffffff;
      padding: 20px;
      position: absolute;
-     left: 36%;
-     bottom: 2.5%;
+     left: 35%;
+     bottom: 4%;
      border: 3px solid #333333;
      border-radius: 15px;
      transform: scale(0, 0);
-     font-size: 50px;
+     font-size: 25px;
      font-family: 'Press Start 2P', cursive;
      transition: transform 0.5s;
      transition: background-color 0.15s;
@@ -495,7 +495,7 @@ button.play.visible {
      top: 25%;
      right: 0%;
      transform: scale(0, 0);
-     font-size: 20px;
+     font-size: 11px;
      font-family: 'Press Start 2P', cursive;
      padding: 10px;
      background-color: #007FFF;
@@ -534,7 +534,7 @@ button.play.visible {
      bottom: 1%;
      right: 1%;
      font-family: 'Press Start 2P', cursive;
-     font-size: 14px;
+     font-size: 9px;
      color: #ffffff;
 }
 

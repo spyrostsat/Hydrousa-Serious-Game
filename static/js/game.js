@@ -8,7 +8,7 @@ import * as CHART from '../node_modules/chart.js/dist/chart.esm.js'
 
 CHART.Chart.register.apply(null, Object.values(CHART).filter((chartClass) => (chartClass.id)));
 CHART.Chart.defaults.font.size = 16;
-CHART.Chart.defaults.font.family = "Games";
+CHART.Chart.defaults.font.family = 'Arial';
 
 
 class Game {
@@ -339,7 +339,7 @@ class Game {
                     this.introductionMenuText.style.top = "1%"
                     this.introductionMenuText.style.left = "1%"
                     this.introductionMenuText.style.right = "1%"
-                    this.introductionMenuText.innerHTML = "The game is designed in a way, that stakeholders can consider alternative methods for resolving their town's water management issues, referring to the coverage of:<br />&#x2022 irrigation<br />&#x2022 non-potable household uses"
+                    this.introductionMenuText.innerHTML = "The game is designed in a way, that stakeholders can consider alternative methods for resolving their town's water management issues, referring to the coverage of:<br /><br />&#x2022 irrigation<br />&#x2022 non-potable household uses"
                }
                else if (currentNumberOfParagraphs == 3) {
                     // this.introductionMenuText.style.fontSize = "25px"
@@ -363,7 +363,7 @@ class Game {
                     this.introductionMenuText.style.top = "1%"
                     this.introductionMenuText.style.left = "1%"
                     this.introductionMenuText.style.right = "1%"
-                    this.introductionMenuText.innerHTML = "There is additional water being collected from the town's crops via a Bioswale System. This water is saved in Tank 3 and is also used exclusively for irrigation. The probable overflows head to the aquifer. The aquifer can send water back to Tank 2 to support the irrigation coverage."
+                    this.introductionMenuText.innerHTML = "There is additional water being collected from the town's crops via a Bioswale System. This water is saved in Tank 3 and is also used exclusively for irrigation. The probable overflows head to the aquifer. The aquifer can send water back to Tank 2 to support the irrigation."
                }
                else if (currentNumberOfParagraphs == 6) {
                     // this.introductionMenuText.style.fontSize = "25px"
@@ -379,7 +379,7 @@ class Game {
                     this.introductionMenuText.style.top = "1%"
                     this.introductionMenuText.style.left = "1%"
                     this.introductionMenuText.style.right = "1%"
-                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus, which can help you design the town's water management policy. The menus open only when you approach specific city components."
+                    this.introductionMenuText.innerHTML = "Use your right mouse click to move and left click to open the 3 hidden town menus, which can help you design the town's water management policy.<br /><br />The menus open only when you approach specific city components."
                }
                else if (currentNumberOfParagraphs == 8) {
                     this.housesImg = document.getElementById('houses-img')
@@ -390,11 +390,10 @@ class Game {
                     this.cropsImg.hidden = false
                     this.waterTowerImg.hidden = false
 
-                    this.introductionMenuText.style.fontSize = "25px"
                     this.introductionMenuText.style.position = "absolute"
                     this.introductionMenuText.style.top = "1%"
-                    this.introductionMenuText.style.left = "5%"
-                    this.introductionMenuText.style.right = "5%"
+                    this.introductionMenuText.style.left = "1%"
+                    this.introductionMenuText.style.right = "1%"
                     this.introductionMenuText.innerHTML = "The city components that activate the hidden menus are shown below. Good luck!"
                }
                else if (currentNumberOfParagraphs == 9) {
@@ -500,7 +499,7 @@ class Game {
 
           this.easyImage = document.getElementById('easy-img')
           this.easyImage.onmouseover = () => {
-               this.infoText.innerHTML = `Time: 10 Min<br>Budget: 180.000 \u20AC<br>Help Info: Available<br>Population: 5.000 Inhabitants<br>Rainfall: High<br>Irrigation Demand: Low`
+               this.infoText.innerHTML = `Time: 10 Min<br><br>Budget: 180.000 \u20AC<br><br>Help Info: Available<br><br>Population: 5.000 Inhabitants<br><br>Rainfall: High<br><br>Irrigation Demand: Low`
                // this.infoText.style.lineHeight = "1.8"
                // this.infoText.style.top = "30%"
                // this.infoText.style.height = "240px"
@@ -513,7 +512,7 @@ class Game {
 
           this.mediumImage = document.getElementById('medium-img')
           this.mediumImage.onmouseover = () => {
-               this.infoText.innerHTML = `Time: 5 Min<br>Budget: 150.000 \u20AC<br>Help Info: Available<br>Population: 10.000 Inhabitants<br>Rainfall: Moderate<br>Irrigation Demand: Moderate`
+               this.infoText.innerHTML = `Time: 5 Min<br><br>Budget: 150.000 \u20AC<br><br>Help Info: Available<br><br>Population:10.000 Inhabitants<br><br>Rainfall: Moderate<br><br>Irrigation Demand: Moderate`
                // this.infoText.style.lineHeight = "1.8"
                // this.infoText.style.top = "30%"
                // this.infoText.style.height = "240px"
@@ -526,7 +525,7 @@ class Game {
 
           this.hardImage = document.getElementById('hard-img')
           this.hardImage.onmouseover = () => {
-               this.infoText.innerHTML = `Time: 3 Min<br>Budget: 120.000 \u20AC<br>Help Info: Not Available<br>Population: 15.000 Inhabitants<br>Rainfall: Low<br>Irrigation Demand: High`
+               this.infoText.innerHTML = `Time: 3 Min<br><br>Budget: 120.000 \u20AC<br><br>Help Info: Not Available<br><br>Population:15.000 Inhabitants<br><br>Rainfall: Low<br><br>Irrigation Demand: High`
                // this.infoText.style.lineHeight = "1.8"
                // this.infoText.style.top = "30%"
                // this.infoText.style.height = "240px"
@@ -2244,7 +2243,7 @@ class Game {
                this.results.classList.add('visible')
                this.timeCountingStarted = true
                this.previousTimeElapsed = Date.now()
-               this.resultsText.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3<br><br>Try to find an adequate system design</span>`
+               this.resultsText.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3</span><br>Non-Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 5px; right: 1px;">3<br><br>Try to find an adequate system design!</span>`
                this.resultsOK.onclick = () => {
                     if (this.simulationRuns < 3) { // this needs debugging - i dont know whats happening
                          this.simulationButton.disabled = false
