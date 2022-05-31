@@ -1216,7 +1216,7 @@ class Game {
           this.rotationState = false
 
           // Character movement speed
-          this.movementSpeed = 1 // 0.5 is the right value
+          this.movementSpeed = 0.5 // 0.5 is the right value
 
           // Property to handle character body rotation when he is moving
           this.currentCharacterAngle = 0
