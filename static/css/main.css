@@ -6,7 +6,7 @@
 html, body {
     overflow: hidden;
     font-size: 20px;
-    font-family: 'Games', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 body, label, input, button, img {
@@ -46,7 +46,7 @@ body, label, input, button, img {
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 650px;
@@ -78,7 +78,7 @@ body, label, input, button, img {
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 25px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      transition: background-color 0.15s;
 }
 
@@ -95,7 +95,7 @@ body, label, input, button, img {
      padding: 10px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 700px;
@@ -107,7 +107,7 @@ body, label, input, button, img {
 }
 
 #difficulty-text {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      font-size: 40px;
      color: #ffffff;
      position: absolute;
@@ -116,7 +116,7 @@ body, label, input, button, img {
 }
 
 #easy-button {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -134,7 +134,7 @@ body, label, input, button, img {
 }
 
 #medium-button {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -152,7 +152,7 @@ body, label, input, button, img {
 }
 
 #hard-button {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -178,7 +178,7 @@ body, label, input, button, img {
      padding: 10px; */
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
-     /* font-family: 'Games', sans-serif;
+     /* font-family: 'Press Start 2P', cursive;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 20px;
@@ -208,7 +208,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
      font-size: 18px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
@@ -230,7 +230,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0); /*initialy the water-tower-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
      font-size: 18px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
@@ -253,7 +253,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0); /*initialy the crop-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
      font-size: 18px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
@@ -283,7 +283,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      border: 3px solid #333333;
      border-radius: 10px;
 }
@@ -305,7 +305,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
 }
 
 .budget.visible {
@@ -322,7 +322,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
 }
 
 .irrigation-household-info.visible {
@@ -339,7 +339,7 @@ input[type=range][orient=vertical]
      transition: transform 0.3s;
      transition: background-color 0.15s;
      font-size: 26px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
 }
 
 .time.visible {
@@ -353,7 +353,7 @@ input[type=range][orient=vertical]
      transform: scale(0, 0);
      font-size: 26px;
      line-height: 50px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      padding: 10px;
      background-color: #007FFF;
      color: #ffffff;
@@ -369,7 +369,7 @@ input[type=range][orient=vertical]
 }
 
 #results-ok {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 20px;
@@ -388,7 +388,7 @@ input[type=range][orient=vertical]
 
 
 #new-game {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 18px;
@@ -408,7 +408,7 @@ input[type=range][orient=vertical]
 
 
 #city-ok {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 15px;
@@ -426,7 +426,7 @@ input[type=range][orient=vertical]
 }
 
 #water-tower-ok {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 15px;
@@ -445,7 +445,7 @@ input[type=range][orient=vertical]
 
 
 #crop-ok {
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
      padding: 15px;
@@ -473,7 +473,7 @@ button.play {
      border-radius: 15px;
      transform: scale(0, 0);
      font-size: 50px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      transition: transform 0.5s;
      transition: background-color 0.15s;
 }
@@ -496,7 +496,7 @@ button.play.visible {
      right: 0%;
      transform: scale(0, 0);
      font-size: 20px;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      padding: 10px;
      background-color: #007FFF;
      color: #ffffff;
@@ -533,7 +533,7 @@ button.play.visible {
      position: absolute;
      bottom: 1%;
      right: 1%;
-     font-family: 'Games', sans-serif;
+     font-family: 'Press Start 2P', cursive;
      font-size: 14px;
      color: #ffffff;
 }
