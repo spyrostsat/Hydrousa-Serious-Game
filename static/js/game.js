@@ -192,7 +192,7 @@ class Game {
                this.irrigationChart.destroy()
                this.householdChart.destroy()
 
-               this.irrigationTimeseries = Array.from({length: 365}, () => 50 + Math.random() * 20)
+               this.irrigationTimeseries = Array.from({length: 365}, () => 37 + Math.random() * 20)
 
                this.rainfallTimeseries = [4.20, 0.60, 2.70, 21.3, 0.00, 4.20, 12.9, 0.90, 0.00, 1.50, 0.30, 8.40, 5.70, 1.50, 11.7, 0.60, 6.60, 0.90, 0.60, 0.00, 0.60, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.30, 3.30, 3.60, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.00, 10.8, 7.80, 9.90, 17.1, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 1.50, 0.90, 5.10, 2.10, 0.00, 0.00, 0.00, 0.30, 30.6, 17.4, 0.00, 0.00, 21.6, 14.7, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.00, 0.00, 1.80, 0.30, 3.30, 0.00, 0.00, 0.00, 2.70, 0.30, 0.00, 0.30, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 3.30, 0.30, 1.80, 0.00, 3.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 14.7, 21.6, 0.00, 0.00, 17.4, 30.6, 0.30, 0.00, 0.00, 0.00, 2.10, 5.10, 0.90, 1.50, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 17.1, 9.90, 7.80, 10.8, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
 
@@ -351,7 +351,7 @@ class Game {
                     this.introductionMenuText.style.top = "1%"
                     this.introductionMenuText.style.left = "1%"
                     this.introductionMenuText.style.right = "1%"
-                    this.introductionMenuText.innerHTML = "The water falling on the houses' roofs and the town's paving is collected. The roofs water is stored in Tank 1 and is primarily used for household uses. The probable overflows head to Tank 2, where they meet the water collected from the paving."
+                    this.introductionMenuText.innerHTML = "The rainwater falling on the houses' roofs and the town's paving is collected. The roofs water is stored in Tank 1 and is primarily used for household uses. The probable overflows head to Tank 2, where they meet the water collected from the paving."
                }
                else if (currentNumberOfParagraphs == 4) {
                     // this.introductionMenuText.style.fontSize = "25px"
@@ -425,12 +425,12 @@ class Game {
                this.remainingBudget = 180000 // higher the difficulty lower the budget
                this.remainingTime = 600 // available time in seconds
                this.rainfallMultiplyIndex = 1 + Math.random() // higher the difficulty lower the index (to reduce total rainfall)
-               this.irrigationMultiplyIndex = 0.5 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
+               this.irrigationMultiplyIndex = 0.4 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.0035 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.0032 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -453,12 +453,12 @@ class Game {
                this.remainingBudget = 150000 // higher the difficulty lower the budget
                this.remainingTime = 300 // available time in seconds
                this.rainfallMultiplyIndex = 0.8 + Math.random() * 0.4 // higher the difficulty lower the index (to reduce total rainfall)
-               this.irrigationMultiplyIndex = 0.8 + Math.random() * 0.4 // higher the difficulty higher the index (to increase total irrigation demand)
+               this.irrigationMultiplyIndex = 0.6 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4.5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.0045 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.0043 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -481,12 +481,12 @@ class Game {
                this.remainingBudget = 120000 // higher the difficulty lower the budget
                this.remainingTime = 180 // available time in seconds
                this.rainfallMultiplyIndex = 0.7 + Math.random() * 0.3 // higher the difficulty lower the index (to reduce total rainfall)
-               this.irrigationMultiplyIndex = 1 + Math.random() * 0.3 // higher the difficulty higher the index (to increase total irrigation demand)
+               this.irrigationMultiplyIndex = 1 + Math.random() * 0.35 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.006 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.0056 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -556,14 +556,14 @@ class Game {
 
           const roofsTag = document.getElementById('roofs')
           const roofsValue = document.getElementById('roofsValue')
-          const roofsArray = this.range(1000, 2000, 1000)
+          const roofsArray = this.range(0, 100, 100)
           roofsTag.value = roofsArray[Math.floor(Math.random() * roofsArray.length)]
           var previousRoofsValue = parseFloat(roofsTag.value)
           var differenceRoofsValue = 0
           this.roofsArea = parseFloat(roofsTag.value)
           roofsValue.innerHTML = this.roofsArea
 
-          this.roofsAreaUnitCost = 0.3 // in Euros/m2 - needs calibration
+          this.roofsAreaUnitCost = 0.27 // in Euros/m2 - needs calibration
           roofsTag.onchange = () => {
                this.roofsArea = parseFloat(roofsTag.value)
                roofsValue.innerHTML = this.roofsArea
@@ -589,7 +589,7 @@ class Game {
 
           const roofsCoeffTag = document.getElementById('roofsCoeff')
           const roofsCoeffValue = document.getElementById('roofsCoeffValue')
-          const roofsCoeffArray = this.range(0.01, 0.05, 0.01)
+          const roofsCoeffArray = this.range(0.5, 0.51, 0.01)
           roofsCoeffTag.value = roofsCoeffArray[Math.floor(Math.random() * roofsCoeffArray.length)]
 
           var previousRoofsCoeffValue = parseFloat(roofsCoeffTag.value)
@@ -597,7 +597,7 @@ class Game {
           this.roofsCoeff = parseFloat(roofsCoeffTag.value)
           roofsCoeffValue.innerHTML = this.roofsCoeff
 
-          this.roofsCoeffUnitCost = 7500 // in Euros/m2 - needs calibration
+          this.roofsCoeffUnitCost = 17000 // in Euros/m2 - needs calibration
           roofsCoeffTag.onchange = () => {
                this.roofsCoeff = parseFloat(roofsCoeffTag.value)
                roofsCoeffValue.innerHTML = this.roofsCoeff
@@ -623,7 +623,7 @@ class Game {
 
           const yardsTag = document.getElementById('yards')
           const yardsValue = document.getElementById('yardsValue')
-          const yardsArray = this.range(1000, 5000, 1000)
+          const yardsArray = this.range(0, 100, 100)
           yardsTag.value = yardsArray[Math.floor(Math.random() * yardsArray.length)]
 
           var previousYardsValue = parseFloat(yardsTag.value)
@@ -631,7 +631,7 @@ class Game {
           this.yardsArea = parseFloat(yardsTag.value)
           yardsValue.innerHTML = this.yardsArea
 
-          this.yardsAreaUnitCost = 0.3 // in Euros/m2 - needs calibration
+          this.yardsAreaUnitCost = 0.27 // in Euros/m2 - needs calibration
           yardsTag.onchange = () => {
                this.yardsArea = parseFloat(yardsTag.value)
                yardsValue.innerHTML = this.yardsArea
@@ -657,7 +657,7 @@ class Game {
 
           const yardsCoeffTag = document.getElementById('yardsCoeff')
           const yardsCoeffValue = document.getElementById('yardsCoeffValue')
-          const yardsCoeffArray = this.range(0.01, 0.05, 0.01)
+          const yardsCoeffArray = this.range(0.5, 0.51, 0.01)
           yardsCoeffTag.value = yardsCoeffArray[Math.floor(Math.random() * yardsCoeffArray.length)]
 
           var previousYardsCoeffValue = parseFloat(yardsCoeffTag.value)
@@ -665,7 +665,7 @@ class Game {
           this.yardsCoeff = parseFloat(yardsCoeffTag.value)
           yardsCoeffValue.innerHTML = this.yardsCoeff
 
-          this.yardsCoeffUnitCost = 5500 // in Euros/m2 - needs calibration
+          this.yardsCoeffUnitCost = 17000 // in Euros/m2 - needs calibration
           yardsCoeffTag.onchange = () => {
                this.yardsCoeff = parseFloat(yardsCoeffTag.value)
                yardsCoeffValue.innerHTML = this.yardsCoeff
@@ -691,7 +691,7 @@ class Game {
 
           const openTankVolumeTag = document.getElementById('openTankVolume')
           const openTankVolumeValue = document.getElementById('openTankVolumeValue')
-          const openTankArray = this.range(0, 10, 10)
+          const openTankArray = this.range(0, 2, 1)
           openTankVolumeTag.value = openTankArray[Math.floor(Math.random() * openTankArray.length)]
 
           var previousOpenTankValue = parseFloat(openTankVolumeTag.value)
@@ -699,7 +699,7 @@ class Game {
           this.openTankMaxVol = parseFloat(openTankVolumeTag.value)
           openTankVolumeValue.innerHTML = this.openTankMaxVol
 
-          this.openTankVolumeUnitCost = 22 // in Euros/m2 - needs calibration
+          this.openTankVolumeUnitCost = 40 // in Euros/m2 - needs calibration
           openTankVolumeTag.onchange = () => {
                this.openTankMaxVol = parseFloat(openTankVolumeTag.value)
                openTankVolumeValue.innerHTML = this.openTankMaxVol
@@ -725,7 +725,7 @@ class Game {
 
           const roofsTankVolumeTag = document.getElementById('roofsTankVolume')
           const roofsTankVolumeValue = document.getElementById('roofsTankVolumeValue')
-          const roofsTankArray = this.range(0, 10, 10)
+          const roofsTankArray = this.range(0, 2, 1)
           roofsTankVolumeTag.value = roofsTankArray[Math.floor(Math.random() * roofsTankArray.length)]
 
           var previousRoofsTankValue = parseFloat(roofsTankVolumeTag.value)
@@ -733,7 +733,7 @@ class Game {
           this.roofsTankMaxVol = parseFloat(roofsTankVolumeTag.value)
           roofsTankVolumeValue.innerHTML = this.roofsTankMaxVol
 
-          this.roofsTankVolumeUnitCost = 22 // in Euros/m2 - needs calibration
+          this.roofsTankVolumeUnitCost = 40 // in Euros/m2 - needs calibration
           roofsTankVolumeTag.onchange = () => {
                this.roofsTankMaxVol = parseFloat(roofsTankVolumeTag.value)
                roofsTankVolumeValue.innerHTML = this.roofsTankMaxVol
@@ -759,7 +759,7 @@ class Game {
 
           const tank2VolumeTag = document.getElementById('tank2Volume')
           const tank2VolumeValue = document.getElementById('tank2VolumeValue')
-          const tank2Array = this.range(0, 10, 10)
+          const tank2Array = this.range(0, 2, 1)
           tank2VolumeTag.value = tank2Array[Math.floor(Math.random() * tank2Array.length)]
 
           var previousTank2Value = parseFloat(tank2VolumeTag.value)
@@ -767,7 +767,7 @@ class Game {
           this.tank2MaxVol = parseFloat(tank2VolumeTag.value)
           tank2VolumeValue.innerHTML = this.tank2MaxVol
 
-          this.tank2VolumeUnitCost =27 // in Euros/m2 - needs calibration
+          this.tank2VolumeUnitCost = 40 // in Euros/m2 - needs calibration
           tank2VolumeTag.onchange = () => {
                this.tank2MaxVol = parseFloat(tank2VolumeTag.value)
                tank2VolumeValue.innerHTML = this.tank2MaxVol
@@ -793,7 +793,7 @@ class Game {
 
           const subsurfaceTankVolumeTag = document.getElementById('subsurfaceTankVolume')
           const subsurfaceTankVolumeValue = document.getElementById('subsurfaceTankVolumeValue')
-          const subsurfaceTankArray = this.range(10, 60, 50)
+          const subsurfaceTankArray = this.range(0, 20, 10)
           subsurfaceTankVolumeTag.value = subsurfaceTankArray[Math.floor(Math.random() * subsurfaceTankArray.length)]
 
           var previousSubsurfaceTankValue = parseFloat(subsurfaceTankVolumeTag.value)
@@ -801,7 +801,7 @@ class Game {
           this.subsurfaceTankMaxVol = parseFloat(subsurfaceTankVolumeTag.value)
           subsurfaceTankVolumeValue.innerHTML = this.subsurfaceTankMaxVol
 
-          this.subsurfaceTankVolumeUnitCost = 1 // in Euros/m2 - needs calibration
+          this.subsurfaceTankVolumeUnitCost = 6 // in Euros/m2 - needs calibration
           subsurfaceTankVolumeTag.onchange = () => {
                this.subsurfaceTankMaxVol = parseFloat(subsurfaceTankVolumeTag.value)
                subsurfaceTankVolumeValue.innerHTML = this.subsurfaceTankMaxVol
@@ -827,7 +827,7 @@ class Game {
 
           const tank2MinVolPercentageTag = document.getElementById('tank2MinVolPercentage')
           const tank2MinVolPercentageValue = document.getElementById('tank2MinVolPercentageValue')
-          const tank2VolArray = this.range(0.01, 0.99, 0.01)
+          const tank2VolArray = this.range(0.98, 0.99, 0.01)
           tank2MinVolPercentageTag.value = tank2VolArray[Math.floor(Math.random() * tank2VolArray.length)]
 
           var previousTank2MinVolPerValue = parseFloat(tank2MinVolPercentageTag.value)
@@ -861,7 +861,7 @@ class Game {
 
           const subsurfaceTankMaxVolPercentageTag = document.getElementById('subsurfaceTankMaxVolPercentage')
           const subsurfaceTankMaxVolPercentageValue = document.getElementById('subsurfaceTankMaxVolPercentageValue')
-          const subsurfaceTankVolArray = this.range(0.01, 0.99, 0.01)
+          const subsurfaceTankVolArray = this.range(0.98, 0.99, 0.01)
           subsurfaceTankMaxVolPercentageTag.value = subsurfaceTankVolArray[Math.floor(Math.random() * subsurfaceTankVolArray.length)]
 
           var previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
@@ -896,7 +896,7 @@ class Game {
 
           const stormwaterAreaTag = document.getElementById('stormwaterArea')
           const stormwaterAreaValue = document.getElementById('stormwaterAreaValue')
-          const stormwaterAreaArray = this.range(10000, 20000, 10000)
+          const stormwaterAreaArray = this.range(0, 100, 100)
           stormwaterAreaTag.value = stormwaterAreaArray[Math.floor(Math.random() * stormwaterAreaArray.length)]
 
           var previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
@@ -904,7 +904,7 @@ class Game {
           this.stormwaterArea = parseFloat(stormwaterAreaTag.value)
           stormwaterAreaValue.innerHTML = this.stormwaterArea
 
-          this.stormwaterAreaUnitCost = 0.1 // in Euros/m2 - needs calibration
+          this.stormwaterAreaUnitCost = 0.15 // in Euros/m2 - needs calibration
           stormwaterAreaTag.onchange = () => {
                this.stormwaterArea = parseFloat(stormwaterAreaTag.value)
                stormwaterAreaValue.innerHTML = this.stormwaterArea
@@ -930,7 +930,7 @@ class Game {
 
           const stormwaterCoeffTag = document.getElementById('stormwaterCoeff')
           const stormwaterCoeffValue = document.getElementById('stormwaterCoeffValue')
-          const stormwaterCoeffArray = this.range(0.01, 0.05, 0.01)
+          const stormwaterCoeffArray = this.range(0.5, 0.51, 0.01)
           stormwaterCoeffTag.value = stormwaterCoeffArray[Math.floor(Math.random() * stormwaterCoeffArray.length)]
 
           var previousStormwaterCoeffValue = parseFloat(stormwaterCoeffTag.value)
@@ -938,7 +938,7 @@ class Game {
           this.stormwaterCoeff = parseFloat(stormwaterCoeffTag.value)
           stormwaterCoeffValue.innerHTML = this.stormwaterCoeff
 
-          this.stormwaterCoeffUnitCost = 5500 // in Euros/m2 - needs calibration
+          this.stormwaterCoeffUnitCost = 17000 // in Euros/m2 - needs calibration
           stormwaterCoeffTag.onchange = () => {
                this.stormwaterCoeff = parseFloat(stormwaterCoeffTag.value)
                stormwaterCoeffValue.innerHTML = this.stormwaterCoeff
@@ -964,7 +964,7 @@ class Game {
 
           const bioswaleInfiltrationRateTag = document.getElementById('BioswaleInfiltrationRate')
           const bioswaleInfiltrationRateValue = document.getElementById('BioswaleInfiltrationRateValue')
-          const infiltrationArray = this.range(0.01, 0.05, 0.01)
+          const infiltrationArray = this.range(0.3, 0.31, 0.01)
           bioswaleInfiltrationRateTag.value = infiltrationArray[Math.floor(Math.random() * infiltrationArray.length)]
 
           var previousBioswaleInfilValue = parseFloat(bioswaleInfiltrationRateTag.value)
@@ -972,7 +972,7 @@ class Game {
           this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
           bioswaleInfiltrationRateValue.innerHTML = `${(this.BioswaleInfiltrationRate * 100).toFixed(0)}%`
 
-          this.BioswaleInfiltrationRateUnitCost = 15000 // in Euros/m2 - needs calibration
+          this.BioswaleInfiltrationRateUnitCost = 17000 // in Euros/m2 - needs calibration
           bioswaleInfiltrationRateTag.onchange = () => {
                this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
                bioswaleInfiltrationRateValue.innerHTML = `${(this.BioswaleInfiltrationRate * 100).toFixed(0)}%`
@@ -1121,7 +1121,7 @@ class Game {
                               this.gameDifficulty.classList.add('visible')
 
                               // this.irrigationTimeseries = Array.from({length: 100}, () => 0.5 + Math.random() * 3)
-                              this.irrigationTimeseries = Array.from({length: 365}, () => 50 + Math.random() * 20)
+                              this.irrigationTimeseries = Array.from({length: 365}, () => 37 + Math.random() * 20)
 
                               this.rainfallTimeseries = [4.20, 0.60, 2.70, 21.3, 0.00, 4.20, 12.9, 0.90, 0.00, 1.50, 0.30, 8.40, 5.70, 1.50, 11.7, 0.60, 6.60, 0.90, 0.60, 0.00, 0.60, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.30, 3.30, 3.60, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.00, 10.8, 7.80, 9.90, 17.1, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 1.50, 0.90, 5.10, 2.10, 0.00, 0.00, 0.00, 0.30, 30.6, 17.4, 0.00, 0.00, 21.6, 14.7, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.00, 0.00, 1.80, 0.30, 3.30, 0.00, 0.00, 0.00, 2.70, 0.30, 0.00, 0.30, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 3.30, 0.30, 1.80, 0.00, 3.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 14.7, 21.6, 0.00, 0.00, 17.4, 30.6, 0.30, 0.00, 0.00, 0.00, 2.10, 5.10, 0.90, 1.50, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 17.1, 9.90, 7.80, 10.8, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
                          }
