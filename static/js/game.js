@@ -266,13 +266,13 @@ class Game {
                previousTank2MinVolPerValue = parseFloat(tank2MinVolPercentageTag.value)
                differenceTank2MinVolPerValue = 0
                this.tank2MinVolPercentage = parseFloat(tank2MinVolPercentageTag.value)
-               tank2MinVolPercentageValue.innerHTML = `${this.tank2MinVolPercentage * 100}%`
+               tank2MinVolPercentageValue.innerHTML = `${(this.tank2MinVolPercentage * 100).toFixed(0)}%`
 
                subsurfaceTankMaxVolPercentageTag.value = subsurfaceTankVolArray[Math.floor(Math.random() * subsurfaceTankVolArray.length)]
                previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
                differenceSubsurfaceTankMaxVolPerValue = 0
                this.subsurfaceTankMaxVolPercentage = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
-               subsurfaceTankMaxVolPercentageValue.innerHTML = `${this.subsurfaceTankMaxVolPercentage * 100}%`
+               subsurfaceTankMaxVolPercentageValue.innerHTML = `${(this.subsurfaceTankMaxVolPercentage * 100).toFixed(0)}%`
 
                stormwaterAreaTag.value = stormwaterAreaArray[Math.floor(Math.random() * stormwaterAreaArray.length)]
                previousStormwaterValue = parseFloat(stormwaterAreaTag.value)
@@ -290,7 +290,7 @@ class Game {
                previousBioswaleInfilValue = parseFloat(bioswaleInfiltrationRateTag.value)
                differenceBioswaleInfilValue = 0
                this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
-               bioswaleInfiltrationRateValue.innerHTML = this.BioswaleInfiltrationRate
+               bioswaleInfiltrationRateValue.innerHTML = `${(this.BioswaleInfiltrationRate * 100).toFixed(0)}%`
 
                bioswaleQmaxTag.value = bioswaleQmaxArray[Math.floor(Math.random() * bioswaleQmaxArray.length)]
                previousBioswaleQmaxValue = parseFloat(bioswaleQmaxTag.value)
@@ -829,12 +829,12 @@ class Game {
           var previousTank2MinVolPerValue = parseFloat(tank2MinVolPercentageTag.value)
           var differenceTank2MinVolPerValue = 0
           this.tank2MinVolPercentage = parseFloat(tank2MinVolPercentageTag.value) // we don't ever want to let the water level of Tank2 go BELOW 20%
-          tank2MinVolPercentageValue.innerHTML = `${this.tank2MinVolPercentage * 100}%`
+          tank2MinVolPercentageValue.innerHTML = `${(this.tank2MinVolPercentage * 100).toFixed(0)}%`
 
           this.tank2MinVolPercentageUnitCost = 0 // this is parametrical, no cost needed
           tank2MinVolPercentageTag.onchange = () => {
                this.tank2MinVolPercentage = parseFloat(tank2MinVolPercentageTag.value)
-               tank2MinVolPercentageValue.innerHTML = `${this.tank2MinVolPercentage * 100}%`
+               tank2MinVolPercentageValue.innerHTML = `${(this.tank2MinVolPercentage * 100).toFixed(0)}%`
                differenceTank2MinVolPerValue = this.tank2MinVolPercentage - previousTank2MinVolPerValue
                previousTank2MinVolPerValue = this.tank2MinVolPercentage
                this.remainingBudget -= differenceTank2MinVolPerValue * this.tank2MinVolPercentageUnitCost
@@ -863,12 +863,12 @@ class Game {
           var previousSubsurfaceTankMaxVolPerValue = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
           var differenceSubsurfaceTankMaxVolPerValue = 0
           this.subsurfaceTankMaxVolPercentage = parseFloat(subsurfaceTankMaxVolPercentageTag.value) // we don't ever want to let the water level of SubsurfaceTank go ABOVE 80%
-          subsurfaceTankMaxVolPercentageValue.innerHTML = `${this.subsurfaceTankMaxVolPercentage * 100}%`
+          subsurfaceTankMaxVolPercentageValue.innerHTML = `${(this.subsurfaceTankMaxVolPercentage * 100).toFixed(0)}%`
 
           this.subsurfaceTankMaxVolPercentageUnitCost = 0 // this is parametrical, no cost needed
           subsurfaceTankMaxVolPercentageTag.onchange = () => {
                this.subsurfaceTankMaxVolPercentage = parseFloat(subsurfaceTankMaxVolPercentageTag.value)
-               subsurfaceTankMaxVolPercentageValue.innerHTML = `${this.subsurfaceTankMaxVolPercentage * 100}%`
+               subsurfaceTankMaxVolPercentageValue.innerHTML = `${(this.subsurfaceTankMaxVolPercentage * 100).toFixed(0)}%`
                differenceSubsurfaceTankMaxVolPerValue = this.subsurfaceTankMaxVolPercentage - previousSubsurfaceTankMaxVolPerValue
                previousSubsurfaceTankMaxVolPerValue = this.subsurfaceTankMaxVolPercentage
                this.remainingBudget -= differenceSubsurfaceTankMaxVolPerValue * this.subsurfaceTankMaxVolPercentageUnitCost
@@ -966,12 +966,12 @@ class Game {
           var previousBioswaleInfilValue = parseFloat(bioswaleInfiltrationRateTag.value)
           var differenceBioswaleInfilValue = 0
           this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
-          bioswaleInfiltrationRateValue.innerHTML = this.BioswaleInfiltrationRate
+          bioswaleInfiltrationRateValue.innerHTML = `${(this.BioswaleInfiltrationRate * 100).toFixed(0)}%`
 
           this.BioswaleInfiltrationRateUnitCost = 15000 // in Euros/m2 - needs calibration
           bioswaleInfiltrationRateTag.onchange = () => {
                this.BioswaleInfiltrationRate = parseFloat(bioswaleInfiltrationRateTag.value)
-               bioswaleInfiltrationRateValue.innerHTML = this.BioswaleInfiltrationRate
+               bioswaleInfiltrationRateValue.innerHTML = `${(this.BioswaleInfiltrationRate * 100).toFixed(0)}%`
                differenceBioswaleInfilValue = this.BioswaleInfiltrationRate - previousBioswaleInfilValue
                previousBioswaleInfilValue = this.BioswaleInfiltrationRate
                this.remainingBudget -= differenceBioswaleInfilValue * this.BioswaleInfiltrationRateUnitCost
