@@ -201,7 +201,7 @@ input[type=range][orient=vertical]
 .city-menu {
      position: absolute;
      top: 15%;
-     left: 18%;
+     left: 12%;
      background-color: #007FFF;
      color: #ffffff;
      padding: 10px;
@@ -212,7 +212,7 @@ input[type=range][orient=vertical]
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 52%;
+     width: 55%;
      height: 65%;
 }
 
@@ -222,7 +222,7 @@ input[type=range][orient=vertical]
 
 .water-tower-menu {
      position: absolute;
-     top: 12%;
+     top: 9.7%;
      left: 5%;
      background-color: #007FFF;
      color: #ffffff;
@@ -234,8 +234,8 @@ input[type=range][orient=vertical]
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     width: 70%;
-     height: 72%;
+     width: 60%;
+     height: 75%;
 }
 
 .water-tower-menu.visible {
@@ -257,7 +257,7 @@ input[type=range][orient=vertical]
      line-height: 2;
      border: 3px solid #333333;
      border-radius: 7px;
-     height:59%;
+     height:68%;
      width: 63%;
 }
 
@@ -432,7 +432,7 @@ input[type=range][orient=vertical]
      padding: 15px;
      position: absolute;
      left: 42%;
-     bottom: 1%;
+     bottom: 0.5%;
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 16px;
