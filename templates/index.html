@@ -19,16 +19,31 @@
      <div id="loading-bar"></div>
 
      <!-- Lets play button -->
-     <button type="button" class="play" disabled>Let's Play!</button>
+     <button type="button" class="play" hidden>Let's Play!</button>
 
-     <!-- Introduction Menu providing information about the game -->
+     <!-- Introduction MenuS providing information about the game -->
+     <!-- First we have the "Welcome" Menu -->
+
      <div class="introduction-menu">
           <p id="introduction-menu-text" style="position: absolute; top: 35%; left:12%">Welcome to Hydrousa Serious Game!</p>
-          <img src="../static/models/houses2.PNG" alt="Houses" id="houses-img" width="150" hidden style="position: absolute; top: 31%; left:7%">
-          <img src="../static/models/crops.PNG" alt="Crops" id="crops-img" width="150" hidden style="position: absolute; top: 31%; left:36%">
-          <img src="../static/models/water_tower.PNG" alt="Water Tower" id="water-tower-img" width="150" height="125" hidden style="position: absolute; top: 31%; left:65%">
           <button type="button" id="introduction-menu-button">GOT IT</button>
      </div>
+
+     <div class="theory-menu">
+          <p id="theory-menu-text">Theory Menu</p>
+          <button type="button" id="theory-menu-button">GOT IT</button>
+     </div>
+
+     <div class="controls-menu">
+          <p id="controls-menu-text">Controls Menu</p>
+          <img src="../static/models/houses2.PNG" alt="Houses" id="houses-img" width="150" style="position: absolute; top: 31%; left:7%">
+          <img src="../static/models/crops.PNG" alt="Crops" id="crops-img" width="150" style="position: absolute; top: 31%; left:36%">
+          <img src="../static/models/water_tower.PNG" alt="Water Tower" id="water-tower-img" width="150" height="125" style="position: absolute; top: 31%; left:65%">
+          <button type="button" id="controls-menu-button">GOT IT</button>
+     </div>
+
+
+
 
      <!-- Difficulty Menu -->
      <div class="game-difficulty">
@@ -44,25 +59,25 @@
           <span id="populationValue">5000</span>
           <br> -->
 
-          <label for="roofs"><img src="../static/models/info.png" alt="info" width="24" id="roofs-area-img"> How much area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>) do you want to be exploited for rainwater harvesting from the town's roofs? </label>
+          <label for="roofs"><img src="../static/models/info.png" alt="info" width="24" id="roofs-area-img"> How much area do you want to exploit from the roofs? </label>
           <br>
-          <input id="roofs" type="range" name="roofs" min="0" max="150000" step="100" value="100" style="width: 75%; margin-bottom: 12px;">
+          <input id="roofs" type="range" name="roofs" min="0" max="200000" step="100" value="100" style="width: 75%; margin-bottom: 12px;">
           <span id="roofsValue">100</span>
           <br>
 
-          <label for="roofsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="roofs-coeff-img"> How much do you want the roofs runoff coefficient to be? </label>
+          <label for="roofsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="roofs-coeff-img"> How much do you expect the roofs' runoff coefficient to be? </label>
           <br>
           <input id="roofsCoeff" type="range" name="roofsCoeff" min="0.5" max="0.9" step="0.01" value="0.5" style="width: 75%; margin-bottom: 12px;">
           <span id="roofsCoeffValue">0.5</span>
           <br>
 
-          <label for="yards"><img src="../static/models/info.png" alt="info" width="24" id="yards-area-img"> How much area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>) do you want to be exploited for rainwater harvesting from the town's paving? </label>
+          <label for="yards"><img src="../static/models/info.png" alt="info" width="24" id="yards-area-img"> How much area do you want to exploit from the impermeable surfaces? </label>
           <br>
-          <input id="yards" type="range" name="yards" min="0" max="150000" step="100" value="100" style="width: 75%; margin-bottom: 12px;">
+          <input id="yards" type="range" name="yards" min="0" max="200000" step="100" value="100" style="width: 75%; margin-bottom: 12px;">
           <span id="yardsValue">100</span>
           <br>
 
-          <label for="yardsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="yards-coeff-img"> How much do you want the paving's runoff coefficient to be? </label>
+          <label for="yardsCoeff"><img src="../static/models/info.png" alt="info" width="24" id="yards-coeff-img"> How much do you expect the impermeable surfaces' runoff coefficient to be? </label>
           <br>
           <input id="yardsCoeff" type="range" name="yardsCoeff" min="0.5" max="0.9" step="0.01" value="0.5" style="width: 75%; margin-bottom: 12px;">
           <span id="yardsCoeffValue">0.5</span>
@@ -70,37 +85,37 @@
      </div>
 
      <div class="water-tower-menu">
-          <label for="roofsTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="roofs-tank-img"> How large (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>) do you want to make Tank 1? </label>
+          <label for="roofsTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="roofs-tank-img"> How large do you want to make Tanks No1? </label>
           <br>
-          <input id="roofsTankVolume" type="range" name="roofsTankVolume" min="0" max="500" step="1" value="0" style="width: 75%; margin-bottom: 11px;">
+          <input id="roofsTankVolume" type="range" name="roofsTankVolume" min="0" max="50000" step="1" value="0" style="width: 75%; margin-bottom: 11px;">
           <span id="roofsTankVolumeValue">0</span>
           <br>
 
-          <label for="tank2Volume"><img src="../static/models/info.png" alt="info" width="24" id="tank2-img"> How large (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>) do you want to make Tank 2? </label>
+          <label for="tank2Volume"><img src="../static/models/info.png" alt="info" width="24" id="tank2-img"> How large do you want to make Tanks No2? </label>
           <br>
-          <input id="tank2Volume" type="range" name="tank2Volume" min="0" max="500" step="1" value="0" style="width: 75%; margin-bottom: 11px;">
+          <input id="tank2Volume" type="range" name="tank2Volume" min="0" max="50000" step="1" value="0" style="width: 75%; margin-bottom: 11px;">
           <span id="tank2VolumeValue">0</span>
           <br>
 
-          <label for="openTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="open-tank-img"> How large (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>) do you want to make Tank 3? </label>
+          <label for="openTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="open-tank-img"> How large do you want to make Tanks No3? </label>
           <br>
-          <input id="openTankVolume" type="range" name="openTankVolume" min="0" max="500" step="1" value="0" style="width: 75%; margin-bottom: 11px;">
+          <input id="openTankVolume" type="range" name="openTankVolume" min="0" max="50000" step="1" value="0" style="width: 75%; margin-bottom: 11px;">
           <span id="openTankVolumeValue">0</span>
           <br>
 
-          <label for="subsurfaceTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="subsurface-tank-img"> How much Aquifer capacity (m<span style="position: relative; bottom: 5px; right: 1px;">3</span>) do you want to exploit? </label>
+          <label for="subsurfaceTankVolume"><img src="../static/models/info.png" alt="info" width="24" id="subsurface-tank-img"> How much Aquifer capacity do you want to exploit? </label>
           <br>
-          <input id="subsurfaceTankVolume" type="range" name="subsurfaceTankVolume" min="0" max="5000" step="10" value="0" style="width: 75%; margin-bottom: 11px;">
+          <input id="subsurfaceTankVolume" type="range" name="subsurfaceTankVolume" min="0" max="200000" step="10" value="0" style="width: 75%; margin-bottom: 11px;">
           <span id="subsurfaceTankVolumeValue">0</span>
           <br>
 
-          <label for="tank2MinVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="tank2-min-vol-per"> What percentage of Tank 2 capacity do you want to remain in Tank 2? </label>
+          <label for="tank2MinVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="tank2-min-vol-per"> What percentage of Tanks No2 capacity do you want to remain to Tanks No2 and not head to the Aquifer? </label>
           <br>
           <input id="tank2MinVolPercentage" type="range" name="tank2MinVolPercentage" min="0.01" max="0.99" step="0.01" value="0.5" style="width: 75%; margin-bottom: 11px;">
           <span id="tank2MinVolPercentageValue">0.5</span>
           <br>
 
-          <label for="subsurfaceTankMaxVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="sub-tank-max-vol-per"> What percentage of the Aquifer's capacity do you want to never be exceeded when filling the aquifer? </label>
+          <label for="subsurfaceTankMaxVolPercentage"><img src="../static/models/info.png" alt="info" width="24" id="sub-tank-max-vol-per"> What percentage of the Aquifer's capacity do you never want to exceed? </label>
           <br>
           <input id="subsurfaceTankMaxVolPercentage" type="range" name="subsurfaceTankMaxVolPercentage" min="0.01" max="0.99" step="0.01" value="0.5" style="width: 75%; margin-bottom: 11px;">
           <span id="subsurfaceTankMaxVolPercentageValue">0.5</span>
@@ -113,27 +128,27 @@
           <input id="irrigation" type="range" name="irrigation" min="5" max="200" step="1" value="25" style="width: 200px;">
           <span id="irrigationValue">25</span>
           <br> -->
-          <label for="stormwaterArea"><img src="../static/models/info.png" alt="info" width="24" id="storm-area-img"> How much area (m<span style="position: relative; bottom: 5px; right: 1px;">2</span>) do you want to be exploited for rainwater harvesting from the town's field? </label>
+          <label for="stormwaterArea"><img src="../static/models/info.png" alt="info" width="24" id="storm-area-img"> How much area do you want to exploit from the field? </label>
           <br>
           <input id="stormwaterArea" type="range" name="stormwaterArea" min="0" max="200000" step="100" value="100" style="width: 75%; margin-bottom: 12px;">
           <span id="stormwaterAreaValue">100</span>
           <br>
 
-          <label for="stormwaterCoeff"><img src="../static/models/info.png" alt="info" width="24" id="storm-coeff-img"> How much do you want the field's runoff coefficient to be? </label>
+          <label for="stormwaterCoeff"><img src="../static/models/info.png" alt="info" width="24" id="storm-coeff-img"> How much do you expect the field's runoff coefficient to be? </label>
           <br>
           <input id="stormwaterCoeff" type="range" name="stormwaterCoeff" min="0.5" max="0.9" step="0.01" value="0.5" style="width: 75%; margin-bottom: 12px;">
           <span id="stormwaterCoeffValue">0.5</span>
           <br>
 
-          <label for="BioswaleInfiltrationRate"><img src="../static/models/info.png" alt="info" width="24" id="bios-infil-img"> How much rainwater percentage do you want to be infiltrated from the field to the bioswale system? </label>
+          <label for="BioswaleInfiltrationRate"><img src="../static/models/info.png" alt="info" width="24" id="bios-infil-img"> How much do you expect the infiltrated water from the field to the Bioswale systems to be? </label>
           <br>
           <input id="BioswaleInfiltrationRate" type="range" name="BioswaleInfiltrationRate" min="0.3" max="0.9" step="0.01" value="0.3" style="width: 75%; margin-bottom: 12px;">
           <span id="BioswaleInfiltrationRateValue">0.3</span>
           <br>
 
-          <label for="bioswaleQmax"><img src="../static/models/info.png" alt="info" width="24" id="bios-qmax-img"> How much maximum supply (m<span style="position: relative; bottom: 5px; right: 4px;">3</span>/day) do you want your Bioswale System to have? </label>
+          <label for="bioswaleQmax"><img src="../static/models/info.png" alt="info" width="24" id="bios-qmax-img"> What maximum water flow do you want the Bioswale systems to have? </label>
           <br>
-          <input id="bioswaleQmax" type="range" name="bioswaleQmax" min="10" max="5000" step="10" value="10" style="width: 75%; margin-bottom: 12px;">
+          <input id="bioswaleQmax" type="range" name="bioswaleQmax" min="10" max="10000" step="10" value="10" style="width: 75%; margin-bottom: 12px;">
           <span id="bioswaleQmaxValue">10</span>
 
           <button type="button" id="crop-ok">OK</button>
