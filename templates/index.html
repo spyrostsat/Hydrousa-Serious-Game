@@ -30,19 +30,36 @@
      </div>
 
      <div class="theory-menu">
-          <p id="theory-menu-text">Theory Menu</p>
+          <p id="theory-menu-text">This gaming experience lets you become the savior of a virtual town, by helping it recover from a water
+          crisis. Goal of the game is managing to find a system design that exploits the town's available resources wisely and meets the
+          respective irrigation and household non potable demands.
+          <br>
+          <br>
+          Rainwater falling on the houses' roofs and the town's impermeable surfaces (pavements, streets, yards, etc.)
+          is collected. The roofs' rainwater is stored in Tanks Νο1 and is primarily used for household non potable uses.
+          The surface runoff from the impermeable surfaces is stored in Tanks Νο2, where it also meets the rainwater of any probable overflow
+          οf Tanks Νο1. Rainwater of Tanks Νο2 is used for irrigation as well as for storage in the subsurface (Aquifer) through artificial recharge.
+          Additional rainwater is collected via Bioswale systems (open-channel linear drainage systems) from the town's fields and reserved in
+          Τanks Νο3. This water is also used for irrigation, while any probable overflow of Tanks No3 heads to the subsurface through
+          artificial recharge. Water can be recovered from the subsurface for irrigation.
+          <br>
+          <br>
+          <img src="../static/models/theory1.png" alt="Game Theory" width="550">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <img src="../static/models/theory2.png" alt="Game Theory" width="550">
           <button type="button" id="theory-menu-button">GOT IT</button>
      </div>
 
      <div class="controls-menu">
-          <p id="controls-menu-text">Controls Menu</p>
+          <p id="controls-menu-text">There are 3 Difficulty Levels (Easy, Medium, Hard), which configure multiple game settings e.g. demand,
+          resources, time, budget. Use your right mouse click to move and left click to open the 3 hidden town menus, which can help you
+          design the town's water management policy. The menus open only when you approach specific city components.
+          Clue: The city components that activate the hidden menus are shown below. Good luck!</p>
+
           <img src="../static/models/houses2.PNG" alt="Houses" id="houses-img" width="150" style="position: absolute; top: 31%; left:7%">
           <img src="../static/models/crops.PNG" alt="Crops" id="crops-img" width="150" style="position: absolute; top: 31%; left:36%">
           <img src="../static/models/water_tower.PNG" alt="Water Tower" id="water-tower-img" width="150" height="125" style="position: absolute; top: 31%; left:65%">
           <button type="button" id="controls-menu-button">GOT IT</button>
      </div>
-
-
 
 
      <!-- Difficulty Menu -->
@@ -128,19 +145,19 @@
           <input id="irrigation" type="range" name="irrigation" min="5" max="200" step="1" value="25" style="width: 200px;">
           <span id="irrigationValue">25</span>
           <br> -->
-          <label for="stormwaterArea"><img src="../static/models/info.png" alt="info" width="24" id="storm-area-img"> How much area do you want to exploit from the field? </label>
+          <label for="stormwaterArea"><img src="../static/models/info.png" alt="info" width="24" id="storm-area-img"> How much area do you want to exploit from the fields? </label>
           <br>
           <input id="stormwaterArea" type="range" name="stormwaterArea" min="0" max="200000" step="100" value="100" style="width: 75%; margin-bottom: 12px;">
           <span id="stormwaterAreaValue">100</span>
           <br>
 
-          <label for="stormwaterCoeff"><img src="../static/models/info.png" alt="info" width="24" id="storm-coeff-img"> How much do you expect the field's runoff coefficient to be? </label>
+          <label for="stormwaterCoeff"><img src="../static/models/info.png" alt="info" width="24" id="storm-coeff-img"> How much do you expect the fields' runoff coefficient to be? </label>
           <br>
           <input id="stormwaterCoeff" type="range" name="stormwaterCoeff" min="0.5" max="0.9" step="0.01" value="0.5" style="width: 75%; margin-bottom: 12px;">
           <span id="stormwaterCoeffValue">0.5</span>
           <br>
 
-          <label for="BioswaleInfiltrationRate"><img src="../static/models/info.png" alt="info" width="24" id="bios-infil-img"> How much do you expect the infiltrated water from the field to the Bioswale systems to be? </label>
+          <label for="BioswaleInfiltrationRate"><img src="../static/models/info.png" alt="info" width="24" id="bios-infil-img"> How much do you expect the infiltrated water from the fields to the Bioswale systems to be? </label>
           <br>
           <input id="BioswaleInfiltrationRate" type="range" name="BioswaleInfiltrationRate" min="0.3" max="0.9" step="0.01" value="0.3" style="width: 75%; margin-bottom: 12px;">
           <span id="BioswaleInfiltrationRateValue">0.3</span>

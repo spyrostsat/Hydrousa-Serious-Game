@@ -875,7 +875,7 @@ class Game {
 
           this.stormwaterImage = document.getElementById('storm-area-img')
           this.stormwaterImage.onmouseover = () => {
-               this.infoText.innerHTML = `Determines the amount of rainwater that will be collected from the field via Bioswale systems and will be stored in Tanks No3.`
+               this.infoText.innerHTML = `Determines the amount of rainwater that will be collected from the fields via Bioswale systems and will be stored in Tanks No3.`
                this.infoText.style.top = "36%"
                this.infoText.style.height = "14%"
                this.infoText.style.width = "300px"
@@ -909,7 +909,7 @@ class Game {
 
           this.stormwaterCoeffImage = document.getElementById('storm-coeff-img')
           this.stormwaterCoeffImage.onmouseover = () => {
-               this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the field to Tanks No3.`
+               this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the fields to Tanks No3.`
                this.infoText.style.top = "38%"
                this.infoText.style.height = "11%"
                this.infoText.style.width = "300px"
@@ -943,7 +943,7 @@ class Game {
 
           this.bioswaleInfilImage = document.getElementById('bios-infil-img')
           this.bioswaleInfilImage.onmouseover = () => {
-               this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the field to the Bioswale systems.`
+               this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the fields to the Bioswale systems.`
                this.infoText.style.top = "36%"
                this.infoText.style.height = "14%"
                this.infoText.style.width = "300px"
@@ -977,7 +977,7 @@ class Game {
 
           this.bioswaleQmaxImage = document.getElementById('bios-qmax-img')
           this.bioswaleQmaxImage.onmouseover = () => {
-               this.infoText.innerHTML = `Determines the amount of rainwater that might be lost during its transfer from the field to the Bioswale systems.`
+               this.infoText.innerHTML = `Determines the amount of rainwater that might be lost during its transfer from the fields to the Bioswale systems.`
                this.infoText.style.top = "36%"
                this.infoText.style.height = "14%"
                this.infoText.style.width = "300px"
@@ -1134,14 +1134,14 @@ class Game {
           (buffer) => {
                this.sound3.setBuffer(buffer)
                this.sound3.setLoop(false)
-               this.sound3.setVolume(0.09)
+               this.sound3.setVolume(0.07)
           })
 
           this.audioLoader.load("/static/models/lose.mp3",
           (buffer) => {
                this.sound4.setBuffer(buffer)
                this.sound4.setLoop(false)
-               this.sound4.setVolume(0.09)
+               this.sound4.setVolume(0.07)
           })
 
           // // Lets write some 3D TEXT 'Hydrousa' in the first scene/camera while the page is loading
@@ -1790,7 +1790,7 @@ class Game {
                     labels: this.daysCounter,
                     datasets: [
                          { // i can have more than one datasets, i put each dataset in a different js object inside this array
-                         label: 'Tank 1 Storage',
+                         label: 'Tanks No1 Storage',
                          data: this.roofsTankStorage,
                          backgroundColor: gradient1,
                          borderColor: "rgba(58, 123, 213, 1)",
@@ -1816,7 +1816,7 @@ class Game {
                        },
                        title: {
                             display: true,
-                            text: "Tank 1 Storage",
+                            text: "Tanks No1 Storage",
                             font: {size: 26}
                        }
                     },
@@ -1831,7 +1831,7 @@ class Game {
                               },
                               title: {
                                    display: true,
-                                   text: "Storage in m^3",
+                                   text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
                                         weight: "bold"
@@ -1839,6 +1839,7 @@ class Game {
                               },
                          },
                          x: {
+                              beginAtZero: true,
                               grid: {display: false},
                               title: {
                                    display: true,
@@ -1846,6 +1847,13 @@ class Game {
                                    font: {
                                         size: 18,
                                         weight: "bold"
+                                   }
+                              },
+                              ticks: {
+                                   callback: function(value, index, values) {
+                                        if (value == 0 || value == 50 || value == 100 || value == 150 || value == 200 || value == 250 || value == 300 || value == 350) {
+                                             return value;
+                                        }
                                    }
                               }
                          }
@@ -1860,7 +1868,7 @@ class Game {
                data: {
                     labels: this.daysCounter,
                     datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
-                         label: 'Tank 2 Storage',
+                         label: 'Tanks No2 Storage',
                          data: this.tank2Storage,
                          backgroundColor: gradient2,
                          borderColor: "rgba(58, 123, 213, 1)",
@@ -1885,7 +1893,7 @@ class Game {
                        },
                        title: {
                             display: true,
-                            text: "Tank 2 Storage",
+                            text: "Tanks No2 Storage",
                             font: {size: 26}
                        }
                     },
@@ -1900,7 +1908,7 @@ class Game {
                               },
                               title: {
                                    display: true,
-                                   text: "Storage in m^3",
+                                   text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
                                         weight: "bold"
@@ -1916,6 +1924,13 @@ class Game {
                                         size: 18,
                                         weight: "bold"
                                    }
+                              },
+                              ticks: {
+                                   callback: function(value, index, values) {
+                                        if (value == 0 || value == 50 || value == 100 || value == 150 || value == 200 || value == 250 || value == 300 || value == 350) {
+                                             return value;
+                                        }
+                                   }
                               }
                          }
                     }
@@ -1929,7 +1944,7 @@ class Game {
                data: {
                     labels: this.daysCounter,
                     datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
-                         label: 'Tank 3 Storage',
+                         label: 'Tanks No3 Storage',
                          data: this.openTankStorage,
                          backgroundColor: gradient3,
                          borderColor: "rgba(58, 123, 213, 1)",
@@ -1954,7 +1969,7 @@ class Game {
                        },
                        title: {
                             display: true,
-                            text: "Tank 3 Storage",
+                            text: "Tanks No3 Storage",
                             font: {size: 26}
                        }
                     },
@@ -1969,7 +1984,7 @@ class Game {
                               },
                               title: {
                                    display: true,
-                                   text: "Storage in m^3",
+                                   text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
                                         weight: "bold"
@@ -1985,6 +2000,13 @@ class Game {
                                         size: 18,
                                         weight: "bold"
                                    }
+                              },
+                              ticks: {
+                                   callback: function(value, index, values) {
+                                        if (value == 0 || value == 50 || value == 100 || value == 150 || value == 200 || value == 250 || value == 300 || value == 350) {
+                                             return value;
+                                        }
+                                   }
                               }
                          }
                     }
@@ -1998,7 +2020,7 @@ class Game {
                data: {
                     labels: this.daysCounter,
                     datasets: [{ // i can have more than one datasets, i put each dataset in a different js object inside this array
-                         label: 'Aquifer Storage',
+                         label: 'Exploited Aquifer Storage',
                          data: this.subsurfaceTankStorage,
                          backgroundColor: gradient4,
                          borderColor: "rgba(58, 123, 213, 1)",
@@ -2023,7 +2045,7 @@ class Game {
                        },
                        title: {
                             display: true,
-                            text: "Aquifer Storage",
+                            text: "Exploited Aquifer Storage",
                             font: {size: 26}
                        }
                     },
@@ -2038,7 +2060,7 @@ class Game {
                               },
                               title: {
                                    display: true,
-                                   text: "Storage in m^3",
+                                   text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
                                         weight: "bold"
@@ -2053,6 +2075,13 @@ class Game {
                                    font: {
                                         size: 18,
                                         weight: "bold"
+                                   }
+                              },
+                              ticks: {
+                                   callback: function(value, index, values) {
+                                        if (value == 0 || value == 50 || value == 100 || value == 150 || value == 200 || value == 250 || value == 300 || value == 350) {
+                                             return value;
+                                        }
                                    }
                               }
                          }
@@ -2107,7 +2136,7 @@ class Game {
                               },
                               title: {
                                    display: true,
-                                   text: "Deficit in m^3",
+                                   text: "Deficit in cubic meters",
                                    font: {
                                         size: 18,
                                         weight: "bold"
@@ -2122,6 +2151,13 @@ class Game {
                                    font: {
                                         size: 18,
                                         weight: "bold"
+                                   }
+                              },
+                              ticks: {
+                                   callback: function(value, index, values) {
+                                        if (value == 0 || value == 50 || value == 100 || value == 150 || value == 200 || value == 250 || value == 300 || value == 350) {
+                                             return value;
+                                        }
                                    }
                               }
                          }
@@ -2176,7 +2212,7 @@ class Game {
                               },
                               title: {
                                    display: true,
-                                   text: "Deficit in m^3",
+                                   text: "Deficit in cubic meters",
                                    font: {
                                         size: 18,
                                         weight: "bold"
@@ -2191,6 +2227,13 @@ class Game {
                                    font: {
                                         size: 18,
                                         weight: "bold"
+                                   }
+                              },
+                              ticks: {
+                                   callback: function(value, index, values) {
+                                        if (value == 0 || value == 50 || value == 100 || value == 150 || value == 200 || value == 250 || value == 300 || value == 350) {
+                                             return value;
+                                        }
                                    }
                               }
                          }
