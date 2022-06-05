@@ -89,6 +89,7 @@ body, label, input, button, img {
 
 /* THEORY MENU */
 .theory-menu {
+     z-index: 0;
      opacity: 0.94;
      position: absolute;
      top: 16%;
@@ -114,6 +115,17 @@ body, label, input, button, img {
      text-align: justify;
      font-size: 12px;
      color: #ffffff;
+}
+
+#theory-menu-img {
+     position: absolute;
+     bottom: 15.5%;
+     left: 33.5%;
+     z-index: 1;
+}
+
+#theory-menu-img:hover {
+     transform: translateX(100px) translateY(-110px) scale(2);
 }
 
 #theory-menu-button {
@@ -142,35 +154,27 @@ body, label, input, button, img {
      top: 16%;
      left: 2%;
      background-color: #007FFF;
-     padding: 10px;
+     padding: 20px;
      transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
      transition: transform 0.3s;
      font-family: 'Press Start 2P', cursive;
      border: 3px solid #333333;
      border-radius: 7px;
      width: 94%;
-     height: 76%;
+     height: 74.5%;
 }
 
 .controls-menu.visible {
      transform: scale(1, 1);
 }
 
-#controls-menu-text {
-     padding: 10px;
-     line-height: 1.5;
-     text-align: justify;
-     font-size: 12px;
-     color: #ffffff;
-}
-
 #controls-menu-button {
      background-color: #007FFF;
      color: #ffffff;
-     padding: 20px;
+     padding: 10px;
      position: absolute;
      left: 40.5%;
-     bottom: 2%;
+     bottom: 1%;
      border: 3px solid #333333;
      border-radius: 7px;
      font-size: 16px;
@@ -180,6 +184,160 @@ body, label, input, button, img {
 
 #controls-menu-button:hover {
      background-color: #0000ff;
+}
+
+
+/* SUBMENU 1 */
+
+.controls-submenu-1 {
+     z-index: 0;
+     padding: 5px;
+     position: absolute;
+     top: 0.5%;
+     left: 0.5%;
+     font-family: 'Press Start 2P', cursive;
+     width: 30%;
+     height: 44%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+}
+
+
+#controls-submenu-1-text {
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 12px;
+     color: #ffffff;
+}
+
+#controls-submenu-1-img {
+     position: absolute;
+     bottom: 0.2%;
+     left: 4%;
+     z-index: 1;
+}
+#controls-submenu-1-img:hover {
+     transform: translateX(210px) translateY(100px) scale(2);
+}
+
+
+/* SUBMENU 2 */
+
+.controls-submenu-2 {
+     z-index: 0;
+     padding: 5px;
+     position: absolute;
+     top: 0.5%;
+     left: 34%;
+     font-family: 'Press Start 2P', cursive;
+     width: 64.5%;
+     height: 44%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+}
+
+
+#controls-submenu-2-text {
+     position: absolute;
+     top: 0.5%;
+     left: 0.5%;
+     height: 99%;
+     width: 51%;
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 12px;
+     color: #ffffff;
+}
+
+#controls-submenu-2-img {
+     position: absolute;
+     top: 9%;
+     left: 53.5%;
+     z-index: 1;
+}
+
+#controls-submenu-2-img:hover {
+     transform: translateX(-220px) translateY(110px) scale(2);
+}
+
+
+/* SUBMENU 3 */
+
+.controls-submenu-3 {
+     z-index: 0;
+     padding: 5px;
+     position: absolute;
+     top: 49%;
+     left: 0.5%;
+     font-family: 'Press Start 2P', cursive;
+     width: 50%;
+     height: 38%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+}
+
+#controls-submenu-3-text {
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 12px;
+     color: #ffffff;
+}
+
+#controls-submenu-3-img-1 {
+     position: absolute;
+     bottom: 1.5%;
+     left: 1%;
+}
+
+#controls-submenu-3-img-2 {
+     position: absolute;
+     bottom: 1.5%;
+     left: 38%;
+}
+
+#controls-submenu-3-img-3 {
+     position: absolute;
+     bottom: 2.5%;
+     right: 1%;
+}
+
+
+/* SUBMENU 4 */
+
+.controls-submenu-4 {
+     z-index: 0;
+     padding: 5px;
+     position: absolute;
+     top: 49%;
+     left: 53%;
+     font-family: 'Press Start 2P', cursive;
+     width: 45%;
+     height: 38%;
+     border: 3px solid #333333;
+     border-radius: 7px;
+}
+
+
+#controls-submenu-4-text {
+     position: absolute;
+     top: 0.5%;
+     left: 0.5%;
+     height: 99%;
+     width: 37%;
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 12px;
+     color: #ffffff;
+}
+
+#controls-submenu-4-img {
+     position: absolute;
+     top: 7%;
+     right: 1%;
+     z-index: 1;
+}
+#controls-submenu-4-img:hover {
+     transform: translateX(-200px) translateY(-100px) scale(2);
 }
 
 

@@ -41,23 +41,42 @@
           οf Tanks Νο1. Rainwater of Tanks Νο2 is used for irrigation as well as for storage in the subsurface (Aquifer) through artificial recharge.
           Additional rainwater is collected via Bioswale systems (open-channel linear drainage systems) from the town's fields and reserved in
           Τanks Νο3. This water is also used for irrigation, while any probable overflow of Tanks No3 heads to the subsurface through
-          artificial recharge. Water can be recovered from the subsurface for irrigation.
+          artificial recharge. Water can be recovered from the subsurface for irrigation. All system components are schematically presented below:
           <br>
           <br>
-          <img src="../static/models/theory1.png" alt="Game Theory" width="550">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-          <img src="../static/models/theory2.png" alt="Game Theory" width="550">
+          <img src="../static/models/theory.png" alt="Game Theory" width="370" id="theory-menu-img">
           <button type="button" id="theory-menu-button">GOT IT</button>
      </div>
 
-     <div class="controls-menu">
-          <p id="controls-menu-text">There are 3 Difficulty Levels (Easy, Medium, Hard), which configure multiple game settings e.g. demand,
-          resources, time, budget. Use your right mouse click to move and left click to open the 3 hidden town menus, which can help you
-          design the town's water management policy. The menus open only when you approach specific city components.
-          Clue: The city components that activate the hidden menus are shown below. Good luck!</p>
+     <!--
+     <p id="controls-menu-text"> Use your right mouse click to move and left click to open the 3 hidden town menus, which can help you
+     design the town's water management policy. The menus open only when you approach specific city components.
+     Clue: The city components that activate the hidden menus are shown below. Good luck!</p>
+ -->
 
-          <img src="../static/models/houses2.PNG" alt="Houses" id="houses-img" width="150" style="position: absolute; top: 31%; left:7%">
-          <img src="../static/models/crops.PNG" alt="Crops" id="crops-img" width="150" style="position: absolute; top: 31%; left:36%">
-          <img src="../static/models/water_tower.PNG" alt="Water Tower" id="water-tower-img" width="150" height="125" style="position: absolute; top: 31%; left:65%">
+     <div class="controls-menu">
+          <div class="controls-submenu-1">
+               <p id="controls-submenu-1-text">There are 3 Difficulty Levels. Hover the information icons with your mouse for more details.</p>
+               <br>
+               <img src="../static/models/difficulty_menu.png" alt="Difficulty Menu" width="410" id="controls-submenu-1-img">
+          </div>
+          <div class="controls-submenu-2">
+               <p id="controls-submenu-2-text"> &#8226; <u><b>Movement:</b></u> Use your right mouse click to move &#8226; <u><b>Top-Left:</b></u> Click to see the final results once you're confident the demands are met &#8226; <u><b>Top-Middle:</b></u> Remaining time to design the system &#8226; <u><b>Top-Right:</b></u> The decisions you make to design the system have a respective construction and operating cost &#8226; <u><b>Middle-Left:</b></u> Volume Controller
+               &#8226;<u><b>Bottom-Left:</b></u> Information about the remaining deficits, updating dynamically whenever a decision is made &#8226; <u><b>Bottom-Right:</b></u> Useful graphs, updating dynamically as well </p>
+               <img src="../static/models/interface.png" alt="Difficulty Menu" width="440" id="controls-submenu-2-img">
+          </div>
+          <div class="controls-submenu-3">
+               <p id="controls-submenu-3-text">To make your decisions and design the system, you have to find and open three hidden menus. Each menu opens when you approach and left click a respective city component. <br> <u><b>Clue:</b></u> The city components look like this: </p>
+               <img src="../static/models/houses2.PNG" alt="Houses" id="controls-submenu-3-img-1" width="170">
+               <img src="../static/models/crops.PNG" alt="Crops" id="controls-submenu-3-img-2" width="170">
+               <img src="../static/models/water_tower.PNG" alt="Water Tower" id="controls-submenu-3-img-3" width="170" height="130">
+
+          </div>
+          <div class="controls-submenu-4">
+               <p id="controls-submenu-4-text">This is a hidden menu. Use the sliders to design the system the way you want. You can request additional information on each slider by hovering the respective icons with your mouse.</p>
+               <img src="../static/models/hidden_menus.png" alt="Houses" id="controls-submenu-4-img" width="400">
+          </div>
+
           <button type="button" id="controls-menu-button">GOT IT</button>
      </div>
 
@@ -177,7 +196,7 @@
           <input id="sound-mixer" type="range" name="sound-mixer" min="0" max="1" step="0.025" value="0.1" orient="vertical">
      </div>
 
-     <button type="button" class="simulation-button">Run Simulation</button>
+     <button type="button" class="simulation-button">I'm Ready!</button>
 
      <div class="results">
           <p class="results-text"></p>

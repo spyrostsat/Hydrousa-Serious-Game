@@ -31,6 +31,51 @@ class Game {
 
           // Get control of our menus html elements
 
+          // Code to disappear all other divs when hovering an image on the introductory menu
+          const submenu1 = document.querySelector('.controls-submenu-1')
+          const submenu1_img = document.getElementById('controls-submenu-1-img')
+          const submenu2 = document.querySelector('.controls-submenu-2')
+          const submenu2_img = document.getElementById('controls-submenu-2-img')
+          const submenu3 = document.querySelector('.controls-submenu-3')
+          // const submenu3_img1 = document.getElementById('controls-submenu-3-img-1')
+          // const submenu3_img2 = document.getElementById('controls-submenu-3-img-2')
+          // const submenu3_img3 = document.getElementById('controls-submenu-3-img-3')
+          const submenu4 = document.querySelector('.controls-submenu-4')
+          const submenu4_img = document.getElementById('controls-submenu-4-img')
+
+
+          submenu1_img.onmouseover = () => {
+               submenu2.hidden = true
+               submenu3.hidden = true
+               submenu4.hidden = true
+          }
+          submenu1_img.onmouseout = () => {
+               submenu2.hidden = false
+               submenu3.hidden = false
+               submenu4.hidden = false
+          }
+          submenu2_img.onmouseover = () => {
+               submenu1.hidden = true
+               submenu3.hidden = true
+               submenu4.hidden = true
+          }
+          submenu2_img.onmouseout = () => {
+               submenu1.hidden = false
+               submenu3.hidden = false
+               submenu4.hidden = false
+          }
+          submenu4_img.onmouseover = () => {
+               submenu1.hidden = true
+               submenu2.hidden = true
+               submenu3.hidden = true
+          }
+          submenu4_img.onmouseout = () => {
+               submenu1.hidden = false
+               submenu2.hidden = false
+               submenu3.hidden = false
+          }
+
+
           this.hydrousaLogo = document.getElementById('hydrousa-logo-container')
           this.ntuaLogo = document.getElementById('ntua-logo-container')
           this.uwmhLogo = document.getElementById('uwmh-logo-container')
@@ -326,11 +371,6 @@ class Game {
           cropOk.onclick = () => {
                this.cropMenu.classList.remove('visible')
           }
-
-          // CONTROLS IMAGES
-          this.housesImg = document.getElementById('houses-img')
-          this.cropsImg = document.getElementById('crops-img')
-          this.waterTowerImg = document.getElementById('water-tower-img')
 
 
           // INTRODUCTION MENU
