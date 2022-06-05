@@ -477,7 +477,7 @@ input[type=range][orient=vertical]
 
 .water-tower-menu {
      position: absolute;
-     top: 14%;
+     top: 11%;
      left: 14%;
      background-color: #007FFF;
      color: #ffffff;
@@ -490,7 +490,7 @@ input[type=range][orient=vertical]
      border: 0.1875vw solid #333333;
      border-radius: 0.4375vw;
      width: 54%;
-     height: 68%;
+     height: 73%;
 }
 
 .water-tower-menu.visible {

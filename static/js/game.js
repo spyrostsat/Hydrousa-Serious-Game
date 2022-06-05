@@ -502,10 +502,10 @@ class Game {
           this.easyImage = document.getElementById('easy-img')
           this.easyImage.onmouseover = () => {
                this.infoText.innerHTML = `Time: 10 Min<br><br>Budget: 200.000 \u20AC<br><br>Help Info: Available<br><br>Population: 5.000 Inhabitants<br><br>Rainfall: High<br><br>Irrigation Demand: Low`
-               // this.infoText.style.lineHeight = "1.8"
-               // this.infoText.style.top = "30%"
-               // this.infoText.style.height = "240px"
-               // this.infoText.style.width = "310px"
+               this.infoText.style.lineHeight = "1.8"
+               this.infoText.style.top = "30%"
+               this.infoText.style.height = "15vw"
+               this.infoText.style.width = "22.5vw"
                this.infoText.classList.add('visible')
           }
           this.easyImage.onmouseout = () => {
@@ -515,10 +515,10 @@ class Game {
           this.mediumImage = document.getElementById('medium-img')
           this.mediumImage.onmouseover = () => {
                this.infoText.innerHTML = `Time: 5 Min<br><br>Budget: 150.000 \u20AC<br><br>Help Info: Available<br><br>Population: 10.000 Inhabitants<br><br>Rainfall: Moderate<br><br>Irrigation Demand: Moderate`
-               // this.infoText.style.lineHeight = "1.8"
-               // this.infoText.style.top = "30%"
-               // this.infoText.style.height = "240px"
-               // this.infoText.style.width = "310px"
+               this.infoText.style.lineHeight = "1.8"
+               this.infoText.style.top = "30%"
+               this.infoText.style.height = "15vw"
+               this.infoText.style.width = "22.5vw"
                this.infoText.classList.add('visible')
           }
           this.mediumImage.onmouseout = () => {
@@ -528,10 +528,10 @@ class Game {
           this.hardImage = document.getElementById('hard-img')
           this.hardImage.onmouseover = () => {
                this.infoText.innerHTML = `Time: 3 Min<br><br>Budget: 100.000 \u20AC<br><br>Help Info: Not Available<br><br>Population: 15.000 Inhabitants<br><br>Rainfall: Low<br><br>Irrigation Demand: High`
-               // this.infoText.style.lineHeight = "1.8"
-               // this.infoText.style.top = "30%"
-               // this.infoText.style.height = "240px"
-               // this.infoText.style.width = "310px"
+               this.infoText.style.lineHeight = "1.8"
+               this.infoText.style.top = "30%"
+               this.infoText.style.height = "15vw"
+               this.infoText.style.width = "22.5vw"
                this.infoText.classList.add('visible')
           }
           this.hardImage.onmouseout = () => {
@@ -951,7 +951,7 @@ class Game {
           this.stormwaterCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the fields to Tanks No3.`
                this.infoText.style.top = "38%"
-               this.infoText.style.height = "11%"
+               this.infoText.style.height = "12%"
                this.infoText.style.width = "18.75vw"
                this.infoText.classList.add('visible')
           }
@@ -2349,11 +2349,11 @@ class Game {
                          this.sound3.play()
                     }
                     else if (this.totalIrrigationDeficit <= 0 && this.totalHouseholdDeficit <= 0 && this.remainingBudget < 0) {
-                         this.resultsText.innerHTML = `Oops! This is not a cost-effective design!<br>Irrigation Deficit Remaining:<br>${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>Non-Potable Household Deficit Remaining:<br>${Math.abs(this.totalHouseholdDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>Remaining Budget:<br>${this.remainingBudget.toFixed(2)} \u20AC`
+                         this.resultsText.innerHTML = `Oops! This is not a cost-effective design!<br>&#8226; Irrigation Deficit Remaining:<br>${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Non-Potable Household Deficit Remaining:<br>${Math.abs(this.totalHouseholdDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Remaining Budget:<br>${this.remainingBudget.toFixed(2)} \u20AC`
                          this.sound4.play()
                     }
                     else {
-                         this.resultsText.innerHTML = `Oops! The demands are not being satisfied!<br>Irrigation Deficit Remaining:<br>${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>Non-Potable Household Deficit Remaining:<br>${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>Remaining Budget:<br>${this.remainingBudget.toFixed(2)} \u20AC`
+                         this.resultsText.innerHTML = `Oops! The demands are not being satisfied!<br>&#8226; Irrigation Deficit Remaining:<br>${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Non-Potable Household Deficit Remaining:<br>${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Remaining Budget:<br>${this.remainingBudget.toFixed(2)} \u20AC`
                          this.sound4.play()
                     }
                }
