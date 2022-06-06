@@ -2421,12 +2421,12 @@ class Game {
                     }
                }
                // TAKE CARE OF DIFFERENT FRAME RATES (FPS). If a computer has i high frame rate i reduce the rain and movement speed whereas if it has a low one , i increase it
-
                // the speed and rain will change at every frame at the begining of the game but after some time (i.e. 350 iterations)
                // the frame rate will have become stable and hence we don't want to update them at every iteration to avoid instabilities
                if (this.helpCounter < 350) {
-                    this.movementSpeed = 18.18 * this.deltaTime + 0.0455 // linear equation (y=ax+b) so that when delta=0.025 speed = 0.5 and when delta=0.0085 speed = 0.2
-                    this.rainVelocity = 21.21 * this.deltaTime + 0.16975 // linear equation (y=ax+b) so that when delta=0.025 rain = 0.7 and when delta=0.0085 rain = 0.35
+                    this.activatingRainNumber = Math.round(-83333.33 * this.deltaTime + 3083.33) // linear equation (y=ax+b) so that when delta=0.025 number = 1000 and when delta=0.007 number = 2500
+                    this.movementSpeed = 18.8888 * this.deltaTime + 0.02777 // linear equation (y=ax+b) so that when delta=0.025 speed = 0.5 and when delta=0.007 speed = 0.16
+                    this.rainVelocity = 28.8888 * this.deltaTime - 0.02222 // linear equation (y=ax+b) so that when delta=0.025 rain = 0.7 and when delta=0.007 rain = 0.18
                }
 
                // Update AnimationMixer
@@ -2459,7 +2459,7 @@ class Game {
                     this.raindrops.geometry.attributes.position.needsUpdate = true
 
                     // Activating - Deactivating raindrops and corresponding sounds
-                    if (this.helpCounter % 1000 == 0) {
+                    if (this.helpCounter % this.activatingRainNumber == 0) {
                          const change_possibility = Math.random()
                          if (!this.raindrops.visible) {
                               if (change_possibility < 0.5) {
