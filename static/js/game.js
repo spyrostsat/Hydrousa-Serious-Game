@@ -479,8 +479,8 @@ class Game {
                this.population = 8000 // higher the difficulty higher the population (to increase household demand)
                this.remainingBudget = 100000 // higher the difficulty lower the budget
                this.remainingTime = 180 // available time in seconds
-               this.rainfallMultiplyIndex = 0.78 + Math.random() * 0.22 // higher the difficulty lower the index (to reduce total rainfall)
-               this.irrigationMultiplyIndex = 0.65 + Math.random() * 0.35 // higher the difficulty higher the index (to increase total irrigation demand)
+               this.rainfallMultiplyIndex = 0.85 + Math.random() * 0.15 // higher the difficulty lower the index (to reduce total rainfall)
+               this.irrigationMultiplyIndex = 0.58 + Math.random() * 0.42 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
