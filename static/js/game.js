@@ -1242,7 +1242,7 @@ class Game {
 
           this.rainAdded = false
           this.rainVelocity = 0.7
-          this.rainShowingCounter = 0 // a counter to control when the raindrops are visible or not
+          this.helpCounter = 0 // a counter to control when the raindrops are visible or not
           this.addRain()
 
           this.addSea()
@@ -2422,8 +2422,12 @@ class Game {
                }
                // TAKE CARE OF DIFFERENT FRAME RATES (FPS). If a computer has i high frame rate i reduce the rain and movement speed whereas if it has a low one , i increase it
 
-               this.movementSpeed = 18.18 * this.deltaTime + 0.0455 // linear equation (y=ax+b) so that when delta=0.025 speed = 0.5 and when delta=0.0085 speed = 0.2
-               this.rainVelocity = 21.21 * this.deltaTime + 0.16975 // linear equation (y=ax+b) so that when delta=0.025 rain = 0.7 and when delta=0.0085 rain = 0.35
+               // the speed and rain will change at every frame at the begining of the game but after some time (i.e. 350 iterations)
+               // the frame rate will have become stable and hence we don't want to update them at every iteration to avoid instabilities
+               if (this.helpCounter < 350) {
+                    this.movementSpeed = 18.18 * this.deltaTime + 0.0455 // linear equation (y=ax+b) so that when delta=0.025 speed = 0.5 and when delta=0.0085 speed = 0.2
+                    this.rainVelocity = 21.21 * this.deltaTime + 0.16975 // linear equation (y=ax+b) so that when delta=0.025 rain = 0.7 and when delta=0.0085 rain = 0.35
+               }
 
                // Update AnimationMixer
                if (this.characterMixer != null) {
@@ -2440,8 +2444,8 @@ class Game {
 
                // Move the rain
                if (this.rainAdded) {
-                    this.rainShowingCounter++;
-                    if (this.rainShowingCounter == 5) { // just to make sure everything is loaded and to avoid the browser's warning message: Audio is already playing.
+                    this.helpCounter++;
+                    if (this.helpCounter == 5) { // just to make sure everything is loaded and to avoid the browser's warning message: Audio is already playing.
                          // this.sound.play()
                          this.sound2.play()
                     }
@@ -2455,7 +2459,7 @@ class Game {
                     this.raindrops.geometry.attributes.position.needsUpdate = true
 
                     // Activating - Deactivating raindrops and corresponding sounds
-                    if (this.rainShowingCounter % 1000 == 0) {
+                    if (this.helpCounter % 1000 == 0) {
                          const change_possibility = Math.random()
                          if (!this.raindrops.visible) {
                               if (change_possibility < 0.5) {
