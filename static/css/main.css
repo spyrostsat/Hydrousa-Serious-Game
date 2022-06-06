@@ -472,7 +472,7 @@ input[type=range][orient=vertical]
      line-height: 2;
      border: 0.1875vw solid #333333;
      border-radius: 0.4375vw;
-     width: 55%;
+     width: 59%;
      height: 52%;
 }
 
@@ -608,8 +608,8 @@ input[type=range][orient=vertical]
 
 .results {
      position: absolute;
-     top: 17%;
-     left: 20%;
+     top: 15%;
+     left: 18%;
      transform: scale(0, 0);
      font-size: 0.9375vw;
      line-height: 3.125vw;
@@ -619,8 +619,8 @@ input[type=range][orient=vertical]
      color: #ffffff;
      border: 0.1875vw solid #333333;
      border-radius: 0.4375vw;
-     width: 42.5vw;
-     height: 28vw;
+     width: 47vw;
+     height: 30vw;
      transition: transform 0.3s;
 }
 

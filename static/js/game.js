@@ -248,6 +248,7 @@ class Game {
                this.resultsOK.hidden = false
                this.gameEnded = false
                this.simulationButton.disabled = true
+               this.finalDifficulty = null
 
                this.imgTank1.hidden = true
                this.imgTank2.hidden = true
@@ -2288,7 +2289,7 @@ class Game {
                this.results.classList.add('visible')
                this.timeCountingStarted = true
                this.previousTimeElapsed = Date.now()
-               this.resultsText.innerHTML = `Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>Non Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3<br><br>Try to find an adequate system design and meet the demands!</span>`
+               this.resultsText.innerHTML = `&#8226; Difficulty Chosen: ${this.finalDifficulty.toUpperCase()} <br> &#8226; Irrigation Deficit: ${this.totalIrrigationDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Non Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3<br><br><br>Try to find an adequate system design and meet the demands!</span>`
                this.resultsOK.onclick = () => {
                     if (this.simulationRuns < 3) { // this needs debugging - i dont know whats happening
                          this.simulationButton.disabled = false
@@ -2345,15 +2346,15 @@ class Game {
                     // this.sound.setVolume(0.30)
                     // this.sound2.setVolume(0.30)
                     if (this.totalIrrigationDeficit <= 0 && this.totalHouseholdDeficit <= 0 && this.remainingBudget >= 0) {
-                         this.resultsText.innerHTML = `Congratulations! The irrigation and non-potable household demands are being satisfied!<br>Nice Work!`
+                         this.resultsText.innerHTML = `Difficulty Chosen: ${this.finalDifficulty.toUpperCase()}<br><br>Congratulations! The irrigation and non potable household demands are being satisfied!<br><br>Nice Work!`
                          this.sound3.play()
                     }
                     else if (this.totalIrrigationDeficit <= 0 && this.totalHouseholdDeficit <= 0 && this.remainingBudget < 0) {
-                         this.resultsText.innerHTML = `Oops! This is not a cost-effective design!<br>&#8226; Irrigation Deficit Remaining:<br>${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Non-Potable Household Deficit Remaining:<br>${Math.abs(this.totalHouseholdDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Remaining Budget:<br>${this.remainingBudget.toFixed(2)} \u20AC`
+                         this.resultsText.innerHTML = `Difficulty Chosen: ${this.finalDifficulty.toUpperCase()}<br><br>Oops! This is not a cost-effective design!<br><br>&#8226; Irrigation Deficit: ${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Non Potable Household Deficit: ${Math.abs(this.totalHouseholdDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
                          this.sound4.play()
                     }
                     else {
-                         this.resultsText.innerHTML = `Oops! The demands are not being satisfied!<br>&#8226; Irrigation Deficit Remaining:<br>${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Non-Potable Household Deficit Remaining:<br>${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Remaining Budget:<br>${this.remainingBudget.toFixed(2)} \u20AC`
+                         this.resultsText.innerHTML = `Difficulty Chosen: ${this.finalDifficulty.toUpperCase()}<br><br>Oops! The demands are not being satisfied!<br><br>&#8226; Irrigation Deficit: ${Math.abs(this.totalIrrigationDeficit.toFixed(2))} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Non Potable Household Deficit: ${this.totalHouseholdDeficit.toFixed(2)} m<span style="position: relative; bottom: 0.3125vw; right: 0.0625vw;">3</span><br>&#8226; Remaining Budget: ${this.remainingBudget.toFixed(2)} \u20AC`
                          this.sound4.play()
                     }
                }
@@ -2419,16 +2420,10 @@ class Game {
                          this.runSimulation()
                     }
                }
-               // TAKE CARE OF DIFFERENT FRAME RATES (FPS). If a computer has i high frame rate i reduce the rain and movement speed whereas
-               // if it has a low one , i increase it
-               if (this.deltaTime < 0.008) {
-                    this.movementSpeed = 0.25
-                    this.rainVelocity = 0.35
-               }
-               else if (this.deltaTime > 0.04) {
-                    this.movementSpeed = 0.75
-                    this.rainVelocity = 1.05
-               }
+               // TAKE CARE OF DIFFERENT FRAME RATES (FPS). If a computer has i high frame rate i reduce the rain and movement speed whereas if it has a low one , i increase it
+
+               this.movementSpeed = 18.18 * this.deltaTime + 0.0455 // linear equation (y=ax+b) so that when delta=0.025 speed = 0.5 and when delta=0.0085 speed = 0.2
+               this.rainVelocity = 21.21 * this.deltaTime + 0.16975 // linear equation (y=ax+b) so that when delta=0.025 rain = 0.7 and when delta=0.0085 rain = 0.35
 
                // Update AnimationMixer
                if (this.characterMixer != null) {
@@ -2536,7 +2531,7 @@ class Game {
                     this.cameraCounter = Math.PI * 2
                }
 
-               // Let's run a simulation whenever the player changes a menu slider on the EASY difficulty
+               // Let's run a simulation whenever the player changes a menu slider on the EASY/MEDIUM difficulties
                if (this.finalDifficulty !== "hard" && this.newSimulationRun === true) {
                     this.runSimulation()
                     this.newSimulationRun = false
