@@ -237,7 +237,7 @@ class Game {
                this.irrigationChart.destroy()
                this.householdChart.destroy()
 
-               this.irrigationTimeseries = Array.from({length: 365}, () => 350 + Math.random() * 25)
+               this.irrigationTimeseries = Array.from({length: 365}, () => 300 + Math.random() * 25)
 
                this.rainfallTimeseries = [4.20, 0.60, 2.70, 21.3, 0.00, 4.20, 12.9, 0.90, 0.00, 1.50, 0.30, 8.40, 5.70, 1.50, 11.7, 0.60, 6.60, 0.90, 0.60, 0.00, 0.60, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.30, 3.30, 3.60, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.00, 10.8, 7.80, 9.90, 17.1, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 1.50, 0.90, 5.10, 2.10, 0.00, 0.00, 0.00, 0.30, 30.6, 17.4, 0.00, 0.00, 21.6, 14.7, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.00, 0.00, 1.80, 0.30, 3.30, 0.00, 0.00, 0.00, 2.70, 0.30, 0.00, 0.30, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 3.30, 0.30, 1.80, 0.00, 3.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 14.7, 21.6, 0.00, 0.00, 17.4, 30.6, 0.30, 0.00, 0.00, 0.00, 2.10, 5.10, 0.90, 1.50, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 17.1, 9.90, 7.80, 10.8, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
 
@@ -422,13 +422,13 @@ class Game {
                this.population = 5000 // higher the difficulty higher the population (to increase household demand)
                this.remainingBudget = 200000 // higher the difficulty lower the budget
                this.remainingTime = 600 // available time in seconds
-               this.rainfallMultiplyIndex = 1 + Math.random() // higher the difficulty lower the index (to reduce total rainfall)
-               this.irrigationMultiplyIndex = 0.4 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
+               this.rainfallMultiplyIndex = 1 + Math.random() * 0.7 // higher the difficulty lower the index (to reduce total rainfall)
+               this.irrigationMultiplyIndex = 0.4 + Math.random() * 0.3 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.02 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.015 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -451,12 +451,12 @@ class Game {
                this.remainingBudget = 150000 // higher the difficulty lower the budget
                this.remainingTime = 300 // available time in seconds
                this.rainfallMultiplyIndex = 0.8 + Math.random() * 0.4 // higher the difficulty lower the index (to reduce total rainfall)
-               this.irrigationMultiplyIndex = 0.6 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
+               this.irrigationMultiplyIndex = 0.5 + Math.random() * 0.5 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 4.5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.02 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.015 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -475,16 +475,16 @@ class Game {
                this.finalDifficulty = "hard"
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
-               this.population = 8200 // higher the difficulty higher the population (to increase household demand)
+               this.population = 8000 // higher the difficulty higher the population (to increase household demand)
                this.remainingBudget = 100000 // higher the difficulty lower the budget
                this.remainingTime = 180 // available time in seconds
-               this.rainfallMultiplyIndex = 0.7 + Math.random() * 0.3 // higher the difficulty lower the index (to reduce total rainfall)
-               this.irrigationMultiplyIndex = 1 + Math.random() * 0.35 // higher the difficulty higher the index (to increase total irrigation demand)
+               this.rainfallMultiplyIndex = 0.78 + Math.random() * 0.22 // higher the difficulty lower the index (to reduce total rainfall)
+               this.irrigationMultiplyIndex = 0.65 + Math.random() * 0.35 // higher the difficulty higher the index (to increase total irrigation demand)
                this.rainfallTimeseries = this.rainfallTimeseries.map((num) => {return num * this.rainfallMultiplyIndex})
                this.irrigationTimeseries = this.irrigationTimeseries.map((num) => {return num * this.irrigationMultiplyIndex})
 
                // each person is considered to need 5L/day, emerging from rainwater harvesting (this water is collected via the houses roofs areas and the corresponding Roofs Tank), for non-potable domestic uses (e.g. shower, laundry, washing machine)
-               this.totalNonPotableHouseholdDemand = this.population * 0.02 // in m3/day
+               this.totalNonPotableHouseholdDemand = this.population * 0.015 // in m3/day
                this.difficultyChosen = true
                // this method takes care of everything refering to the left or right mouse click
 
@@ -1119,7 +1119,7 @@ class Game {
                               this.gameDifficulty.classList.add('visible')
 
                               // this.irrigationTimeseries = Array.from({length: 100}, () => 0.5 + Math.random() * 3)
-                              this.irrigationTimeseries = Array.from({length: 365}, () => 350 + Math.random() * 25)
+                              this.irrigationTimeseries = Array.from({length: 365}, () => 300 + Math.random() * 25)
 
                               this.rainfallTimeseries = [4.20, 0.60, 2.70, 21.3, 0.00, 4.20, 12.9, 0.90, 0.00, 1.50, 0.30, 8.40, 5.70, 1.50, 11.7, 0.60, 6.60, 0.90, 0.60, 0.00, 0.60, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.30, 3.30, 3.60, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.00, 10.8, 7.80, 9.90, 17.1, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 1.50, 0.90, 5.10, 2.10, 0.00, 0.00, 0.00, 0.30, 30.6, 17.4, 0.00, 0.00, 21.6, 14.7, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 3.00, 0.00, 1.80, 0.30, 3.30, 0.00, 0.00, 0.00, 2.70, 0.30, 0.00, 0.30, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 2.70, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 0.00, 0.00, 2.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.30, 2.70, 0.00, 0.00, 0.00, 3.30, 0.30, 1.80, 0.00, 3.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 2.40, 0.00, 0.00, 0.00, 0.00, 14.7, 21.6, 0.00, 0.00, 17.4, 30.6, 0.30, 0.00, 0.00, 0.00, 2.10, 5.10, 0.90, 1.50, 0.00, 0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 17.1, 9.90, 7.80, 10.8, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
                          }
