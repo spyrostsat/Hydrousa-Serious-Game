@@ -2421,13 +2421,13 @@ class Game {
                }
                // TAKE CARE OF DIFFERENT FRAME RATES (FPS). If a computer has i high frame rate i reduce the rain and movement speed whereas
                // if it has a low one , i increase it
-               if (this.deltaTime < 0.009) {
-                    this.movementSpeed = 0.166
-                    this.rainVelocity = 0.233
+               if (this.deltaTime < 0.008) {
+                    this.movementSpeed = 0.25
+                    this.rainVelocity = 0.35
                }
-               else if (this.deltaTime > 0.039) {
-                    this.movementSpeed = 0.83
-                    this.rainVelocity = 1.16
+               else if (this.deltaTime > 0.04) {
+                    this.movementSpeed = 0.75
+                    this.rainVelocity = 1.05
                }
 
                // Update AnimationMixer
