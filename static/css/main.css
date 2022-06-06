@@ -111,21 +111,26 @@ body, label, input, button, img {
 
 #theory-menu-text {
      padding: 0.625vw;
+     position: absolute;
+     top: 0%;
+     left: 0%;
+     width: 60%;
+     height: 90%;
      line-height: 1.5;
      text-align: justify;
-     font-size: 0.75vw;
+     font-size: 0.875vw;
      color: #ffffff;
 }
 
 #theory-menu-img {
      position: absolute;
-     bottom: 15.5%;
-     left: 2%;
+     top: 10%;
+     left: 62%;
      z-index: 1;
 }
 
 #theory-menu-img:hover {
-     transform: translateX(12vw) translateY(-8vw) scale(2);
+     transform: translateX(-12vw) translateY(2.5vw) scale(1.7);
 }
 
 #theory-menu-button {
@@ -217,7 +222,7 @@ body, label, input, button, img {
      z-index: 1;
 }
 #controls-submenu-1-img:hover {
-     transform: translateX(13.125vw) translateY(6.25vw) scale(2);
+     transform: translateX(14.125vw) translateY(6.25vw) scale(2.3);
 }
 
 
@@ -320,8 +325,8 @@ body, label, input, button, img {
 
 #controls-submenu-4-text {
      position: absolute;
-     top: 0.5%;
-     left: 0.5%;
+     top: 2%;
+     left: 2%;
      height: 99%;
      width: 37%;
      line-height: 1.7;
@@ -333,11 +338,11 @@ body, label, input, button, img {
 #controls-submenu-4-img {
      position: absolute;
      top: 7%;
-     right: 1%;
+     right: 2%;
      z-index: 1;
 }
 #controls-submenu-4-img:hover {
-     transform: translateX(-12.5vw) translateY(-6.25vw) scale(2);
+     transform: translateX(-18vw) translateY(-6.25vw) scale(2.5);
 }
 
 
