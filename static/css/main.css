@@ -129,6 +129,17 @@ body, label, input, button, img {
      z-index: 1;
 }
 
+#hover-info {
+     position: absolute;
+     top: 6.7%;
+     left: 70%;
+     font-family: 'Press Start 2P', cursive;
+     line-height: 1.5;
+     text-align: justify;
+     font-size: 0.68vw;
+     color: #ffffff;
+}
+
 #theory-menu-img:hover {
      transform: translateX(-12vw) translateY(2.5vw) scale(1.7);
 }
