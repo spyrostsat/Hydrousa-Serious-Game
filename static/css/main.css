@@ -132,11 +132,11 @@ body, label, input, button, img {
 #hover-info {
      position: absolute;
      top: 6.7%;
-     left: 70%;
+     left: 66%;
      font-family: 'Press Start 2P', cursive;
      line-height: 1.5;
      text-align: justify;
-     font-size: 0.68vw;
+     font-size: 0.66vw;
      color: #ffffff;
 }
 
