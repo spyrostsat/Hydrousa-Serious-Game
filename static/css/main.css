@@ -784,20 +784,20 @@ button.play.visible {
 
 #hydrousa-logo-container {
      position: absolute;
-     top: 0.4%;
-     left: 0.2%;
+     top: 0.5%;
+     left: 0.5%;
 }
 
 #ntua-logo-container {
      position: absolute;
-     top: 0.4%;
-     right: 0.2%;
+     top: 0.5%;
+     right: 0.5%;
 }
 
 #uwmh-logo-container {
      position: absolute;
      top: 1%;
-     left: 40%;
+     left: 40.5%;
 }
 
 #copyright-text {
