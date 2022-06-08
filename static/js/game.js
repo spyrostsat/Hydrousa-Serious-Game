@@ -477,7 +477,7 @@ class Game {
                this.gameDifficulty.classList.remove('visible')
                // The 4 game settings that depend on the game's difficulty
                this.population = 8000 // higher the difficulty higher the population (to increase household demand)
-               this.remainingBudget = 100000 // higher the difficulty lower the budget
+               this.remainingBudget = 110000 // higher the difficulty lower the budget
                this.remainingTime = 180 // available time in seconds
                this.rainfallMultiplyIndex = 0.85 + Math.random() * 0.15 // higher the difficulty lower the index (to reduce total rainfall)
                this.irrigationMultiplyIndex = 0.58 + Math.random() * 0.42 // higher the difficulty higher the index (to increase total irrigation demand)
@@ -528,7 +528,7 @@ class Game {
 
           this.hardImage = document.getElementById('hard-img')
           this.hardImage.onmouseover = () => {
-               this.infoText.innerHTML = `Time: 3 Min<br><br>Budget: 100.000 \u20AC<br><br>Help Info: Not Available<br><br>Population: 15.000 Inhabitants<br><br>Rainfall: Low<br><br>Irrigation Demand: High`
+               this.infoText.innerHTML = `Time: 3 Min<br><br>Budget: 110.000 \u20AC<br><br>Help Info: Not Available<br><br>Population: 15.000 Inhabitants<br><br>Rainfall: Low<br><br>Irrigation Demand: High`
                this.infoText.style.lineHeight = "1.8"
                this.infoText.style.top = "30%"
                this.infoText.style.height = "15vw"
