@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container text-center my-4">
+     <p style="font-size: 32px;" class="lead my-4">Hydrousa Serious Game</p>
+
+     <p style="font-size:16px;" class="text-muted my-5 text-center">
+          This gaming experience lets you become the savior of a virtual town, by helping it recover from a water crisis. Goal of the
+          game is managing to find a system design that exploits the town's available resources wisely and meets the respective irrigation
+          and household non potable demands.
+     </p>
+
+     <div class="justify-content-center my-5">
+          <a href="{{ url_for('game_page') }}"><button style="font-size:30px;" type="button" class="btn btn-outline-info btn-lg">Play The Game</button></a>
+     </div>
+</div>
+
+{% endblock content %}

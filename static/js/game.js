@@ -1106,15 +1106,12 @@ class Game {
                          this.playButton.classList.add('visible')
 
                          this.playButton.onclick = () => {
+                              this.canvas.classList.remove('d-none')
                               this.pageLoaded = true
-                              this.hydrousaLogo.hidden = true
-                              this.ntuaLogo.hidden = true
-                              this.uwmhLogo.hidden = true
                               this.loadingBar.style.transform = `scaleX(0)`
                               this.simulationButton.classList.add('visible')
                               this.playButton.classList.remove('visible')
                               this.introductionMenu.classList.remove('visible')
-                              this.copyright.hidden = true
                               // this.gameDifficulty.classList.add('visible')
                               this.soundControl.classList.add('visible')
                               this.gameDifficulty.classList.add('visible')

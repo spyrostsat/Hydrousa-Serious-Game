@@ -1,0 +1,1038 @@
+*:not(nav) {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+     background-image: url("/static/models/background.jpg");
+     background-size: cover;
+     /* Background images from https://www.freepik.com/free-vector/ */
+     min-height: 100vh;
+     background-position: center center;
+     background-attachment: scroll;
+     /* background-blend-mode: luminosity; */
+     /* background-repeat: no-repeat; */
+}
+
+html, body:not(nav) {
+    overflow: hidden;
+    font-size: 0.875vw;
+    font-family: 'Press Start 2P', cursive;
+}
+
+nav {
+     font-size: 16px;
+}
+
+html, body, label, input, button, img, nav, a {
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+
+#webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    /* cursor: url("/static/models/cursor1.png"), auto; */
+    /*cursor image should change from cursor1 to cursor2 when player hovers town components*/
+    /*site for cursor icons: https://icons8.com/icons/set/gaming-cursor
+    Cursor images should be 24x24 pixels*/
+}
+
+#loading-bar {
+     position: absolute;
+     top: 50%;
+     width: 100%;
+     height: 0.25vw;
+     background: #000000;
+     transform: scaleX(0);
+     transform-origin: top left;
+     transition: transform 0.3s;
+}
+
+/* INTRODUCTION MENU */
+.introduction-menu {
+     /* opacity: 0.94; */
+     position: absolute;
+     top: 27%;
+     left: 25.5%;
+     background-color: #007FFF;
+     padding: 0.625vw;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-family: 'Press Start 2P', cursive;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 40.625vw;
+     height: 20vw;
+}
+
+.introduction-menu.visible {
+     transform: scale(1, 1);
+}
+
+#introduction-menu-text {
+     line-height: 1.5;
+     text-align: justify;
+     font-size: 0.9375vw;
+     color: #ffffff;
+     position: absolute;
+     top: 5%;
+     left: 5%;
+     padding: 0.625vw;
+}
+
+#introduction-menu-button {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     position: absolute;
+     left: 37%;
+     bottom: 2%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1vw;
+     font-family: 'Press Start 2P', cursive;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#introduction-menu-button:hover {
+     background-color: #0000ff;
+}
+
+
+/* THEORY MENU */
+.theory-menu {
+     z-index: 0;
+     /* opacity: 0.94; */
+     position: absolute;
+     top: 16%;
+     left: 2%;
+     background-color: #007FFF;
+     padding: 0.625vw;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-family: 'Press Start 2P', cursive;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 94%;
+     height: 76%;
+}
+
+.theory-menu.visible {
+     transform: scale(1, 1);
+}
+
+#theory-menu-text {
+     padding: 0.625vw;
+     position: absolute;
+     top: 0%;
+     left: 0%;
+     width: 60%;
+     height: 90%;
+     line-height: 1.5;
+     text-align: justify;
+     font-size: 0.875vw;
+     color: #ffffff;
+}
+
+#theory-menu-img {
+     position: absolute;
+     top: 10%;
+     left: 62%;
+     z-index: 1;
+}
+
+#hover-info {
+     position: absolute;
+     top: 6.7%;
+     left: 66%;
+     font-family: 'Press Start 2P', cursive;
+     line-height: 1.5;
+     text-align: justify;
+     font-size: 0.66vw;
+     color: #ffffff;
+}
+
+#theory-menu-img:hover {
+     transform: translateX(-12vw) translateY(2.5vw) scale(1.7);
+}
+
+#theory-menu-button {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     position: absolute;
+     left: 40.5%;
+     bottom: 2%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1vw;
+     font-family: 'Press Start 2P', cursive;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#theory-menu-button:hover {
+     background-color: #0000ff;
+}
+
+
+/* CONTROLS MENU */
+.controls-menu {
+     /* opacity: 0.94; */
+     position: absolute;
+     top: 16%;
+     left: 2%;
+     background-color: #007FFF;
+     padding: 1.25vw;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-family: 'Press Start 2P', cursive;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 94%;
+     height: 74.5%;
+}
+
+.controls-menu.visible {
+     transform: scale(1, 1);
+}
+
+#controls-menu-button {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 0.625vw;
+     position: absolute;
+     left: 40.5%;
+     bottom: 1%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1vw;
+     font-family: 'Press Start 2P', cursive;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#controls-menu-button:hover {
+     background-color: #0000ff;
+}
+
+
+/* SUBMENU 1 */
+
+.controls-submenu-1 {
+     z-index: 0;
+     padding: 0.3125vw;
+     position: absolute;
+     top: 0.5%;
+     left: 0.5%;
+     font-family: 'Press Start 2P', cursive;
+     width: 30%;
+     height: 44%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+}
+
+
+#controls-submenu-1-text {
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 0.65vw;
+     color: #ffffff;
+}
+
+#controls-submenu-1-img {
+     position: absolute;
+     bottom: 0.2%;
+     left: 4%;
+     z-index: 1;
+}
+#controls-submenu-1-img:hover {
+     transform: translateX(14.125vw) translateY(6.25vw) scale(2.3);
+}
+
+
+/* SUBMENU 2 */
+
+.controls-submenu-2 {
+     z-index: 0;
+     padding: 0.3125vw;
+     position: absolute;
+     top: 0.5%;
+     left: 34%;
+     font-family: 'Press Start 2P', cursive;
+     width: 64.5%;
+     height: 44%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+}
+
+
+#controls-submenu-2-text {
+     position: absolute;
+     top: 0.5%;
+     left: 0.5%;
+     height: 99%;
+     width: 51%;
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 0.65vw;
+     color: #ffffff;
+}
+
+#controls-submenu-2-img {
+     position: absolute;
+     top: 9%;
+     left: 53.5%;
+     z-index: 1;
+}
+
+#controls-submenu-2-img:hover {
+     transform: translateX(-13.75vw) translateY(6.875vw) scale(2);
+}
+
+
+/* SUBMENU 3 */
+
+.controls-submenu-3 {
+     z-index: 0;
+     padding: 0.3125vw;
+     position: absolute;
+     top: 49%;
+     left: 0.5%;
+     font-family: 'Press Start 2P', cursive;
+     width: 50%;
+     height: 38%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+}
+
+#controls-submenu-3-text {
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 0.65vw;
+     color: #ffffff;
+}
+
+#controls-submenu-3-img-1 {
+     position: absolute;
+     bottom: 1.5%;
+     left: 1%;
+}
+
+#controls-submenu-3-img-2 {
+     position: absolute;
+     bottom: 1.5%;
+     left: 38%;
+}
+
+#controls-submenu-3-img-3 {
+     position: absolute;
+     bottom: 2.5%;
+     right: 1%;
+}
+
+
+/* SUBMENU 4 */
+
+.controls-submenu-4 {
+     z-index: 0;
+     padding: 0.3125vw;
+     position: absolute;
+     top: 49%;
+     left: 53%;
+     font-family: 'Press Start 2P', cursive;
+     width: 45%;
+     height: 38%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+}
+
+
+#controls-submenu-4-text {
+     position: absolute;
+     top: 2%;
+     left: 2%;
+     height: 99%;
+     width: 37%;
+     line-height: 1.7;
+     text-align: justify;
+     font-size: 0.65vw;
+     color: #ffffff;
+}
+
+#controls-submenu-4-img {
+     position: absolute;
+     top: 7%;
+     right: 2%;
+     z-index: 1;
+}
+#controls-submenu-4-img:hover {
+     transform: translateX(-18vw) translateY(-6.25vw) scale(2.5);
+}
+
+
+/* GAME DIFFICUTLY */
+.game-difficulty {
+     position: absolute;
+     top: 30%;
+     left: 19%;
+     background-color: #007FFF;
+     padding: 0.625vw;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-family: 'Press Start 2P', cursive;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 43.75vw;
+     height: 15vw;
+}
+
+.game-difficulty.visible {
+     transform: scale(1, 1);
+}
+
+#difficulty-text {
+     font-family: 'Press Start 2P', cursive;
+     font-size: 1.5625vw;
+     color: #ffffff;
+     position: absolute;
+     top: 16%;
+     left: 20%;
+}
+
+#easy-button {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     position: absolute;
+     left: 5%;
+     bottom: 20%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1.25vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#easy-button:hover {
+     background-color: #0000ff;
+}
+
+#medium-button {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     position: absolute;
+     left: 34.5%;
+     bottom: 20%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1.25vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#medium-button:hover {
+     background-color: #0000ff;
+}
+
+#hard-button {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     position: absolute;
+     left: 70%;
+     bottom: 20%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1.25vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#hard-button:hover {
+     background-color: #0000ff;
+}
+
+/* SOUND CONTROL */
+.sound-control {
+     position: absolute;
+     top: 22%;
+     left: 1%;
+     /* background-color: #007FFF;
+     padding: 0.625vw; */
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     /* font-family: 'Press Start 2P', cursive;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 1.25vw;
+     height: 12.5vw; */
+}
+
+.sound-control.visible {
+     transform: scale(1, 1);
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* Chromium */
+    width: 0.375vw;
+    height: 15.625vw;
+    padding: 0 0.3125vw;
+}
+
+.city-menu {
+     position: absolute;
+     top: 18%;
+     left: 12%;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 0.625vw;
+     transform: scale(0, 0); /*initialy the city-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-size: 0.75vw;
+     font-family: 'Press Start 2P', cursive;
+     line-height: 2;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 59%;
+     height: 52%;
+}
+
+.city-menu.visible {
+     transform: scale(1, 1);
+}
+
+.water-tower-menu {
+     position: absolute;
+     top: 11%;
+     left: 14%;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 0.625vw;
+     transform: scale(0, 0); /*initialy the water-tower-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-size: 0.6875vw;
+     font-family: 'Press Start 2P', cursive;
+     line-height: 2;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 54%;
+     height: 73%;
+}
+
+.water-tower-menu.visible {
+     transform: scale(1, 1);
+}
+
+
+.crop-menu {
+     position: absolute;
+     top: 18%;
+     left: 8%;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 0.625vw;
+     transform: scale(0, 0); /*initialy the crop-menu is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     font-size: 0.75vw;
+     font-family: 'Press Start 2P', cursive;
+     line-height: 2;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     height:52%;
+     width: 61%;
+}
+
+.crop-menu.visible {
+     transform: scale(1, 1);
+}
+
+/*this css rule removes the default arrows existing in the input tags*/
+#population::-webkit-outer-spin-button, #population::-webkit-inner-spin-button, #roofs::-webkit-outer-spin-button, #roofs::-webkit-inner-spin-button, #roofsCoeff::-webkit-outer-spin-button, #roofsCoeff::-webkit-inner-spin-button, #yards::-webkit-outer-spin-button, #yards::-webkit-inner-spin-button, #yardsCoeff::-webkit-outer-spin-button, #yardsCoeff::-webkit-inner-spin-button, #openTankArea::-webkit-outer-spin-button, #openTankArea::-webkit-inner-spin-button, #openTankSpill::-webkit-outer-spin-button, #openTankSpill::-webkit-inner-spin-button, #tank2Area::-webkit-outer-spin-button, #tank2Area::-webkit-inner-spin-button, #tank2Spill::-webkit-outer-spin-button, #tank2Spill::-webkit-inner-spin-button, #subsurfaceTankArea::-webkit-outer-spin-button, #subsurfaceTankArea::-webkit-inner-spin-button, #subsurfaceTankSpill::-webkit-outer-spin-button, #subsurfaceTankSpill::-webkit-inner-spin-button, #rainfall::-webkit-outer-spin-button, #rainfall::-webkit-inner-spin-button, #irrigation::-webkit-outer-spin-button, #irrigation::-webkit-inner-spin-button, #stormwaterArea::-webkit-outer-spin-button, #stormwaterArea::-webkit-inner-spin-button, #stormwaterCoeff::-webkit-outer-spin-button, #stormwaterCoeff::-webkit-inner-spin-button, #BioswaleB::-webkit-outer-spin-button, #BioswaleB::-webkit-inner-spin-button, #BioswaleZ::-webkit-outer-spin-button, #BioswaleZ::-webkit-inner-spin-button, #BioswaleJ::-webkit-outer-spin-button, #BioswaleJ::-webkit-inner-spin-button, #BioswaleN::-webkit-outer-spin-button, #BioswaleN::-webkit-inner-spin-button, #BioswaleYo::-webkit-outer-spin-button, #BioswaleYo::-webkit-inner-spin-button {
+
+     -webkit-appearance: none;
+     margin: 0;
+}
+
+.simulation-button {
+     position: absolute;
+     top: 0.375vw;
+     left: 0.375vw;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     transform: scale(0, 0); /*initialy the simulation-button is invisible and when we add the class .visible to it, it becomes visible*/
+     transition: transform 0.3s;
+     transition: background-color 0.15s;
+     font-size: 1vw;
+     font-family: 'Press Start 2P', cursive;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.625vw;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+.simulation-button:hover:enabled {
+     background-color: #0000ff;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+.simulation-button.visible {
+     transform: scale(1, 1);
+}
+
+.budget {
+     position: absolute;
+     top: 0.625vw;
+     right: 0.625vw;
+     color: #ffffff;
+     transform: scale(0, 0);
+     transition: transform 0.3s;
+     transition: background-color 0.15s;
+     font-size: 1vw;
+     font-family: 'Press Start 2P', cursive;
+}
+
+.budget.visible {
+     transform: scale(1, 1);
+}
+
+.irrigation-household-info {
+     line-height: 1.7;
+     position: absolute;
+     bottom: 0.75vw;
+     left: 0.75vw;
+     color: #ffffff;
+     transform: scale(0, 0);
+     transition: transform 0.3s;
+     transition: background-color 0.15s;
+     font-size: 0.875vw;
+     font-family: 'Press Start 2P', cursive;
+}
+
+.irrigation-household-info.visible {
+     transform: scale(1, 1);
+}
+
+
+.time {
+     position: absolute;
+     top: 1vw;
+     left: 32%;
+     color: #ffffff;
+     transform: scale(0, 0);
+     transition: transform 0.3s;
+     transition: background-color 0.15s;
+     font-size: 1vw;
+     font-family: 'Press Start 2P', cursive;
+}
+
+.time.visible {
+     transform: scale(1, 1);
+}
+
+.results {
+     position: absolute;
+     top: 15%;
+     left: 18%;
+     transform: scale(0, 0);
+     font-size: 0.9375vw;
+     line-height: 3.125vw;
+     font-family: 'Press Start 2P', cursive;
+     padding: 0.625vw;
+     background-color: #007FFF;
+     color: #ffffff;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     width: 47vw;
+     height: 30vw;
+     transition: transform 0.3s;
+}
+
+.results.visible {
+     transform: scale(1, 1);
+}
+
+#results-ok {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     position: absolute;
+     left: 42%;
+     bottom: 3%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#results-ok:hover {
+     background-color: #0000ff;
+}
+
+
+#new-game {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.125vw;
+     position: absolute;
+     left: 33%;
+     bottom: 3%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1.25vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#new-game:hover {
+     background-color: #0000ff;
+}
+
+
+
+#city-ok {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 0.75vw;
+     position: absolute;
+     left: 42%;
+     bottom: 1%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#city-ok:hover {
+     background-color: #0000ff;
+}
+
+#water-tower-ok {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 0.75vw;
+     position: absolute;
+     left: 42%;
+     bottom: 1%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#water-tower-ok:hover {
+     background-color: #0000ff;
+}
+
+
+#crop-ok {
+     font-family: 'Press Start 2P', cursive;
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 0.75vw;
+     position: absolute;
+     left: 42%;
+     bottom: 1%;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     font-size: 1vw;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#crop-ok:hover {
+     background-color: #0000ff;
+}
+
+button.play {
+     background-color: #007FFF;
+     color: #ffffff;
+     padding: 1.25vw;
+     position: absolute;
+     left: 36%;
+     bottom: 2%;
+     border: 0.1875vw solid #333333;
+     border-radius: 10.3125vw;
+     transform: scale(0, 0);
+     font-size: 1.5625vw;
+     font-family: 'Press Start 2P', cursive;
+     transition: transform 0.5s;
+     transition: background-color 0.15s;
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+button.play:enabled:hover {
+     background-color: #0000ff;
+}
+
+button.play.visible {
+     transform: scale(1, 1);
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+.info-text {
+     line-height: 1.8;
+     text-align: justify;
+     border: 0.1875vw solid #333333;
+     border-radius: 0.4375vw;
+     position: absolute;
+     top: 30%;
+     right: 0%;
+     transform: scale(0, 0);
+     font-size: 0.6875vw;
+     font-family: 'Press Start 2P', cursive;
+     padding: 0.625vw;
+     background-color: #007FFF;
+     color: #ffffff;
+     border: 0.1875vw solid #444444;
+     border-radius: 0.125vw;
+     width: 22.5vw;
+     height: 15vw;
+     transition: transform 0.3s;
+}
+
+.info-text.visible {
+     transform: scale(1, 1);
+}
+
+#hydrousa-logo-container {
+     position: absolute;
+     top: 0.5%;
+     left: 0.5%;
+}
+
+#ntua-logo-container {
+     position: absolute;
+     top: 0.5%;
+     right: 0.5%;
+}
+
+#uwmh-logo-container {
+     position: absolute;
+     top: 1%;
+     left: 40.5%;
+}
+
+#copyright-text {
+     position: absolute;
+     bottom: 1%;
+     right: 1%;
+     font-family: 'Press Start 2P', cursive;
+     font-size: 0.625vw;
+     color: #ffffff;
+}
+
+
+input[type=range] {
+  height: 20px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071A9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #007FFF;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #3071A9;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071A9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #007FFF;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #3071A9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071A9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #007FFF;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071A9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #3071A9;
+}
+
+/* GRAPHS SECTION */
+
+/* TANK 1 STORAGE */
+#tank1-container {
+     position: absolute;
+     bottom: 2%;
+     left: 55%;
+}
+
+.graph-tank1-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* TANK 2 STORAGE */
+#tank2-container {
+     position: absolute;
+     bottom: 2%;
+     left: 63%;
+}
+
+.graph-tank2-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* TANK 3 STORAGE */
+#tank3-container {
+     position: absolute;
+     bottom: 2%;
+     left: 71%;
+}
+
+.graph-tank3-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* AQUIFER STORAGE */
+#tank4-container {
+     position: absolute;
+     bottom: 2%;
+     left: 79%;
+}
+
+.graph-tank4-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* IRRIGATION DEFICIT */
+#irrigation-container {
+     position: absolute;
+     bottom: 2%;
+     left: 87%;
+}
+
+.graph-irrigation-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
+
+/* HOUSEHOLD DEFICIT */
+#household-container {
+     position: absolute;
+     bottom: 2%;
+     left: 95%;
+}
+
+.graph-household-container {
+     /* at first the div container has opacity = 0 and z-index = -1 in order for it to be behind everything (so that the right mouse click doesn't open the graph's options) and invisible*/
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     top: 25%;
+     left: 22.5%;
+     background-color: #ffffff;
+     width: 50vw;
+     height: 50vh;
+}
