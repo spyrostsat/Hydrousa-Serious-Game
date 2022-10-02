@@ -1,4 +1,4 @@
-# HYDROUSA
+# Hydrousa Serious Game
 Official Repository of Hydrousa Serious Game
 
 ![Town Demonstration](/pictures/City.png)
