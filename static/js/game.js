@@ -577,7 +577,7 @@ class Game {
           this.roofsImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that will be collected from the roofs and will be stored in Tanks No1.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "5vw"
+               this.infoText.style.height = "12vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -611,7 +611,7 @@ class Game {
           this.roofsCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the roofs to Tanks No1.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "5vw"
+               this.infoText.style.height = "12vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -645,7 +645,7 @@ class Game {
           this.yardsImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that will be collected from the impermeable surfaces and will be stored in Tanks No2.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "6.25vw"
+               this.infoText.style.height = "12vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -679,7 +679,7 @@ class Game {
           this.yardsCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the impermeable surfaces to Tanks No2.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "6.25vw"
+               this.infoText.style.height = "12vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -713,7 +713,7 @@ class Game {
           this.openTankImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the total capacity of Tanks No3, the water of which is exclusively used for irrigation. Probable overflows will be stored in the subsurface through artificial recharge.`
                this.infoText.style.top = "32%"
-               this.infoText.style.height = "21%"
+               this.infoText.style.height = "28%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
@@ -747,7 +747,7 @@ class Game {
           this.roofsTankImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the total capacity of Tanks No1, the water of which is primarily used for non potable household uses. Probable overflows head to Tanks No2.`
                this.infoText.style.top = "38%"
-               this.infoText.style.height = "18%"
+               this.infoText.style.height = "25%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
@@ -781,7 +781,7 @@ class Game {
           this.tank2Image.onmouseover = () => {
                this.infoText.innerHTML = `Determines the total capacity of Tanks No2, the water of which is exclusively used for irrigation. You can decide to send the water leftovers to the subsurface through artificial recharge.`
                this.infoText.style.top = "32%"
-               this.infoText.style.height = "24%"
+               this.infoText.style.height = "28%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
@@ -815,7 +815,7 @@ class Game {
           this.subsurfaceTankImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the total capacity of the town's subsurface (Aquifer). The Aquifer can be used to transfer water back to Tanks No2 when needed (especially during summertime) to aid the irrigation.`
                this.infoText.style.top = "32%"
-               this.infoText.style.height = "24%"
+               this.infoText.style.height = "28%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
@@ -849,7 +849,7 @@ class Game {
           this.tank2MinVolPerImage.onmouseover = () => {
                this.infoText.innerHTML = `The lower this parameter is set to, the more water leftovers will head from Tanks No2 to the town's subsurface.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "13%"
+               this.infoText.style.height = "22%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
@@ -883,7 +883,7 @@ class Game {
           this.subsurfaceTankMaxVolPerImage.onmouseover = () => {
                this.infoText.innerHTML = `The higher this parameter is set to, the less water will head from the Aquifer back to Tanks No2.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "13%"
+               this.infoText.style.height = "22%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
@@ -918,7 +918,7 @@ class Game {
           this.stormwaterImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that will be collected from the fields via Bioswale systems and will be stored in Tanks No3.`
                this.infoText.style.top = "36%"
-               this.infoText.style.height = "14%"
+               this.infoText.style.height = "20%"
                this.infoText.style.width = "18.75vw"
                this.infoText.classList.add('visible')
           }
@@ -952,7 +952,7 @@ class Game {
           this.stormwaterCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the fields to Tanks No3.`
                this.infoText.style.top = "38%"
-               this.infoText.style.height = "12%"
+               this.infoText.style.height = "17%"
                this.infoText.style.width = "18.75vw"
                this.infoText.classList.add('visible')
           }
@@ -986,7 +986,7 @@ class Game {
           this.bioswaleInfilImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the fields to the Bioswale systems.`
                this.infoText.style.top = "36%"
-               this.infoText.style.height = "14%"
+               this.infoText.style.height = "17%"
                this.infoText.style.width = "18.75vw"
                this.infoText.classList.add('visible')
           }
@@ -1020,7 +1020,7 @@ class Game {
           this.bioswaleQmaxImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that might be lost during its transfer from the fields to the Bioswale systems.`
                this.infoText.style.top = "36%"
-               this.infoText.style.height = "14%"
+               this.infoText.style.height = "17%"
                this.infoText.style.width = "18.75vw"
                this.infoText.classList.add('visible')
           }
@@ -1855,7 +1855,10 @@ class Game {
                        title: {
                             display: true,
                             text: "Tanks No1 Storage",
-                            font: {size: 26}
+                            font: {
+                                 size: 26,
+                                 weight: 'normal'
+                            }
                        }
                     },
                     radius: 0,
@@ -1872,7 +1875,7 @@ class Game {
                                    text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               },
                          },
@@ -1884,7 +1887,7 @@ class Game {
                                    text: "Days",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               },
                               ticks: {
@@ -1932,7 +1935,10 @@ class Game {
                        title: {
                             display: true,
                             text: "Tanks No2 Storage",
-                            font: {size: 26}
+                            font: {
+                                 size: 26,
+                                 weight: 'normal'
+                            }
                        }
                     },
                     radius: 0,
@@ -1949,7 +1955,7 @@ class Game {
                                    text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               }
                          },
@@ -1960,7 +1966,7 @@ class Game {
                                    text: "Days",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               },
                               ticks: {
@@ -2008,7 +2014,10 @@ class Game {
                        title: {
                             display: true,
                             text: "Tanks No3 Storage",
-                            font: {size: 26}
+                            font: {
+                                 size: 26,
+                                 weight: 'normal'
+                            }
                        }
                     },
                     radius: 0,
@@ -2025,7 +2034,7 @@ class Game {
                                    text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               }
                          },
@@ -2036,7 +2045,7 @@ class Game {
                                    text: "Days",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               },
                               ticks: {
@@ -2084,7 +2093,10 @@ class Game {
                        title: {
                             display: true,
                             text: "Exploited Aquifer Storage",
-                            font: {size: 26}
+                            font: {
+                                size: 26,
+                                weight: 'normal'
+                            }
                        }
                     },
                     radius: 0,
@@ -2101,7 +2113,7 @@ class Game {
                                    text: "Storage in cubic meters",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               }
                          },
@@ -2112,7 +2124,7 @@ class Game {
                                    text: "Days",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               },
                               ticks: {
@@ -2160,7 +2172,10 @@ class Game {
                        title: {
                             display: true,
                             text: "Irrigation Deficit",
-                            font: {size: 26}
+                            font: {
+                                 size: 26,
+                                 weight: 'normal'
+                            }
                        }
                     },
                     radius: 0,
@@ -2177,7 +2192,7 @@ class Game {
                                    text: "Deficit in cubic meters",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               }
                          },
@@ -2188,7 +2203,7 @@ class Game {
                                    text: "Days",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               },
                               ticks: {
@@ -2236,7 +2251,10 @@ class Game {
                        title: {
                             display: true,
                             text: "Non Potable Household Deficit",
-                            font: {size: 26}
+                            font: {
+                                 size: 26,
+                                 weight: 'normal'
+                            }
                        }
                     },
                     radius: 0,
@@ -2253,7 +2271,7 @@ class Game {
                                    text: "Deficit in cubic meters",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               }
                          },
@@ -2264,7 +2282,7 @@ class Game {
                                    text: "Days",
                                    font: {
                                         size: 18,
-                                        weight: "bold"
+                                        weight: "normal"
                                    }
                               },
                               ticks: {

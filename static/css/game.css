@@ -666,7 +666,10 @@ input[type=range][orient=vertical]
      font-family: 'Press Start 2P', cursive;
      background-color: #007FFF;
      color: #ffffff;
-     padding: 1.25vw;
+     padding-top: 0.2vw;
+     padding-bottom: 0.2vw;
+     padding-left: 1vw;
+     padding-right: 1vw;
      position: absolute;
      left: 42%;
      bottom: 3%;
