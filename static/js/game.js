@@ -577,7 +577,7 @@ class Game {
           this.roofsImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that will be collected from the roofs and will be stored in Tanks No1.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "12vw"
+               this.infoText.style.height = "8vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -611,7 +611,7 @@ class Game {
           this.roofsCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the roofs to Tanks No1.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "12vw"
+               this.infoText.style.height = "8vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -645,7 +645,7 @@ class Game {
           this.yardsImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that will be collected from the impermeable surfaces and will be stored in Tanks No2.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "12vw"
+               this.infoText.style.height = "9vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -679,7 +679,7 @@ class Game {
           this.yardsCoeffImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the amount of rainwater that won't get lost during its trasfer from the impermeable surfaces to Tanks No2.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "12vw"
+               this.infoText.style.height = "8vw"
                this.infoText.style.width = "20vw"
                this.infoText.classList.add('visible')
           }
@@ -849,7 +849,7 @@ class Game {
           this.tank2MinVolPerImage.onmouseover = () => {
                this.infoText.innerHTML = `The lower this parameter is set to, the more water leftovers will head from Tanks No2 to the town's subsurface.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "22%"
+               this.infoText.style.height = "20%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
@@ -883,7 +883,7 @@ class Game {
           this.subsurfaceTankMaxVolPerImage.onmouseover = () => {
                this.infoText.innerHTML = `The higher this parameter is set to, the less water will head from the Aquifer back to Tanks No2.`
                this.infoText.style.top = "40%"
-               this.infoText.style.height = "22%"
+               this.infoText.style.height = "19%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
