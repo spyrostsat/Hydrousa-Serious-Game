@@ -4,6 +4,7 @@ html {
 
 body {
      font-family: 'Press Start 2P', cursive;
+     font-size: 0.875vw;
      min-height: 100%;
      display: flex;
      flex-direction: column;
@@ -15,4 +16,16 @@ body {
      background-attachment: scroll;
      /* background-blend-mode: luminosity; */
      /* background-repeat: no-repeat; */
+}
+
+nav {
+     font-size: 10px;
+}
+
+html, body, label, input, button, img, nav, a {
+     cursor: url("/static/models/lol.cur"), auto;
+}
+
+#go-to-game {
+     cursor: url("/static/models/lol.cur"), auto;
 }
