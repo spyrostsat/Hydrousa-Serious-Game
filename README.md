@@ -3,7 +3,7 @@ Official Repository of Hydrousa Serious Game
 
 ![Town Demonstration](/pictures/City.png)
 
-Link to the Game: https://sghydrousa.herokuapp.com/
+Link to the Game: https://sghydrousa.uwmh.eu/
 
 The Project: https://www.hydrousa.org/
 
