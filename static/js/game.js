@@ -747,7 +747,7 @@ class Game {
           this.roofsTankImage.onmouseover = () => {
                this.infoText.innerHTML = `Determines the total capacity of Tanks No1, the water of which is primarily used for non potable household uses. Probable overflows head to Tanks No2.`
                this.infoText.style.top = "38%"
-               this.infoText.style.height = "25%"
+               this.infoText.style.height = "22%"
                this.infoText.style.width = "17.5vw"
                this.infoText.classList.add('visible')
           }
